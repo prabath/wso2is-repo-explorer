@@ -62,4 +62,8 @@
 \> ./rex.sh find patch/PATCH_NUMBER
 ```
 
-* Web console
+* Spin up the web console
+
+```javascript
+\> ./rex.sh serve
+```

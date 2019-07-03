@@ -7,7 +7,7 @@
 \> git clone https://github.com/prabath/wso2is-repo-explorer.git
 ```
 
-* **Step:1** Copy rex.sh to a directory where you want to maintain Identity Server git repositories. Alway better to keep this readonly.
+* **Step:1** Copy rex.sh (from *wso2is-repo-explorer* directory) to a directory where you want to maintain Identity Server git repositories. Alway better to keep this readonly.
 
 * **Step:2** Initialize git repository explorer. This will checkout all Identity Server repositories and will take some time.
 

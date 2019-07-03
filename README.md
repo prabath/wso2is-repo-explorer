@@ -61,3 +61,5 @@
 ```javascript
 \> ./rex.sh find patch/PATCH_NUMBER
 ```
+
+* Web console

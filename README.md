@@ -2,9 +2,10 @@
 
 ## Initial Setup
 
-* **Step:1** Copy rex.sh (from *wso2is-repo-explorer* directory) to a directory where you want to maintain Identity Server git repositories. Alway better to keep this readonly.
+* **Step:1** Copy rex.sh (from *wso2is-repo-explorer* directory) to a directory where you want to maintain Identity Server git repositories. Alway better to keep this readonly. Also make the script an executable.
 ```javascript
 \> wget https://github.com/prabath/wso2is-repo-explorer/raw/master/rex.sh
+\> chmod +x rex.sh
 ```
 * **Step:2** Initialize git repository explorer. This will checkout all Identity Server repositories and will take some time.
 

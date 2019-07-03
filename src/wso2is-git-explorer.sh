@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "init" ]
+if [ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "init" ] | [ "$1" == "update" ]
 then
 	for  n in 1 2 3 4 5
 	do
@@ -17,6 +17,20 @@ then
 	while read -r line; do
   		git clone "$line"
 	done < $input
+fi
+
+if [ "$1" == "update" ] 
+then
+	cd /identity-repos/wso2
+
+	for file in */ ; do 
+  		if [[ -d "$file" && ! -L "$file" ]]; then
+	    	echo "$file";
+    		cd "$file"; 
+			git pull;
+			cd ..;
+  		fi; 
+	done
 fi
 
 cd /
@@ -40,6 +54,19 @@ then
 	while read -r line; do
 		git clone "$line"
 	done < $input
+fi
+
+if [ "$1" == "update" ] 
+then
+	cd /identity-repos/wso2-extensions
+	for file in */ ; do 
+  		if [[ -d "$file" && ! -L "$file" ]]; then
+	    	echo "$file";
+    		cd "$file"; 
+			git pull;
+			cd ..;
+  		fi; 
+	done
 fi
 
 if [ "$1" == "" ] || [ "$1" == "list" ]

@@ -50,3 +50,8 @@ https://github.com/wso2-extensions/identity-outbound-auth-github.git
 Output:
 https://github.com/wso2-extensions/identity-carbon-auth-mutual-ssl/tree/master/components/org.wso2.carbon.identity.authenticator.mutualssl
 ```
+* **Update** all Identity Server related repositories. If there are any new repos, those will be cloned.
+
+```javascript
+\> ./rex.sh update
+```

@@ -38,13 +38,13 @@
 ```
 ## TODOs
 
-* **List** out all Identity Server repos related to provided product version.
+* **List** out all Identity Server repos related to the provided product version.
 
 ```javascript
 \> ./rex.sh list version 5.8.0
 ```
 
-* **Clone** all Identity Server repos related to provided product version.
+* **Clone** all Identity Server repos related to the provided product version.
 
 ```javascript
 \> ./rex.sh clone version 5.8.0

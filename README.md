@@ -1,1 +1,1 @@
-# wso2is-repo-introspection-tool
+# WSO2 Identity Server Git Repo Introspection Tool

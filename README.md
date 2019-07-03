@@ -26,13 +26,13 @@
 ```javascript
 \> ./rex.sh list
 ```
-* **Find** the git repo, by the name of a Jar file (without the version number)
-
-```javascript
-\> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
-```
 * **Update** all Identity Server related repositories. If there are any new repos, those will be cloned.
 
 ```javascript
 \> ./rex.sh update
+```
+* **Find** the git repo, by the name of a Jar file (without the version number)
+
+```javascript
+\> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
 ```

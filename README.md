@@ -47,5 +47,5 @@
 * **Find** the git repo, by the name of a Jar file name and the product version.
 
 ```javascript
-\> ./rex.sh find 5.7.0/org.wso2.carbon.identity.authenticator.mutualssl
+\> ./rex.sh find 5.8.0/org.wso2.carbon.identity.authenticator.mutualssl
 ```

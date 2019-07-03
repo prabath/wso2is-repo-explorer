@@ -6,6 +6,10 @@ COPY wso2is-git-introspection.sh /wso2is-git-introspection.sh
 RUN apk add --update bash && rm -rf /var/cache/apk/*
 
 RUN apk update \
+    && apk add sed \
+    && rm -rf /var/cache/apk/*
+
+RUN apk update \
     && apk add git \
     && rm -rf /var/cache/apk/*
 

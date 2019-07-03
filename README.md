@@ -1,5 +1,6 @@
 # WSO2 Identity Server Git Repo Explorer (rEx)
 
+## Initial Setup
 
 * **Step:0** Clone the git repo with the following command. 
 
@@ -14,14 +15,21 @@
 ```javascript
 \> ./rex.sh init
 ```
+## Usage 
 
-* **Step:3** List out all Identity Server related repositories.
+* **Clone** List out all Identity Server related repositories. If you already performed init, you do not need to do this.
+
+```javascript
+\> ./rex.sh clone
+```
+
+* **List** List out all Identity Server related repositories. If you already performed init, you do not need to do this.
 
 ```javascript
 \> ./rex.sh list
 ```
 
-* **Step:4** Find the git repo, by the name of a Jar file (without the version number)
+* **Find** Find the git repo, by the name of a Jar file (without the version number)
 
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl

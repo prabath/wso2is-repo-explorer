@@ -25,6 +25,21 @@
 
 ```javascript
 \> ./rex.sh list
+
+Output:
+Identity/Security repos under WSO2:
+https://github.com/wso2/security-tools.git
+https://github.com/wso2/carbon-identity-framework.git
+https://github.com/wso2/carbon-security.git
+
+.........
+
+Identity/Security repos under WSO2 Extensions:
+https://github.com/wso2-extensions/identity-outbound-auth-amazon.git
+https://github.com/wso2-extensions/identity-outbound-auth-basecamp.git
+https://github.com/wso2-extensions/identity-outbound-auth-dropbox.git
+https://github.com/wso2-extensions/identity-outbound-auth-foursquare.git
+https://github.com/wso2-extensions/identity-outbound-auth-github.git
 ```
 
 * **Find** the git repo, by the name of a Jar file (without the version number)

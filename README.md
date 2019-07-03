@@ -17,19 +17,19 @@
 ```
 ## Usage 
 
-* **Clone** Clone all Identity Server related repositories. If you already performed init, you do not need to do this.
+* **Clone** all Identity Server related repositories. If you already performed init, you do not need to do this.
 
 ```javascript
 \> ./rex.sh clone
 ```
 
-* **List** List out all Identity Server related repositories. If you already performed init, you do not need to do this.
+* **List** out all Identity Server related repositories. If you already performed init, you do not need to do this.
 
 ```javascript
 \> ./rex.sh list
 ```
 
-* **Find** Find the git repo, by the name of a Jar file (without the version number)
+* **Find** the git repo, by the name of a Jar file (without the version number)
 
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl

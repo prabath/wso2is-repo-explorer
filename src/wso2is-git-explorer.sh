@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "init" ] | [ "$1" == "update" ]
+if [ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "init" ] || [ "$1" == "update" ]
 then
 	for  n in 1 2 3 4 5
 	do
@@ -17,6 +17,8 @@ then
 	while read -r line; do
   		git clone "$line"
 	done < $input
+
+	rm /y.txt
 fi
 
 if [ "$1" == "update" ] 
@@ -25,17 +27,31 @@ then
 
 	for file in */ ; do 
   		if [[ -d "$file" && ! -L "$file" ]]; then
-	    	echo "$file";
+		  	file1=$(echo "$file" | sed "s|/||g")
+		  	sed "/$file1/d" /y.txt > /y.tmp
+			echo "$file1";
+			mv /y.tmp /y.txt
     		cd "$file"; 
 			git pull;
 			cd ..;
   		fi; 
 	done
+
+	cat /y.txt
+
+	cd /identity-repos/wso2
+	input="/y.txt"
+
+	while read -r line; do
+  		git clone "$line"
+	done < $input
+
+	rm /y.txt
 fi
 
 cd /
  
-if [ "$1" == "clone" ] || [ "$1" == "list" ] || [ "$1" == "init" ]
+if [ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "init" ] || [ "$1" == "update" ]
 then
 	for  n in 1 2 3 4 5
 	do
@@ -54,6 +70,8 @@ then
 	while read -r line; do
 		git clone "$line"
 	done < $input
+
+	rm /z.txt
 fi
 
 if [ "$1" == "update" ] 
@@ -61,12 +79,24 @@ then
 	cd /identity-repos/wso2-extensions
 	for file in */ ; do 
   		if [[ -d "$file" && ! -L "$file" ]]; then
-	    	echo "$file";
+		    file1=$(echo "$file" | sed "s|/||g")
+		  	sed "/$file1/d" /z.txt > /z.tmp  
+			echo "$file1";
+			mv /z.tmp /z.txt
     		cd "$file"; 
 			git pull;
 			cd ..;
   		fi; 
 	done
+ 
+	cd /identity-repos/wso2-extensions
+	input="/z.txt"
+
+	while read -r line; do
+  		git clone "$line"
+	done < $input
+
+	rm /z.txt
 fi
 
 if [ "$1" == "" ] || [ "$1" == "list" ]
@@ -74,11 +104,11 @@ then
 	echo ""
 	echo "Identity/Security repos under WSO2:" 
 	cat /y.txt
-        rm /y.txt
+    rm /y.txt
 	echo ""
 	echo "Identity/Security repos under WSO2 Extensions:" 
 	cat /z.txt
-        rm /z.txt
+    rm /z.txt
 fi
 
 if [ "$1" == "find" ] || [ "$2" != "" ]

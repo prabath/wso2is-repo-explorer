@@ -17,7 +17,7 @@
 ```
 ## Usage 
 
-* **Clone** List out all Identity Server related repositories. If you already performed init, you do not need to do this.
+* **Clone** Clone all Identity Server related repositories. If you already performed init, you do not need to do this.
 
 ```javascript
 \> ./rex.sh clone

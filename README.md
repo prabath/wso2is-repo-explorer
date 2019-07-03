@@ -55,3 +55,9 @@
 ```javascript
 \> ./rex.sh find 5.8.0/org.wso2.carbon.identity.authenticator.mutualssl
 ```
+
+* **Find** the git repo(s), by the provided patch number.
+
+```javascript
+\> ./rex.sh find patch/PATCH_NUMBER
+```

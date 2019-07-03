@@ -36,3 +36,34 @@
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
 ```
+## TODOs
+
+* **List** out all Identity Server repos related to the provided product version.
+
+```javascript
+\> ./rex.sh list version 5.8.0
+```
+
+* **Clone** all Identity Server repos related to the provided product version.
+
+```javascript
+\> ./rex.sh clone version 5.8.0
+```
+
+* **Find** the git repo, by the name of a Jar file name and the product version.
+
+```javascript
+\> ./rex.sh find 5.8.0/org.wso2.carbon.identity.authenticator.mutualssl
+```
+
+* **Find** the git repo(s), by the provided patch number.
+
+```javascript
+\> ./rex.sh find patch/PATCH_NUMBER
+```
+
+* Spin up the web console
+
+```javascript
+\> ./rex.sh serve
+```

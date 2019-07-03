@@ -1,4 +1,4 @@
-# WSO2 Identity Server Git Repo Explorer
+# WSO2 Identity Server Git Repo Explorer (rEx)
 
 
 * **Step:0** Clone the git repo with the following command. 

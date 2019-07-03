@@ -31,8 +31,7 @@
 
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
-```
+
 Output:
-```javascript
 https://github.com/wso2-extensions/identity-carbon-auth-mutual-ssl/tree/master/components/org.wso2.carbon.identity.authenticator.mutualssl
 ```

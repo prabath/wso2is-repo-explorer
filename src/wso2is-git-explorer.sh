@@ -7,6 +7,7 @@ then
 	clear
 	done
 	tree > /identity-repos/wso2.tree
+	tree -J > /identity-repos/wso2.json
 fi
 
 if [ "$1" == "clone" ] || [ "$1" == "init" ]
@@ -46,6 +47,7 @@ then
 	while read -r line; do
   		git clone "$line"
 	done < $input
+	tree -J > /identity-repos/wso2.json
 	tree > /identity-repos/wso2.tree
 	rm /y.txt
 fi
@@ -72,6 +74,7 @@ then
 		git clone "$line"
 	done < $input
 
+	tree -J > /identity-repos/wso2-extensions.json
 	tree > /identity-repos/wso2-extensions.tree
 	rm /z.txt
 fi
@@ -98,7 +101,8 @@ then
   		git clone "$line"
 	done < $input
 
-	tree > /identity-repos/wso2-extensions.tree
+	tree -J > /identity-repos/wso2-extensions.json
+	tree  > /identity-repos/wso2-extensions.tree
 	rm /z.txt
 fi
 

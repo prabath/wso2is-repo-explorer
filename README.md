@@ -21,7 +21,7 @@
 \> ./rex.sh clone
 ```
 
-* **List** out all Identity Server related repositories. If you already performed init, you do not need to do this.
+* **List** out all Identity Server related repositories. If you already performed init, you do not need to do this. You do this, even without cloning or init.
 
 ```javascript
 \> ./rex.sh list

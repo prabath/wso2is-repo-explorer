@@ -9,7 +9,7 @@
 
 * **Step:1** Copy rex.sh to a directory where you want to maintain Identity Server git repositories. Alway better to keep this readonly.
 
-* **Step:2** Initialize git repository explorer. This checkout all Identity Server repositories and will take some time.
+* **Step:2** Initialize git repository explorer. This will checkout all Identity Server repositories and will take some time.
 
 ```javascript
 \> ./rex.sh init

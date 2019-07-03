@@ -6,6 +6,7 @@ then
 	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth" >>/y.txt
 	clear
 	done
+	tree > /identity-repos/wso2.tree
 fi
 
 if [ "$1" == "clone" ] || [ "$1" == "init" ]
@@ -45,7 +46,7 @@ then
 	while read -r line; do
   		git clone "$line"
 	done < $input
-
+	tree > /identity-repos/wso2.tree
 	rm /y.txt
 fi
 
@@ -71,6 +72,7 @@ then
 		git clone "$line"
 	done < $input
 
+	tree > /identity-repos/wso2-extensions.tree
 	rm /z.txt
 fi
 
@@ -96,6 +98,7 @@ then
   		git clone "$line"
 	done < $input
 
+	tree > /identity-repos/wso2-extensions.tree
 	rm /z.txt
 fi
 

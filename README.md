@@ -10,6 +10,7 @@
 
 ```javascript
 \> ./rex.sh init
+```
 
 ## Usage 
 

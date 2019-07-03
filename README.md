@@ -1,6 +1,7 @@
 # WSO2 Identity Server Git Repo Explorer (rEx)
 
 ## Initial Setup
+* **Step:0** This relies on Docker, so make sure you have Docker running in your local environment.
 
 * **Step:1** Copy rex.sh (from *wso2is-repo-explorer* directory) to a directory where you want to maintain Identity Server git repositories. Alway better to keep this readonly. Also make the script an executable.
 ```javascript

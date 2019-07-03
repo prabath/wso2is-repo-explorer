@@ -36,3 +36,16 @@
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
 ```
+## TODOs
+
+* **Clone** all Identity Server repos related to provided version.
+
+```javascript
+\> ./rex.sh clone version 5.8.0
+```
+
+* **Find** the git repo, by the name of a Jar file name and the product version.
+
+```javascript
+\> ./rex.sh find 5.7.0/org.wso2.carbon.identity.authenticator.mutualssl
+```

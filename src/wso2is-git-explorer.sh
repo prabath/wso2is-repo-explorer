@@ -4,6 +4,8 @@ if [ "$1" == "update-tree" ]
 then
   rm /identity-repos/wso2.tree
   rm /identity-repos/wso2-extensions.tree
+  rm /identity-repos/wso2.tree.dir
+  rm /identity-repos/wso2-extensions.tree.dir
 fi
 
 file="/identity-repos/wso2.tree"
@@ -14,8 +16,12 @@ else
     cd /
     wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree.dir
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree.dir
 	cp /wso2.tree /identity-repos/wso2.tree
 	cp /wso2-extensions.tree /identity-repos/wso2-extensions.tree
+	cp /wso2.tree.dir /identity-repos/wso2.tree.dir
+	cp /wso2-extensions.tree.dir /identity-repos/wso2-extensions.tree.dir
 fi
 
 if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "update" ]
@@ -38,6 +44,9 @@ then
 	done < $input
 
 	tree -fi > /identity-repos/wso2.tree
+	tree -fi -d > /identity-repos/wso2.tree.dir.tmp
+	sed "/src/d" /identity-repos/wso2.tree.dir.tmp > /identity-repos/wso2.tree.dir
+	rm /identity-repos/wso2.tree.dir.tmp
 	rm /y.txt
 fi
 
@@ -66,6 +75,10 @@ then
 	done < $input
 
 	tree -fi > /identity-repos/wso2.tree
+	tree -fi -d > /identity-repos/wso2.tree.dir.tmp
+	sed "/src/d" /identity-repos/wso2.tree.dir.tmp > /identity-repos/wso2.tree.dir
+	rm /identity-repos/wso2.tree.dir.tmp
+
 	rm /y.txt
 fi
 
@@ -92,6 +105,10 @@ then
 	done < $input
 
 	tree -fi > /identity-repos/wso2-extensions.tree
+	tree -fi -d > /identity-repos/wso2-extensions.tree.dir.tmp
+	sed "/src/d" /identity-repos/wso2-extensions.tree.dir.tmp > /identity-repos/wso2-extensions.tree.dir
+    rm /identity-repos/wso2-extensions.tree.dir.tmp
+
 	rm /z.txt
 fi
 
@@ -118,6 +135,9 @@ then
   		git clone "$line"
 	done < $input
 	tree -fi > /identity-repos/wso2-extensions.tree
+	tree -fi -d > /identity-repos/wso2-extensions.tree.dir.tmp
+	sed "/src/d" /identity-repos/wso2-extensions.tree.dir.tmp > /identity-repos/wso2-extensions.tree.dir
+    rm /identity-repos/wso2-extensions.tree.dir.tmp
 	rm /z.txt
 fi
 
@@ -133,10 +153,23 @@ then
     rm /z.txt
 fi
 
-if [ "$1" == "find" ] || [ "$2" != "" ]
+if [ "$1" == "find" ] && [ "$2" == "-j" ] && [ "$3" != "" ]
 then
         cd /identity-repos
-		grep "$2" wso2.tree > /results.wso2
+		grep "$3" wso2.tree > /results.wso2.dir
+		sed -i -e 's|/|/tree/master/|2' /results.wso2.dir
+		sed -i -e 's|.|https://github.com/wso2|1' /results.wso2.dir
+		grep "$2" wso2-extensions.tree > /results.wso2.extensions.dir
+		sed -i -e 's|/|/tree/master/|2' /results.wso2.extensions
+		sed -i -e 's|.|https://github.com/wso2-extensions|1' /results.wso2.extensions.dir
+		cat /results.wso2.dir >> /results.wso2.extensions.dir
+        cat /results.wso2.extensions.dir
+        rm /results.wso2.extensions.dir
+		rm /results.wso2.dir
+elif [ "$1" == "find" ] && [ "$2" != "" ]
+then
+        cd /identity-repos
+		grep "$3" wso2.tree > /results.wso2
 		sed -i -e 's|/|/tree/master/|2' /results.wso2
 		sed -i -e 's|.|https://github.com/wso2|1' /results.wso2
 		grep "$2" wso2-extensions.tree > /results.wso2.extensions

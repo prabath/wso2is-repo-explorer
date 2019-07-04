@@ -1,18 +1,26 @@
 #!/bin/bash
-if [ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "init" ] || [ "$1" == "update" ]
+
+file="/identity-repos/wso2.tree"
+if [ -f "$file" ]
+then
+	echo ""
+else
+	cp /wso2.tree /identity-repos/wso2.tree
+	cp /wso2-extensions.tree /identity-repos/wso2-extensions.tree
+fi
+
+if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "update" ]
 then
 	for  n in 1 2 3 4 5
 	do
 	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth" >>/y.txt
 	clear
 	done
-	tree > /identity-repos/wso2.tree
-	tree -J > /identity-repos/wso2.json
 fi
 
-if [ "$1" == "clone" ] || [ "$1" == "init" ]
+if [ "$1" == "clone" ] 
 then
-	mkdir /identity-repos/wso2
+	mkdir -p /identity-repos/wso2
 	cd /identity-repos/wso2
 	input="/y.txt"
 
@@ -20,11 +28,13 @@ then
   		git clone "$line"
 	done < $input
 
+	tree -fi > /identity-repos/wso2.tree
 	rm /y.txt
 fi
 
 if [ "$1" == "update" ] 
 then
+	mkdir -p /identity-repos/wso2
 	cd /identity-repos/wso2
 
 	for file in */ ; do 
@@ -39,22 +49,20 @@ then
   		fi; 
 	done
 
-	cat /y.txt
-
 	cd /identity-repos/wso2
 	input="/y.txt"
 
 	while read -r line; do
   		git clone "$line"
 	done < $input
-	tree -J > /identity-repos/wso2.json
-	tree > /identity-repos/wso2.tree
+
+	tree -fi > /identity-repos/wso2.tree
 	rm /y.txt
 fi
 
 cd /
  
-if [ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "init" ] || [ "$1" == "update" ]
+if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "update" ]
 then
 	for  n in 1 2 3 4 5
 	do
@@ -64,7 +72,7 @@ then
 fi
 
 
-if [ "$1" == "clone" ] || [ "$1" == "init" ]
+if [ "$1" == "clone" ] 
 then
 	mkdir /identity-repos/wso2-extensions
 	cd /identity-repos/wso2-extensions
@@ -74,13 +82,13 @@ then
 		git clone "$line"
 	done < $input
 
-	tree -J > /identity-repos/wso2-extensions.json
-	tree > /identity-repos/wso2-extensions.tree
+	tree -fi > /identity-repos/wso2-extensions.tree
 	rm /z.txt
 fi
 
 if [ "$1" == "update" ] 
 then
+	mkdir -p /identity-repos/wso2-extensions
 	cd /identity-repos/wso2-extensions
 	for file in */ ; do 
   		if [[ -d "$file" && ! -L "$file" ]]; then
@@ -100,9 +108,7 @@ then
 	while read -r line; do
   		git clone "$line"
 	done < $input
-
-	tree -J > /identity-repos/wso2-extensions.json
-	tree  > /identity-repos/wso2-extensions.tree
+	tree -fi > /identity-repos/wso2-extensions.tree
 	rm /z.txt
 fi
 
@@ -121,10 +127,18 @@ fi
 if [ "$1" == "find" ] || [ "$2" != "" ]
 then
         cd /identity-repos
-        find . -name  "$2" -type d > /results.txt
-        sed -i -e 's|/|/tree/master/|3' /results.txt
-        sed -i -e 's|./wso2/|https://github.com/wso2/|g' /results.txt
-        sed -i -e 's|./wso2-extensions/|https://github.com/wso2-extensions/|g' /results.txt
-        cat /results.txt
-        rm /results.txt
+		grep "$2" wso2.tree > /results.wso2
+		sed -i -e 's|/|/tree/master/|2' /results.wso2
+		sed -i -e 's|.|https://github.com/wso2|1' /results.wso2
+		grep "$2" wso2-extensions.tree > /results.wso2.extensions
+		sed -i -e 's|/|/tree/master/|2' /results.wso2.extensions
+		sed -i -e 's|.|https://github.com/wso2-extensions|1' /results.wso2.extensions
+		cat /results.wso2 >> /results.wso2.extensions
+        cat /results.wso2.extensions
+        rm /results.wso2.extensions
+		rm /results.wso2
+        #find . -name  "$2" -type d > /results.txt
+        #sed -i -e 's|/|/tree/master/|3' /results.txt
+        #sed -i -e 's|./wso2/|https://github.com/wso2/|g' /results.txt
+        #sed -i -e 's|./wso2-extensions/|https://github.com/wso2-extensions/|g' /results.txt
 fi

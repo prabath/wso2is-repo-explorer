@@ -39,6 +39,12 @@
 \> ./rex.sh find saml-sso
 ```
 
+* **Update** metadata related to all Identity Server repos. It's better to do an update at least weekly, to find the most up-to-date search results. 
+
+```javascript
+\> ./rex.sh update-tree
+```
+
 ## TODOs
 
 * **Find** the git repo, by the given name and the product version.

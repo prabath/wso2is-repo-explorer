@@ -1,4 +1,22 @@
 .
+./balana
+./balana/modules
+./balana/modules/balana-core
+./balana/modules/balana-distribution
+./balana/modules/balana-distribution/conf
+./balana/modules/balana-documentation
+./balana/modules/balana-samples
+./balana/modules/balana-samples/custom-combining-algo
+./balana/modules/balana-samples/custom-combining-algo/conf
+./balana/modules/balana-samples/custom-combining-algo/resources
+./balana/modules/balana-samples/hierarchical-resource
+./balana/modules/balana-samples/hierarchical-resource/resources
+./balana/modules/balana-samples/kmarket-trading-sample
+./balana/modules/balana-samples/kmarket-trading-sample/resources
+./balana/modules/balana-samples/lib
+./balana/modules/balana-samples/web-page-image-filtering
+./balana/modules/balana-samples/web-page-image-filtering/resources
+./balana/modules/balana-utils
 ./carbon-auth
 ./carbon-auth/components
 ./carbon-auth/components/auth
@@ -1497,4 +1515,4 @@
 ./ux-product-is/Wireframes/ver 03
 ./ux-product-is/Wireframes/ver 04
 
-8788 directories
+8908 directories

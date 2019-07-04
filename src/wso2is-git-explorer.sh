@@ -28,7 +28,7 @@ if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "updat
 then
 	for  n in 1 2 3 4 5
 	do
-	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel\|charon\|carbon-secvault\|carbon-commons" >>/y.txt
+	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel\|charon\|carbon-secvault\|carbon-commons\|balana" >>/y.txt
 	clear
 	done
 fi
@@ -183,7 +183,10 @@ then
 
 		sed -i -e 's|carbon-kernel/tree/master|carbon-kernel/tree/4.4.x|1' /results.wso2.extensions.dir
         cat /results.wso2.extensions.dir
-        rm /results.wso2.extensions.dir
+		echo ""
+		echo "If you didn't find what you want, try to refine your search criteria. For example, instead of org.wso2.balana, try just, balana"
+        echo ""
+		rm /results.wso2.extensions.dir
 		rm /results.wso2.dir
 elif [ "$1" == "find" ] && [ "$2" != "" ]
 then
@@ -201,6 +204,10 @@ then
         cat /results.wso2.extensions
         rm /results.wso2.extensions
 		rm /results.wso2
+
+		echo ""
+		echo "If you didn't find what you want, try to refine your search criteria. For example, instead of org.wso2.balana, try just, balana"
+        echo ""
         #find . -name  "$2" -type d > /results.txt
         #sed -i -e 's|/|/tree/master/|3' /results.txt
         #sed -i -e 's|./wso2/|https://github.com/wso2/|g' /results.txt

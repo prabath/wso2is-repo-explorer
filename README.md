@@ -26,14 +26,8 @@
 ```javascript
 \> ./rex.sh update
 ```
-* **Find** the git repo, by the name of a Jar file (without the version number). You can do this, even without cloning all repos.
 
-```javascript
-\> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
-```
-## TODOs
-
-* **Find** the git repo, by the given name.
+* **Find** the git repo, by the given name. You can do this, even without cloning all repos.
 
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
@@ -44,6 +38,8 @@
 
 \> ./rex.sh find saml-sso
 ```
+
+## TODOs
 
 * **Find** the git repo, by the given name and the product version.
 

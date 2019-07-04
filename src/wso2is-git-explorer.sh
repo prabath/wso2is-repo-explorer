@@ -156,11 +156,11 @@ fi
 if [ "$1" == "find" ] && [ "$2" == "-j" ] && [ "$3" != "" ]
 then
         cd /identity-repos
-		grep "$3" wso2.tree > /results.wso2.dir
+		grep "$3" wso2.tree.dir > /results.wso2.dir
 		sed -i -e 's|/|/tree/master/|2' /results.wso2.dir
 		sed -i -e 's|.|https://github.com/wso2|1' /results.wso2.dir
-		grep "$3" wso2-extensions.tree > /results.wso2.extensions.dir
-		sed -i -e 's|/|/tree/master/|2' /results.wso2.extensions
+		grep "$3" wso2-extensions.tree.dir > /results.wso2.extensions.dir
+		sed -i -e 's|/|/tree/master/|2' /results.wso2.extensions.dir
 		sed -i -e 's|.|https://github.com/wso2-extensions|1' /results.wso2.extensions.dir
 		cat /results.wso2.dir >> /results.wso2.extensions.dir
         cat /results.wso2.extensions.dir

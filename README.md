@@ -1,4 +1,4 @@
-# WSO2 Identity Server Git Repo Explorer (rEx)
+# WSO2 Identity Server Repo Explorer (rEx)
 
 ## Initial Setup
 * **Step:1** This relies on Docker, so make sure you have Docker running in your local environment.

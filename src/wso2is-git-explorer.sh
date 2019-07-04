@@ -180,6 +180,8 @@ then
 		sed -i -e 's|/|/tree/master/|2' /results.wso2.extensions.dir
 		sed -i -e 's|.|https://github.com/wso2-extensions|1' /results.wso2.extensions.dir
 		cat /results.wso2.dir >> /results.wso2.extensions.dir
+
+		sed -i -e 's|carbon-kernel/tree/master|carbon-kernel/tree/4.4.x|1' /results.wso2.extensions.dir
         cat /results.wso2.extensions.dir
         rm /results.wso2.extensions.dir
 		rm /results.wso2.dir

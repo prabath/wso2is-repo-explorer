@@ -42,7 +42,7 @@
 
 \> ./rex.sh find OAuth2TokenValidator.java
 
-\> ./rex.sh find saml-inbound
+\> ./rex.sh find saml-sso
 ```
 
 * **Find** the git repo, by the given name and the product version.

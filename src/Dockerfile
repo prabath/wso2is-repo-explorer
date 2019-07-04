@@ -2,10 +2,12 @@ FROM alpine
 
 RUN  mkdir /identity-repos
 COPY wso2is-git-explorer.sh /wso2is-git-explorer.sh
-COPY wso2-extensions.tree /wso2-extensions.tree
-COPY wso2.tree /wso2.tree
 
 RUN apk add --update bash && rm -rf /var/cache/apk/*
+
+RUN apk update \
+    && apk add wget \
+    && rm -rf /var/cache/apk/*
 
 RUN apk update \
     && apk add tree \

@@ -1,10 +1,19 @@
 #!/bin/bash
 
+if [ "$1" == "update-tree" ]
+then
+  rm /identity-repos/wso2.tree
+  rm /identity-repos/wso2-extensions.tree
+fi
+
 file="/identity-repos/wso2.tree"
 if [ -f "$file" ]
 then
 	echo ""
 else
+    cd /
+    wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree
 	cp /wso2.tree /identity-repos/wso2.tree
 	cp /wso2-extensions.tree /identity-repos/wso2-extensions.tree
 fi

@@ -27,7 +27,7 @@
 \> ./rex.sh update
 ```
 
-* **Find** the git repo, by the given name. You can do this, even without cloning all repos.
+* **Find** the git repo(s), by the given name. You can do this, even without cloning all repos.
 
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl

@@ -44,9 +44,11 @@ then
 	done < $input
 
 	tree -fi > /identity-repos/wso2.tree
-	tree -fi -d > /identity-repos/wso2.tree.dir.tmp
-	sed "/src/d" /identity-repos/wso2.tree.dir.tmp > /identity-repos/wso2.tree.dir
-	rm /identity-repos/wso2.tree.dir.tmp
+	tree -fi -d > /identity-repos/wso2.tree.dir.tmp.1
+	sed "/src/d" /identity-repos/wso2.tree.dir.tmp.1 > /identity-repos/wso2.tree.dir.tmp.2
+	sed "/.feature/d" /identity-repos/wso2.tree.dir.tmp.2 > /identity-repos/wso2.tree.dir
+	rm /identity-repos/wso2.tree.dir.tmp.1
+	rm /identity-repos/wso2.tree.dir.tmp.2
 	rm /y.txt
 fi
 
@@ -75,9 +77,11 @@ then
 	done < $input
 
 	tree -fi > /identity-repos/wso2.tree
-	tree -fi -d > /identity-repos/wso2.tree.dir.tmp
-	sed "/src/d" /identity-repos/wso2.tree.dir.tmp > /identity-repos/wso2.tree.dir
-	rm /identity-repos/wso2.tree.dir.tmp
+	tree -fi -d > /identity-repos/wso2.tree.dir.tmp.1
+	sed "/src/d" /identity-repos/wso2.tree.dir.tmp.1 > /identity-repos/wso2.tree.dir.tmp.2
+	sed "/.feature/d" /identity-repos/wso2.tree.dir.tmp.2 > /identity-repos/wso2.tree.dir
+	rm /identity-repos/wso2.tree.dir.tmp.1
+	rm /identity-repos/wso2.tree.dir.tmp.2
 
 	rm /y.txt
 fi
@@ -105,9 +109,12 @@ then
 	done < $input
 
 	tree -fi > /identity-repos/wso2-extensions.tree
-	tree -fi -d > /identity-repos/wso2-extensions.tree.dir.tmp
-	sed "/src/d" /identity-repos/wso2-extensions.tree.dir.tmp > /identity-repos/wso2-extensions.tree.dir
-    rm /identity-repos/wso2-extensions.tree.dir.tmp
+	tree -fi -d > /identity-repos/wso2-extensions.tree.dir.tmp.1
+	sed "/src/d" /identity-repos/wso2-extensions.tree.dir.tmp.1 > /identity-repos/wso2-extensions.tree.dir.tmp.2
+	sed "/.feature/d" /identity-repos/wso2-extensions.tree.dir.tmp.2 > /identity-repos/wso2-extensions.tree.dir
+    rm /identity-repos/wso2-extensions.tree.dir.tmp.1
+	rm /identity-repos/wso2-extensions.tree.dir.tmp.2
+
 
 	rm /z.txt
 fi
@@ -135,9 +142,11 @@ then
   		git clone "$line"
 	done < $input
 	tree -fi > /identity-repos/wso2-extensions.tree
-	tree -fi -d > /identity-repos/wso2-extensions.tree.dir.tmp
-	sed "/src/d" /identity-repos/wso2-extensions.tree.dir.tmp > /identity-repos/wso2-extensions.tree.dir
-    rm /identity-repos/wso2-extensions.tree.dir.tmp
+	tree -fi -d > /identity-repos/wso2-extensions.tree.dir.tmp.1
+	sed "/src/d" /identity-repos/wso2-extensions.tree.dir.tmp.1 > /identity-repos/wso2-extensions.tree.dir.tmp.2
+	sed "/.feature/d" /identity-repos/wso2-extensions.tree.dir.tmp.2 > /identity-repos/wso2-extensions.tree.dir
+    rm /identity-repos/wso2-extensions.tree.dir.tmp.1
+	rm /identity-repos/wso2-extensions.tree.dir.tmp.2
 	rm /z.txt
 fi
 

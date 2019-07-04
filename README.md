@@ -1,4 +1,5 @@
 # WSO2 Identity Server Repo Explorer (rEx)
+WSO2 Identity Server is 100% Open Source!. We maintain  product source code under two GitHub organizations: wso2 and wso2-extensions. These two GitHub organizations carry code related all WSO2 products, with hundreds of repositories. Sometimes it hard to find, which jar file comes from which repo. If you would like to contribute to the product, please check this git repo explorer (rEx).
 
 ## Initial Setup
 * **Step:1** This relies on Docker, so make sure you have Docker running in your local environment.

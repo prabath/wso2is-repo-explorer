@@ -28,10 +28,12 @@ WSO2 Identity Server is 100% Open Source!. We maintain  product source code unde
 \> ./rex.sh update
 ```
 
-* **Find** the git repo(s), by the given name. You can do this, even without cloning all repos.
+* **Find** the git repo(s), by the given name. You can do this, even without cloning all repos. The -j option will narrow down the search results for the given jar file name (without version)
 
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
+
+\> ./rex.sh find -j org.wso2.carbon.identity.authenticator.mutualssl
 
 \> ./rex.sh find OAuth2TokenValidator
 

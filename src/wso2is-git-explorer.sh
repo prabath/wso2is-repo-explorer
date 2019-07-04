@@ -28,7 +28,7 @@ if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "updat
 then
 	for  n in 1 2 3 4 5
 	do
-	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel" >>/y.txt
+	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel\|charon\|carbon-secvault\|carbon-commons" >>/y.txt
 	clear
 	done
 fi

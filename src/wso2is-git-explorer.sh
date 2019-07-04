@@ -28,7 +28,7 @@ if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "updat
 then
 	for  n in 1 2 3 4 5
 	do
-	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|carbon-kernel\|directory\|product-is" >>/y.txt
+	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel" >>/y.txt
 	clear
 	done
 fi
@@ -42,6 +42,10 @@ then
 	while read -r line; do
   		git clone "$line"
 	done < $input
+
+	cd carbon-kernel
+	git checkout 4.4.x
+	cd ..
 
 	tree -fi > /identity-repos/wso2.tree
 	tree -fi -d > /identity-repos/wso2.tree.dir.tmp.1
@@ -76,6 +80,10 @@ then
   		git clone "$line"
 	done < $input
 
+	cd carbon-kernel
+	git checkout 4.4.x
+	cd ..
+
 	tree -fi > /identity-repos/wso2.tree
 	tree -fi -d > /identity-repos/wso2.tree.dir.tmp.1
 	sed "/src/d" /identity-repos/wso2.tree.dir.tmp.1 > /identity-repos/wso2.tree.dir.tmp.2
@@ -92,7 +100,7 @@ if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "updat
 then
 	for  n in 1 2 3 4 5
 	do
-	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2-extensions/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)' | grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|carbon-kernel\|directory\|product-is" >>/z.txt
+	curl -u $gituser:$gitpassword  https://api.github.com/orgs/wso2-extensions/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)' | grep --color  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel" >>/z.txt
 	clear
 	done
 fi
@@ -185,6 +193,9 @@ then
 		sed -i -e 's|/|/tree/master/|2' /results.wso2.extensions
 		sed -i -e 's|.|https://github.com/wso2-extensions|1' /results.wso2.extensions
 		cat /results.wso2 >> /results.wso2.extensions
+
+		sed -i -e 's|carbon-kernel/tree/master|carbon-kernel/tree/4.4.x|1' /results.wso2.extensions
+
         cat /results.wso2.extensions
         rm /results.wso2.extensions
 		rm /results.wso2

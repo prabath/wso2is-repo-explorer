@@ -38,6 +38,30 @@
 ```
 ## TODOs
 
+* **Find** the git repo, by the name of a Jar file.
+
+```javascript
+\> ./rex.sh find -j org.wso2.carbon.identity.authenticator.mutualssl
+```
+
+* **Find** the git repo, by the name of a Jar file name and the product version.
+
+```javascript
+\> ./rex.sh find -j 5.8.0/org.wso2.carbon.identity.authenticator.mutualssl
+```
+
+* **Find** the git repo, by the name of a class file.
+
+```javascript
+\> ./rex.sh find -c OAuth2TokenValidator
+```
+
+* **Find** the git repo, by the name of a class file  and the product version.
+
+```javascript
+\> ./rex.sh find -c 5.8.0/OAuth2TokenValidator
+```
+
 * **List** out all Identity Server repos related to the provided product version.
 
 ```javascript
@@ -48,12 +72,6 @@
 
 ```javascript
 \> ./rex.sh clone version 5.8.0
-```
-
-* **Find** the git repo, by the name of a Jar file name and the product version.
-
-```javascript
-\> ./rex.sh find 5.8.0/org.wso2.carbon.identity.authenticator.mutualssl
 ```
 
 * **Find** the git repo(s), by the provided patch number.

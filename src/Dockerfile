@@ -1,7 +1,8 @@
-FROM alpine
+FROM openjdk:8-jdk-alpine
 
 RUN  mkdir /identity-repos
 COPY wso2is-git-explorer.sh /wso2is-git-explorer.sh
+COPY org.facilelogin.wso2is.repo.explorer-1.0.0.jar /org.facilelogin.wso2is.repo.explorer-1.0.0.jar
 
 RUN apk add --update bash && rm -rf /var/cache/apk/*
 

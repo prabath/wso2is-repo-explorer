@@ -3,6 +3,7 @@
 if [ "$1" == "update-tree" ]
 then
   rm /identity-repos/wso2.tree
+  rm /identity-repos/patch.tree
   rm /identity-repos/wso2-extensions.tree
   rm /identity-repos/wso2.tree.dir
   rm /identity-repos/wso2-extensions.tree.dir
@@ -16,9 +17,11 @@ else
     cd /
     wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/patch.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree.dir
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree.dir
 	cp /wso2.tree /identity-repos/wso2.tree
+	cp /wso2.tree /identity-repos/patch.tree
 	cp /wso2-extensions.tree /identity-repos/wso2-extensions.tree
 	cp /wso2.tree.dir /identity-repos/wso2.tree.dir
 	cp /wso2-extensions.tree.dir /identity-repos/wso2-extensions.tree.dir
@@ -168,6 +171,11 @@ then
 	echo "Identity/Security repos under WSO2 Extensions:" 
 	cat /z.txt
     rm /z.txt
+fi
+
+if [ "$1" == "patches" ] 
+then
+java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.RepoExplorer
 fi
 
 if [ "$1" == "find" ] && [ "$2" == "-j" ] && [ "$3" != "" ]

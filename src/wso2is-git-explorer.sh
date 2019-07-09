@@ -21,7 +21,7 @@ else
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree.dir
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree.dir
 	cp /wso2.tree /identity-repos/wso2.tree
-	cp /wso2.tree /identity-repos/patch.tree
+	cp /patch.tree /identity-repos/patch.tree
 	cp /wso2-extensions.tree /identity-repos/wso2-extensions.tree
 	cp /wso2.tree.dir /identity-repos/wso2.tree.dir
 	cp /wso2-extensions.tree.dir /identity-repos/wso2-extensions.tree.dir

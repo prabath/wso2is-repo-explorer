@@ -90,7 +90,7 @@ public class RepoExplorer {
 			}
 		}
 
-		System.out.println("Repository with the most number of patches (since IS 5.2.): " + topRepoPatchCountName + " ("
+		System.out.println("Repository with the most number of patches (since IS 5.2.0): " + topRepoPatchCountName + " ("
 				+ topRepoPatchCount + ")");
 		System.out.println("Component with the most number of patches (since IS 5.2.0): " + topCompPatchCountName + " ("
 				+ topCompPatchCount + ") [" + topCompPatchCountRepoName + "]");

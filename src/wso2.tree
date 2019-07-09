@@ -7015,6 +7015,7 @@
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/java/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/GraphBasedSequenceHandlerAcrTest.java
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/java/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/GraphBasedSequenceHandlerClaimMappingsTest.java
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/java/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/GraphBasedSequenceHandlerCustomFunctionsTest.java
+./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/java/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/GraphBasedSequenceHandlerExceptionRetryTest.java
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/java/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/GraphBasedSequenceHandlerLongWaitTest.java
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/java/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/GraphBasedSequenceHandlerNoJsTest.java
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/java/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/Util.java
@@ -7078,6 +7079,7 @@
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/resources/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/js-sp-dynamic-1.xml
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/resources/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/js-sp-dynamic-on-fail.xml
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/resources/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/js-sp-dynamic-on-fallback.xml
+./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/resources/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/js-sp-exception-retry.xml
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/resources/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/js-sp-longwait-1.xml
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/resources/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/no-js-sp-1.xml
 ./carbon-identity-framework/components/authentication-framework/org.wso2.carbon.identity.application.authentication.framework/src/test/resources/org/wso2/carbon/identity/application/authentication/framework/handler/step
@@ -8838,6 +8840,7 @@
 ./carbon-identity-framework/components/identity-mgt/org.wso2.carbon.identity.mgt.endpoint/src/test/java/org/wso2/carbon/identity/mgt/endpoint
 ./carbon-identity-framework/components/identity-mgt/org.wso2.carbon.identity.mgt.endpoint/src/test/java/org/wso2/carbon/identity/mgt/endpoint/IdentityManagementEndpointUtilTest.java
 ./carbon-identity-framework/components/identity-mgt/org.wso2.carbon.identity.mgt.endpoint/src/test/resources
+./carbon-identity-framework/components/identity-mgt/org.wso2.carbon.identity.mgt.endpoint/src/test/resources/log4j.properties
 ./carbon-identity-framework/components/identity-mgt/org.wso2.carbon.identity.mgt.endpoint/src/test/resources/testng.xml
 ./carbon-identity-framework/components/identity-mgt/org.wso2.carbon.identity.mgt.ui
 ./carbon-identity-framework/components/identity-mgt/org.wso2.carbon.identity.mgt.ui/pom.xml
@@ -10119,14 +10122,25 @@
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/UserStoreConfigAdminService.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/UserStoreMgtDBQueries.java
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/beans
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/beans/RandomPassword.java
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/beans/RandomPasswordContainer.java
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/cache
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/cache/RandomPasswordContainerCache.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao/AbstractUserStoreDAO.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao/AbstractUserStoreDAOFactory.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao/UserStoreDAO.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao/impl
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao/impl/DatabaseBasedUserStoreDAOFactory.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao/impl/DatabaseBasedUserStoreDAOImpl.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao/impl/FileBasedUserStoreDAOFactory.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dao/impl/FileBasedUserStoreDAOImpl.java
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dto
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dto/PropertyDTO.java
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dto/UserStoreDTO.java
+./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/dto/UserStorePersistanceDTO.java
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/internal
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/internal/UserStoreConfigComponent.java
 ./carbon-identity-framework/components/user-store/org.wso2.carbon.identity.user.store.configuration/src/main/java/org/wso2/carbon/identity/user/store/configuration/internal/UserStoreConfigListenersHolder.java
@@ -17069,8 +17083,10 @@
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/ApiException.java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/ApiResponseMessage.java
-./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/UsersApi.java
-./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/UsersApiService.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/MeApi.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/MeApiService.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/UserIdApi.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/UserIdApiService.java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/dto
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/dto/AssociationRequestDTO.java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/dto/AssociationSwitchRequestDTO.java
@@ -17079,7 +17095,8 @@
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/dto/PropertyDTO.java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/dto/UserDTO.java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/factories
-./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/factories/UsersApiServiceFactory.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/factories/MeApiServiceFactory.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/gen/java/org/wso2/carbon/identity/rest/api/user/association/v1/factories/UserIdApiServiceFactory.java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org
@@ -17091,9 +17108,18 @@
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/AssociationEndpointConstants.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/core
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/core/UserAssociationService.java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/impl
-./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/impl/UsersApiServiceImpl.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/impl/MeApiServiceImpl.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/impl/UserIdApiServiceImpl.java
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/util
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/java/org/wso2/carbon/identity/rest/api/user/association/v1/util/Utils.java
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/resources
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/resources/META-INF
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/resources/META-INF/cxf
+./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/resources/META-INF/cxf/user-association-v1-cxf.xml
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1/src/main/resources/association.yaml
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/pom.xml
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.authorized.apps
@@ -17245,6 +17271,11 @@
 ./identity-api-user/issue_template.md
 ./identity-api-user/pom.xml
 ./identity-api-user/pull_request_template.md
+./identity-apps
+./identity-apps/LICENSE
+./identity-apps/README.md
+./identity-apps/issue_template.md
+./identity-apps/pull_request_template.md
 ./identity-feature-category
 ./identity-feature-category/LICENSE
 ./identity-feature-category/README.md
@@ -26111,4 +26142,4 @@
 ./ux-product-is/gh-deploy.bat
 ./ux-product-is/gh-deploy.sh
 
-8908 directories, 17203 files
+8915 directories, 17227 files

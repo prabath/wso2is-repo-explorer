@@ -39,7 +39,7 @@ WSO2 Identity Server is 100% Open Source!. We maintain  product source code unde
 
 \> ./rex.sh find OAuth2TokenValidator.java
 
-\> ./rex.sh find saml-sso
+\> ./rex.sh find samlsso
 ```
 
 * **Update** metadata related to all Identity Server repos. It's better to do an update at least weekly, to find the most up-to-date search results. 

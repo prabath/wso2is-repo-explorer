@@ -13,12 +13,18 @@ import java.util.Set;
 
 public class RepoExplorer {
 
-	private static final String WSO2_TREE_DIR = "/identity-repos/wso2.tree.dir";
-	private static final String WSO2_EXT_TREE_DIR = "/identity-repos/wso2-extensions.tree.dir";
-	private static final String PATCHES_TREE = "/identity-repos/patch.tree";
+	private static final String WSO2_TREE_DIR = "/identity-repos/.repodata/wso2.tree.dir";
+	private static final String WSO2_EXT_TREE_DIR = "/identity-repos/.repodata/wso2-extensions.tree.dir";
+	private static final String PATCHES_TREE = "/identity-repos/.repodata/patch.tree";
 
-	private static final String TREE_570_ = "/identity-repos/5.7.0.tree";
-	private static final String TREE_580_ = "/identity-repos/5.8.0.tree";
+	private static final String TREE_580_ = "/5.8.0.tree";
+	private static final String TREE_570_ = "/5.7.0.tree";
+	private static final String TREE_560_ = "/5.6.0.tree";
+	private static final String TREE_550_ = "/5.5.0.tree";
+	private static final String TREE_541_ = "/5.4.1.tree";
+	private static final String TREE_540_ = "/5.4.0.tree";
+	private static final String TREE_530_ = "/5.3.0.tree";
+	private static final String TREE_520_ = "/5.2.0.tree";
 
 	private static Map<String, Set<String>> repos = new HashMap<String, Set<String>>();
 	private static Map<String, Component> components = new HashMap<String, Component>();

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-if [ "$1" == "update-tree" ]
+file="/identity-repos/wso2.tree"
+
+if [ -f "$file" ]
 then
   rm /identity-repos/wso2.tree
   rm /identity-repos/patch.tree
@@ -9,22 +11,34 @@ then
   rm /identity-repos/wso2-extensions.tree.dir
 fi
 
-file="/identity-repos/wso2.tree"
+file="/identity-repos/.repodata/wso2.tree"
+
+if [ "$1" == "update-tree" ] && [ -f "$file" ]
+then
+  rm /identity-repos/.repodata/wso2.tree
+  rm /identity-repos/.repodata/patch.tree
+  rm /identity-repos/.repodata/wso2-extensions.tree
+  rm /identity-repos/.repodata/wso2.tree.dir
+  rm /identity-repos/.repodata/wso2-extensions.tree.dir
+fi
+
+file="/identity-repos/.repodata/wso2.tree"
 if [ -f "$file" ]
 then
 	echo ""
 else
     cd /
+	mkdir -p /identity-repos/.repodata
     wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/patch.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree.dir
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree.dir
-	cp /wso2.tree /identity-repos/wso2.tree
-	cp /patch.tree /identity-repos/patch.tree
-	cp /wso2-extensions.tree /identity-repos/wso2-extensions.tree
-	cp /wso2.tree.dir /identity-repos/wso2.tree.dir
-	cp /wso2-extensions.tree.dir /identity-repos/wso2-extensions.tree.dir
+	cp /wso2.tree /identity-repos/.repodata/wso2.tree
+	cp /patch.tree /identity-repos/.repodata/patch.tree
+	cp /wso2-extensions.tree /identity-repos/.repodata/wso2-extensions.tree
+	cp /wso2.tree.dir /identity-repos/.repodata/wso2.tree.dir
+	cp /wso2-extensions.tree.dir /identity-repos/.repodata/wso2-extensions.tree.dir
 fi
 
 if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "update" ]
@@ -50,12 +64,12 @@ then
 	git checkout 4.4.x
 	cd ..
 
-	tree -fi > /identity-repos/wso2.tree
-	tree -fi -d > /identity-repos/wso2.tree.dir.tmp.1
-	sed "/src/d" /identity-repos/wso2.tree.dir.tmp.1 > /identity-repos/wso2.tree.dir.tmp.2
-	sed "/.feature/d" /identity-repos/wso2.tree.dir.tmp.2 > /identity-repos/wso2.tree.dir
-	rm /identity-repos/wso2.tree.dir.tmp.1
-	rm /identity-repos/wso2.tree.dir.tmp.2
+	tree -fi > /identity-repos/.repodata/wso2.tree
+	tree -fi -d > /identity-repos/.repodata/wso2.tree.dir.tmp.1
+	sed "/src/d" /identity-repos/.repodata/wso2.tree.dir.tmp.1 > /identity-repos/.repodata/wso2.tree.dir.tmp.2
+	sed "/.feature/d" /identity-repos/.repodata/wso2.tree.dir.tmp.2 > /identity-repos/.repodata/wso2.tree.dir
+	rm /identity-repos/.repodata/wso2.tree.dir.tmp.1
+	rm /identity-repos/.repodata/wso2.tree.dir.tmp.2
 	rm /y.txt
 fi
 
@@ -87,12 +101,12 @@ then
 	git checkout 4.4.x
 	cd ..
 
-	tree -fi > /identity-repos/wso2.tree
-	tree -fi -d > /identity-repos/wso2.tree.dir.tmp.1
-	sed "/src/d" /identity-repos/wso2.tree.dir.tmp.1 > /identity-repos/wso2.tree.dir.tmp.2
-	sed "/.feature/d" /identity-repos/wso2.tree.dir.tmp.2 > /identity-repos/wso2.tree.dir
-	rm /identity-repos/wso2.tree.dir.tmp.1
-	rm /identity-repos/wso2.tree.dir.tmp.2
+	tree -fi > /identity-repos/.repodata/wso2.tree
+	tree -fi -d > /identity-repos/.repodata/wso2.tree.dir.tmp.1
+	sed "/src/d" /identity-repos/.repodata/wso2.tree.dir.tmp.1 > /identity-repos/.repodata/wso2.tree.dir.tmp.2
+	sed "/.feature/d" /identity-repos/.repodata/wso2.tree.dir.tmp.2 > /identity-repos/.repodata/wso2.tree.dir
+	rm /identity-repos/.repodata/wso2.tree.dir.tmp.1
+	rm /identity-repos/.repodata/wso2.tree.dir.tmp.2
 
 	rm /y.txt
 fi
@@ -119,12 +133,12 @@ then
 		git clone "$line"
 	done < $input
 
-	tree -fi > /identity-repos/wso2-extensions.tree
-	tree -fi -d > /identity-repos/wso2-extensions.tree.dir.tmp.1
-	sed "/src/d" /identity-repos/wso2-extensions.tree.dir.tmp.1 > /identity-repos/wso2-extensions.tree.dir.tmp.2
-	sed "/.feature/d" /identity-repos/wso2-extensions.tree.dir.tmp.2 > /identity-repos/wso2-extensions.tree.dir
-    rm /identity-repos/wso2-extensions.tree.dir.tmp.1
-	rm /identity-repos/wso2-extensions.tree.dir.tmp.2
+	tree -fi > /identity-repos/.repodata/wso2-extensions.tree
+	tree -fi -d > /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.1
+	sed "/src/d" /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.1 > /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.2
+	sed "/.feature/d" /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.2 > /identity-repos/.repodata/wso2-extensions.tree.dir
+    rm /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.1
+	rm /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.2
 
 
 	rm /z.txt
@@ -152,12 +166,12 @@ then
 	while read -r line; do
   		git clone "$line"
 	done < $input
-	tree -fi > /identity-repos/wso2-extensions.tree
-	tree -fi -d > /identity-repos/wso2-extensions.tree.dir.tmp.1
-	sed "/src/d" /identity-repos/wso2-extensions.tree.dir.tmp.1 > /identity-repos/wso2-extensions.tree.dir.tmp.2
-	sed "/.feature/d" /identity-repos/wso2-extensions.tree.dir.tmp.2 > /identity-repos/wso2-extensions.tree.dir
-    rm /identity-repos/wso2-extensions.tree.dir.tmp.1
-	rm /identity-repos/wso2-extensions.tree.dir.tmp.2
+	tree -fi > /identity-repos/.repodata/wso2-extensions.tree
+	tree -fi -d > /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.1
+	sed "/src/d" /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.1 > /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.2
+	sed "/.feature/d" /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.2 > /identity-repos/.repodata/wso2-extensions.tree.dir
+    rm /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.1
+	rm /identity-repos/.repodata/wso2-extensions.tree.dir.tmp.2
 	rm /z.txt
 fi
 

@@ -13,148 +13,175 @@ import java.util.Set;
 
 public class RepoExplorer {
 
-    private static final String WSO2_TREE_DIR = "/identity-repos/wso2.tree.dir";
-    private static final String WSO2_EXT_TREE_DIR = "/identity-repos/wso2-extensions.tree.dir";
-    private static final String PATCHES_TREE = "/identity-repos/patch.tree";
+	private static final String WSO2_TREE_DIR = "/identity-repos/wso2.tree.dir";
+	private static final String WSO2_EXT_TREE_DIR = "/identity-repos/wso2-extensions.tree.dir";
+	private static final String PATCHES_TREE = "/identity-repos/patch.tree";
 
-    private static final String TREE_570_ = "/identity-repos/5.7.0.tree";
-    private static final String TREE_580_ = "/identity-repos/5.8.0.tree";
+	private static final String TREE_570_ = "/identity-repos/5.7.0.tree";
+	private static final String TREE_580_ = "/identity-repos/5.8.0.tree";
 
-    private static Map<String, Set<String>> repos = new HashMap<String, Set<String>>();
-    private static Map<String, Component> components = new HashMap<String, Component>();
+	private static Map<String, Set<String>> repos = new HashMap<String, Set<String>>();
+	private static Map<String, Component> components = new HashMap<String, Component>();
+	private static List<String> skipRepos = new ArrayList<>();
 
-    public static void main(String[] args) {
-	addRepo(WSO2_TREE_DIR, "https://github.com/wso2/");
-	addRepo(WSO2_EXT_TREE_DIR, "https://github.com/wso2-extensions/");
-	populatePatches(PATCHES_TREE);
+	public static void main(String[] args) {
 
-	print();
+		skipRepos.add("identity-test-integration");
 
+		addRepo(WSO2_TREE_DIR, "https://github.com/wso2/");
+		addRepo(WSO2_EXT_TREE_DIR, "https://github.com/wso2-extensions/");
+		populatePatches(PATCHES_TREE);
 
-    }
-
-    private static void print() {
-
-	for (Map.Entry<String, Set<String>> entry : repos.entrySet()) {
-
-	    List<String> list = new ArrayList<>();
-            int repoPatchCount = 0;
-
-	    Set<String> values = entry.getValue();
-	    for (Iterator<String> iterator = values.iterator(); iterator.hasNext();) {
-		Component jar = components.get(iterator.next());
-		List<String> patches = jar.getPatches();
-		if (patches != null && patches.size() > 0) {
-		    list.add("  |-" + jar.getComponentName() + " [" + patches.size() + "]");
-		    for (Iterator<String> iterator2 = patches.iterator(); iterator2.hasNext();) {
-			list.add("         |-" + iterator2.next());
-			repoPatchCount++;
-		    }
-		}
-	    }
-
-	    if (!list.isEmpty()) {
-		System.out.println(entry.getKey() + " (" + repoPatchCount + ")");
-		for (String temp : list) {
-		    System.out.println(temp);
-		}
-
-		System.out.println();
-
-	    }
+		print();
 	}
 
-    }
+	private static void print() {
 
-    /**
-     * 
-     * @param filePath
-     * @param prefix
-     */
-    private static void addRepo(String filePath, String prefix) {
+		int topRepoPatchCount = 0;
+		String topRepoPatchCountName = null;
+		int topCompPatchCount = 0;
+		String topCompPatchCountName = null;
+		String topCompPatchCountRepoName = null;
 
-	BufferedReader reader;
-	try {
-	    reader = new BufferedReader(new FileReader(filePath));
-	    String line = reader.readLine();
-	    while (line != null) {
-		line = reader.readLine();
-		if (line != null && line.length() > 2) {
-		    line = line.replace("./", "");
-		    if (line.indexOf("/") > 0) {
-			String repoName = line.substring(0, line.indexOf("/"));
-			if (line.indexOf("org.wso2.carbon") > 0) {
-			    String componentName = line.substring(line.indexOf("org.wso2.carbon"), line.length());
-			    if (componentName.indexOf("/") > 0) {
-				componentName = componentName.substring(0, componentName.indexOf("/"));
-			    }
+		for (Map.Entry<String, Set<String>> entry : repos.entrySet()) {
 
-			    if (prefix != null) {
-				repoName = prefix + repoName;
-			    }
+			List<String> list = new ArrayList<>();
+			int repoPatchCount = 0;
 
-			    if (repos.containsKey(repoName)) {
-				if (!repos.get(repoName).contains(componentName)) {
-				    repos.get(repoName).add(componentName);
-				    Component comp = new Component();
-				    comp.setComponentName(componentName);
-				    comp.setRepoName(repoName);
-				    components.put(componentName, comp);
+			Set<String> values = entry.getValue();
+			for (Iterator<String> iterator = values.iterator(); iterator.hasNext();) {
+				Component jar = components.get(iterator.next());
+				List<String> patches = jar.getPatches();
+				if (patches != null && patches.size() > 0) {
+
+					if (patches.size() > topCompPatchCount) {
+						topCompPatchCount = patches.size();
+						topCompPatchCountName = jar.getComponentName();
+						topCompPatchCountRepoName = jar.getRepoName();
+					}
+
+					list.add("  |-" + jar.getComponentName() + " [" + patches.size() + "]");
+					for (Iterator<String> iterator2 = patches.iterator(); iterator2.hasNext();) {
+						list.add("         |-" + iterator2.next());
+						repoPatchCount++;
+					}
 				}
-			    } else {
-				Set<String> componentSet;
-				componentSet = new HashSet<String>();
-				componentSet.add(componentName);
-				repos.put(repoName, componentSet);
-				Component comp = new Component();
-				comp.setComponentName(componentName);
-				comp.setRepoName(repoName);
-				components.put(componentName, comp);
-			    }
 			}
-		    }
-		}
-	    }
-	    reader.close();
-	} catch (
 
-	IOException e) {
-	    e.printStackTrace();
-	}
-    }
-
-    private static void populatePatches(String filePath) {
-
-	BufferedReader reader;
-	try {
-	    reader = new BufferedReader(new FileReader(filePath));
-	    String line = reader.readLine();
-	    while (line != null) {
-		line = reader.readLine();
-		if (line != null && line.length() > 2) {
-		    line = line.replace("./", "");
-		    if (line.indexOf("/") > 0) {
-			String patchName = line.substring(0, line.indexOf("/"));
-			if (line.indexOf("org.wso2.carbon") > 0 && line.endsWith(".jar")) {
-			    String jar = line.substring(line.indexOf("org.wso2.carbon"), line.length());
-			    if (jar.indexOf("_") > 0) {
-				jar = jar.substring(0, jar.indexOf("_"));
-			    }
-
-			    Component comp = components.get(jar);
-			    if (comp != null) {
-				comp.addPatch(patchName);
-			    }
+			if (repoPatchCount > topRepoPatchCount) {
+				topRepoPatchCount = repoPatchCount;
+				topRepoPatchCountName = entry.getKey();
 			}
-		    }
-		}
-	    }
-	    reader.close();
-	} catch (
 
-	IOException e) {
-	    e.printStackTrace();
+			if (!list.isEmpty()) {
+				System.out.println(entry.getKey() + " (" + repoPatchCount + ")");
+				for (String temp : list) {
+					System.out.println(temp);
+				}
+
+				System.out.println();
+
+			}
+		}
+
+		System.out.println("Repository with the most number of patches (since IS 5.2.): " + topRepoPatchCountName + " ("
+				+ topRepoPatchCount + ")");
+		System.out.println("Component with the most number of patches (since IS 5.2.0): " + topCompPatchCountName + " ("
+				+ topCompPatchCount + ") [" + topCompPatchCountRepoName + "]");
+
 	}
-    }
+
+	/**
+	 * 
+	 * @param filePath
+	 * @param prefix
+	 */
+	private static void addRepo(String filePath, String prefix) {
+
+		BufferedReader reader;
+		try {
+			reader = new BufferedReader(new FileReader(filePath));
+			String line = reader.readLine();
+			while (line != null) {
+				line = reader.readLine();
+				if (line != null && line.length() > 2) {
+					line = line.replace("./", "");
+					if (line.indexOf("/") > 0) {
+						String repoName = line.substring(0, line.indexOf("/"));
+						if (line.indexOf("org.wso2.carbon") > 0) {
+							String componentName = line.substring(line.indexOf("org.wso2.carbon"), line.length());
+							if (componentName.indexOf("/") > 0) {
+								componentName = componentName.substring(0, componentName.indexOf("/"));
+							}
+
+							if (!skipRepos.contains(repoName)) {
+								if (prefix != null) {
+									repoName = prefix + repoName;
+								}
+
+								if (repos.containsKey(repoName)) {
+									if (!repos.get(repoName).contains(componentName)) {
+										repos.get(repoName).add(componentName);
+										Component comp = new Component();
+										comp.setComponentName(componentName);
+										comp.setRepoName(repoName);
+										components.put(componentName, comp);
+									}
+								} else {
+									Set<String> componentSet;
+									componentSet = new HashSet<String>();
+									componentSet.add(componentName);
+									repos.put(repoName, componentSet);
+									Component comp = new Component();
+									comp.setComponentName(componentName);
+									comp.setRepoName(repoName);
+									components.put(componentName, comp);
+								}
+							}
+						}
+					}
+				}
+			}
+			reader.close();
+		} catch (
+
+		IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static void populatePatches(String filePath) {
+
+		BufferedReader reader;
+		try {
+			reader = new BufferedReader(new FileReader(filePath));
+			String line = reader.readLine();
+			while (line != null) {
+				line = reader.readLine();
+				if (line != null && line.length() > 2) {
+					line = line.replace("./", "");
+					if (line.indexOf("/") > 0) {
+						String patchName = line.substring(0, line.indexOf("/"));
+						if (line.indexOf("org.wso2.carbon") > 0 && line.endsWith(".jar")) {
+							String jar = line.substring(line.indexOf("org.wso2.carbon"), line.length());
+							if (jar.indexOf("_") > 0) {
+								jar = jar.substring(0, jar.indexOf("_"));
+							}
+
+							Component comp = components.get(jar);
+							if (comp != null) {
+								comp.addPatch(patchName);
+							}
+						}
+					}
+				}
+			}
+			reader.close();
+		} catch (
+
+		IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

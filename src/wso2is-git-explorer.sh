@@ -194,7 +194,7 @@ fi
 
 if [ "$1" == "find" ] && [ "$2" == "-j" ] && [ "$3" != "" ]
 then
-        cd /identity-repos
+        cd /identity-repos/.repodata
 		grep "$3" wso2.tree.dir > /results.wso2.dir
 		sed -i -e 's|/|/tree/master/|2' /results.wso2.dir
 		sed -i -e 's|.|https://github.com/wso2|1' /results.wso2.dir
@@ -212,7 +212,7 @@ then
 		rm /results.wso2.dir
 elif [ "$1" == "find" ] && [ "$2" != "" ]
 then
-        cd /identity-repos
+        cd /identity-repos/.repodata
 		grep "$2" wso2.tree > /results.wso2
 		sed -i -e 's|/|/tree/master/|2' /results.wso2
 		sed -i -e 's|.|https://github.com/wso2|1' /results.wso2

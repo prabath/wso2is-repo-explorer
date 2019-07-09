@@ -60,6 +60,12 @@ WSO2 Identity Server is 100% Open Source!. We maintain  product source code unde
 \> ./rex.sh patches -j  org.wso2.carbon.identity.recovery.ui
 ```
 
+* **List** the patches along with all the components since IS 5.2.0 for the given repo.
+
+```javascript
+\> ./rex.sh patches -r carbon-identity-framework
+```
+
 ## TODOs
 
 * **Find** the git repo, by the given name and the product version.

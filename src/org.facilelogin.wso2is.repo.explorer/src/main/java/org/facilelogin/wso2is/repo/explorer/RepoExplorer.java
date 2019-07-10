@@ -38,6 +38,14 @@ public class RepoExplorer {
 		addRepo(WSO2_TREE_DIR, "https://github.com/wso2/");
 		addRepo(WSO2_EXT_TREE_DIR, "https://github.com/wso2-extensions/");
 		populateProducts(TREE_520_, "IS_5.2.0");
+		populateProducts(TREE_530_, "IS_5.3.0");
+		populateProducts(TREE_540_, "IS_5.4.0");
+		populateProducts(TREE_541_, "IS_5.4.1");
+		populateProducts(TREE_550_, "IS_5.5.0");
+		populateProducts(TREE_560_, "IS_5.6.0");
+		populateProducts(TREE_570_, "IS_5.7.0");
+		populateProducts(TREE_580_, "IS_5.8.0");
+
 		populatePatches(PATCHES_TREE);
 
 		if (args.length == 2 && "-j".equals(args[0]) && !args[1].isEmpty()) {

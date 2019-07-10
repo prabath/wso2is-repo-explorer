@@ -31,7 +31,22 @@ else
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree.dir
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree.dir
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is520.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is530.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is540.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is541.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is550.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is560.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is570.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is580.tree
+
 	cp /is520.tree /identity-repos/.repodata/is520.tree
+	cp /is530.tree /identity-repos/.repodata/is530.tree
+	cp /is530.tree /identity-repos/.repodata/is540.tree
+	cp /is530.tree /identity-repos/.repodata/is541.tree
+	cp /is530.tree /identity-repos/.repodata/is550.tree
+	cp /is530.tree /identity-repos/.repodata/is560.tree
+	cp /is530.tree /identity-repos/.repodata/is570.tree
+	cp /is530.tree /identity-repos/.repodata/is580.tree
 	cp /wso2.tree /identity-repos/.repodata/wso2.tree
 	cp /patch.tree /identity-repos/.repodata/patch.tree
 	cp /wso2-extensions.tree /identity-repos/.repodata/wso2-extensions.tree

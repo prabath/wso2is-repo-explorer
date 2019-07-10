@@ -54,7 +54,7 @@ public class RepoExplorer {
 
 		populatePatches(PATCHES_TREE);
 
-		if (args.length == 2 && "-j".equals(args[0]) && !args[1].isEmpty()) {
+		if (args.length == 2 && "-c".equals(args[0]) && !args[1].isEmpty()) {
 			String componentName = args[1];
 			Component comp = components.get(componentName);
 			if (comp != null && !comp.getPatches().isEmpty()) {

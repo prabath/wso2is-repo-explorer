@@ -21,7 +21,7 @@ then
 	## pull the file, which containes all the file details from wso2 git org.
 	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/wso2
 	## pull the file, which containes all the components details from wso2-extensions git org.
-	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/wso2-components
+	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/wso2-components
 	## pull the file, which containes all the file details from wso2-extensions git org.
     wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/wso2-extensions	
 	## pull the file, which containes all the components details from wso2-extensions git org.

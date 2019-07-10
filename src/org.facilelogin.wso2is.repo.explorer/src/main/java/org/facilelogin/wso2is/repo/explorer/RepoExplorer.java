@@ -17,14 +17,14 @@ public class RepoExplorer {
 	private static final String WSO2_EXT_TREE_DIR = "/identity-repos/.repodata/wso2-extensions.tree.dir";
 	private static final String PATCHES_TREE = "/identity-repos/.repodata/patch.tree";
 
-	private static final String TREE_580_ = "/identity-repos/.repodata/5.8.0.tree";
-	private static final String TREE_570_ = "/identity-repos/.repodata/5.7.0.tree";
-	private static final String TREE_560_ = "/identity-repos/.repodata/5.6.0.tree";
-	private static final String TREE_550_ = "/identity-repos/.repodata/5.5.0.tree";
-	private static final String TREE_541_ = "/identity-repos/.repodata/5.4.1.tree";
-	private static final String TREE_540_ = "/identity-repos/.repodata/5.4.0.tree";
-	private static final String TREE_530_ = "/identity-repos/.repodata/5.3.0.tree";
-	private static final String TREE_520_ = "/identity-repos/.repodata/5.2.0.tree";
+	private static final String TREE_580_ = "/identity-repos/.repodata/is580.tree";
+	private static final String TREE_570_ = "/identity-repos/.repodata/is570.tree";
+	private static final String TREE_560_ = "/identity-repos/.repodata/is560.tree";
+	private static final String TREE_550_ = "/identity-repos/.repodata/is550.tree";
+	private static final String TREE_541_ = "/identity-repos/.repodata/is541.tree";
+	private static final String TREE_540_ = "/identity-repos/.repodata/is540.tree";
+	private static final String TREE_530_ = "/identity-repos/.repodata/is530.tree";
+	private static final String TREE_520_ = "/identity-repos/.repodata/is520.tree";
 
 	private static Map<String, Set<String>> repos = new HashMap<String, Set<String>>();
 	private static Map<String, Set<String>> productVersions = new HashMap<String, Set<String>>();
@@ -37,7 +37,7 @@ public class RepoExplorer {
 
 		addRepo(WSO2_TREE_DIR, "https://github.com/wso2/");
 		addRepo(WSO2_EXT_TREE_DIR, "https://github.com/wso2-extensions/");
-		populateProducts(TREE_520_, "5.2.0");
+		populateProducts(TREE_520_, "IS_5.2.0");
 		populatePatches(PATCHES_TREE);
 
 		if (args.length == 2 && "-j".equals(args[0]) && !args[1].isEmpty()) {
@@ -52,8 +52,12 @@ public class RepoExplorer {
 					Patch patch = iterator2.next();
 					Set<String> products = patch.getProductVersion();
 					StringBuffer buffer = new StringBuffer();
-					for (Iterator<String> iterator = products.iterator(); iterator.hasNext();) {
-						buffer.append(iterator.next() + " ");
+					if (products != null && !products.isEmpty()) {
+						for (Iterator<String> iterator = products.iterator(); iterator.hasNext();) {
+							buffer.append(iterator.next() + " ");
+						}
+					} else {
+						buffer.append("No Product Version");
 					}
 
 					System.out.println(patch.getName() + " | " + patch.getJarVersion() + " | " + buffer.toString());
@@ -80,9 +84,22 @@ public class RepoExplorer {
 					List<Patch> patches = jar.getPatches();
 					if (patches != null && patches.size() > 0) {
 						System.out.println("  |-" + jar.getComponentName() + " [" + patches.size() + "]");
+
 						for (Iterator<Patch> iterator2 = patches.iterator(); iterator2.hasNext();) {
-							System.out.println("         |-" + iterator2.next().getName() + "("
-									+ iterator2.next().getJarVersion() + ")");
+							Patch patch = iterator2.next();
+
+							Set<String> products = patch.getProductVersion();
+							StringBuffer buffer = new StringBuffer();
+							if (products != null && !products.isEmpty()) {
+								for (Iterator<String> prod = products.iterator(); iterator.hasNext();) {
+									buffer.append(prod.next() + " ");
+								}
+							} else {
+								buffer.append("No Product Version");
+							}
+
+							System.out.println("         |-" + patch.getName() + " | " + patch.getJarVersion() + " | "
+									+ buffer.toString());
 						}
 					}
 				}
@@ -122,7 +139,8 @@ public class RepoExplorer {
 
 					list.add("  |-" + jar.getComponentName() + " [" + patches.size() + "]");
 					for (Iterator<Patch> iterator2 = patches.iterator(); iterator2.hasNext();) {
-						list.add("         |-" + iterator2.next() + "(" + iterator2.next().getJarVersion() + ")");
+						Patch patch = iterator2.next();
+						list.add("         |-" + patch.getName() + " (" + patch.getJarVersion() + ")");
 						repoPatchCount++;
 					}
 				}
@@ -280,6 +298,8 @@ public class RepoExplorer {
 								String[] parts = jar.split("_");
 								jar = parts[0];
 								jarVersion = parts[1];
+								jarVersion = jarVersion.substring(0, jarVersion.indexOf(".jar"));
+
 								// jar.substring(0, jar.indexOf("_"));
 							}
 

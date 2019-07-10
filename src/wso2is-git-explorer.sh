@@ -30,6 +30,9 @@ else
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/patch.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree.dir
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree.dir
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is460.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is500.tree
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is510.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is520.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is530.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is540.tree
@@ -39,14 +42,17 @@ else
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is570.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is580.tree
 
+    cp /is460.tree /identity-repos/.repodata/is460.tree
+    cp /is500.tree /identity-repos/.repodata/is500.tree
+    cp /is510.tree /identity-repos/.repodata/is510.tree
 	cp /is520.tree /identity-repos/.repodata/is520.tree
 	cp /is530.tree /identity-repos/.repodata/is530.tree
-	cp /is530.tree /identity-repos/.repodata/is540.tree
-	cp /is530.tree /identity-repos/.repodata/is541.tree
-	cp /is530.tree /identity-repos/.repodata/is550.tree
-	cp /is530.tree /identity-repos/.repodata/is560.tree
-	cp /is530.tree /identity-repos/.repodata/is570.tree
-	cp /is530.tree /identity-repos/.repodata/is580.tree
+	cp /is540.tree /identity-repos/.repodata/is540.tree
+	cp /is541.tree /identity-repos/.repodata/is541.tree
+	cp /is550.tree /identity-repos/.repodata/is550.tree
+	cp /is560.tree /identity-repos/.repodata/is560.tree
+	cp /is570.tree /identity-repos/.repodata/is570.tree
+	cp /is580.tree /identity-repos/.repodata/is580.tree
 	cp /wso2.tree /identity-repos/.repodata/wso2.tree
 	cp /patch.tree /identity-repos/.repodata/patch.tree
 	cp /wso2-extensions.tree /identity-repos/.repodata/wso2-extensions.tree

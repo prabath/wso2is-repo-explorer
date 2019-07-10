@@ -25,6 +25,9 @@ public class RepoExplorer {
 	private static final String TREE_540_ = "/identity-repos/.repodata/is540.tree";
 	private static final String TREE_530_ = "/identity-repos/.repodata/is530.tree";
 	private static final String TREE_520_ = "/identity-repos/.repodata/is520.tree";
+	private static final String TREE_510_ = "/identity-repos/.repodata/is510.tree";
+	private static final String TREE_500_ = "/identity-repos/.repodata/is500.tree";
+	private static final String TREE_460_ = "/identity-repos/.repodata/is460.tree";
 
 	private static Map<String, Set<String>> repos = new HashMap<String, Set<String>>();
 	private static Map<String, Set<String>> productVersions = new HashMap<String, Set<String>>();
@@ -37,6 +40,9 @@ public class RepoExplorer {
 
 		addRepo(WSO2_TREE_DIR, "https://github.com/wso2/");
 		addRepo(WSO2_EXT_TREE_DIR, "https://github.com/wso2-extensions/");
+		populateProducts(TREE_460_, "IS_4.6.0");
+		populateProducts(TREE_500_, "IS_5.0.0");
+		populateProducts(TREE_510_, "IS_5.1.0");
 		populateProducts(TREE_520_, "IS_5.2.0");
 		populateProducts(TREE_530_, "IS_5.3.0");
 		populateProducts(TREE_540_, "IS_5.4.0");
@@ -97,9 +103,10 @@ public class RepoExplorer {
 							Patch patch = iterator2.next();
 
 							Set<String> products = patch.getProductVersion();
+
 							StringBuffer buffer = new StringBuffer();
 							if (products != null && !products.isEmpty()) {
-								for (Iterator<String> prod = products.iterator(); iterator.hasNext();) {
+								for (Iterator<String> prod = products.iterator(); prod.hasNext();) {
 									buffer.append(prod.next() + " ");
 								}
 							} else {
@@ -255,10 +262,14 @@ public class RepoExplorer {
 			while (line != null) {
 				line = reader.readLine();
 				if (line != null && line.length() > 2) {
-					if (line.indexOf("org.wso2.carbon") > 0 && line.endsWith(".jar")) {
+					if (line.startsWith("org.wso2.carbon") && line.endsWith(".jar")) {
 						line.replaceAll("-", "_");
 						if (productVersions.containsKey(line)) {
-							productVersions.get(line).add(version);
+							if (line.startsWith("org.wso2.carbon.user.mgt_")) {
+								productVersions.get(line).add(version);
+							} else {
+								productVersions.get(line).add(version);
+							}
 						} else {
 							Set<String> versions = new HashSet<String>();
 							versions.add(version);

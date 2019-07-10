@@ -5,32 +5,45 @@ import java.util.List;
 
 public class Component {
 
-    private String repoName;
-    private String componentName;
-    private List<String> patches = new ArrayList<String>();
+	private String repoName;
+	private String componentName;
+	private List<Patch> patches = new ArrayList<Patch>();
 
-    public String getRepoName() {
-	return repoName;
-    }
+	public Component(String repoName, String componentName, Patch patch) {
+		super();
+		this.repoName = repoName;
+		this.componentName = componentName;
+		this.patches.add(patch);
+	}
 
-    public void setRepoName(String repoName) {
-	this.repoName = repoName;
-    }
+	public Component(String repoName, String componentName) {
+		super();
+		this.repoName = repoName;
+		this.componentName = componentName;
+	}
 
-    public String getComponentName() {
-	return componentName;
-    }
+	public String getRepoName() {
+		return repoName;
+	}
 
-    public void setComponentName(String componentName) {
-	this.componentName = componentName;
-    }
+	public void setRepoName(String repoName) {
+		this.repoName = repoName;
+	}
 
-    public List<String> getPatches() {
-	return patches;
-    }
+	public String getComponentName() {
+		return componentName;
+	}
 
-    public void addPatch(String patch) {
-	this.patches.add(patch);
-    }
+	public void setComponentName(String componentName) {
+		this.componentName = componentName;
+	}
+
+	public List<Patch> getPatches() {
+		return patches;
+	}
+
+	public void addPatch(Patch patch) {
+		this.patches.add(patch);
+	}
 
 }

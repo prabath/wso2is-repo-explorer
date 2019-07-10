@@ -16,10 +16,6 @@ file="/identity-repos/.repodata/wso2.tree"
 if [ "$1" == "update-tree" ] && [ -f "$file" ]
 then
   rm /identity-repos/.repodata/wso2.tree
-  rm /identity-repos/.repodata/patch.tree
-  rm /identity-repos/.repodata/wso2-extensions.tree
-  rm /identity-repos/.repodata/wso2.tree.dir
-  rm /identity-repos/.repodata/wso2-extensions.tree.dir
 fi
 
 file="/identity-repos/.repodata/wso2.tree"
@@ -34,6 +30,8 @@ else
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/patch.tree
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2-extensions.tree.dir
 	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/wso2.tree.dir
+	wget https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/is520.tree
+	cp /is520.tree /identity-repos/.repodata/is520.tree
 	cp /wso2.tree /identity-repos/.repodata/wso2.tree
 	cp /patch.tree /identity-repos/.repodata/patch.tree
 	cp /wso2-extensions.tree /identity-repos/.repodata/wso2-extensions.tree

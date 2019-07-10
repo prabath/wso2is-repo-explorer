@@ -13,6 +13,7 @@ fi
 ## and pull data from the wso2is-repo-explorer git repo.
 file="/identity-repos/.repodata"
 if [ ! -f "$file" ]
+then
     cd /
 	mkdir -p /identity-repos/.repodata
 	## pull the file, which containes all the wum update details.
@@ -256,7 +257,7 @@ then
         echo ""
 fi
 
-if [ "$1" == "patches" ] 
+if [ "$1" == "updates" ] 
 then
 java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.RepoExplorer $2 $3
 fi

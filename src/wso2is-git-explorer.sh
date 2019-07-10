@@ -191,7 +191,7 @@ fi
 
 if [ "$1" == "patches" ] 
 then
-java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.RepoExplorer
+java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.RepoExplorer $2 $3
 fi
 
 if [ "$1" == "find" ] && [ "$2" == "-j" ] && [ "$3" != "" ]

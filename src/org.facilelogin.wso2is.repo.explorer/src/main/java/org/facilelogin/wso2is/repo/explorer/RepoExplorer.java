@@ -38,10 +38,55 @@ public class RepoExplorer {
 		addRepo(WSO2_EXT_TREE_DIR, "https://github.com/wso2-extensions/");
 		populatePatches(PATCHES_TREE);
 
-		print();
+		if (args.length == 2 && "-j".equals(args[0]) && !args[1].isEmpty()) {
+			String componentName = args[1];
+			Component comp = components.get(componentName);
+			if (comp != null && !comp.getPatches().isEmpty()) {
+				System.out.println("Repo Name: " + comp.getRepoName());
+				System.out.println("Component Name: " + comp.getComponentName());
+				System.out.println("Patches (" + comp.getPatches().size() + "): ");
+				List<String> patches = comp.getPatches();
+				for (Iterator<String> iterator2 = patches.iterator(); iterator2.hasNext();) {
+					System.out.println(iterator2.next());
+				}
+			} else {
+				System.out.println("No patches found for the given component!");
+			}
+		} else if (args.length == 2 && "-r".equals(args[0]) && !args[1].isEmpty()) {
+			String repoName = "https://github.com/wso2-extensions/" + args[1];
+			Set<String> compNames = repos.get(repoName);
+
+			if (compNames == null || compNames.size() == 0) {
+				repoName = "https://github.com/wso2/" + args[1];
+				compNames = repos.get(repoName);
+			}
+
+			if (compNames != null && compNames.size() > 0) {
+				
+				System.out.println("Repo Name: " + repoName);
+				System.out.println();
+
+				
+				for (Iterator<String> iterator = compNames.iterator(); iterator.hasNext();) {
+					Component jar = components.get(iterator.next());
+					List<String> patches = jar.getPatches();
+					if (patches != null && patches.size() > 0) {
+						System.out.println("  |-" + jar.getComponentName() + " [" + patches.size() + "]");
+						for (Iterator<String> iterator2 = patches.iterator(); iterator2.hasNext();) {
+							System.out.println("         |-" + iterator2.next());
+						}
+					}
+				}
+			} else {
+				System.out.println("No patches found for the given repo!");
+			}
+
+		} else {
+			printAllPatches();
+		}
 	}
 
-	private static void print() {
+	private static void printAllPatches() {
 
 		int topRepoPatchCount = 0;
 		String topRepoPatchCountName = null;
@@ -90,8 +135,8 @@ public class RepoExplorer {
 			}
 		}
 
-		System.out.println("Repository with the most number of patches (since IS 5.2.0): " + topRepoPatchCountName + " ("
-				+ topRepoPatchCount + ")");
+		System.out.println("Repository with the most number of patches (since IS 5.2.0): " + topRepoPatchCountName
+				+ " (" + topRepoPatchCount + ")");
 		System.out.println("Component with the most number of patches (since IS 5.2.0): " + topCompPatchCountName + " ("
 				+ topCompPatchCount + ") [" + topCompPatchCountRepoName + "]");
 

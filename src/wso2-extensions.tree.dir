@@ -495,12 +495,6 @@
 ./identity-local-auth-limited-sessions/components/org.wso2.carbon.identity.application.authentication-endpoint
 ./identity-local-auth-limited-sessions/components/org.wso2.carbon.identity.application.authenticator.sessionauth
 ./identity-local-auth-limited-sessions/samples
-./identity-local-auth-risk-based-auth
-./identity-local-auth-risk-based-auth/components
-./identity-local-auth-risk-based-auth/components/org.wso2.carbon.identity.authenticator.risk
-./identity-local-auth-risk-based-auth/components/org.wso2.carbon.identity.authenticator.risk.analytics.endpoint
-./identity-local-auth-risk-based-auth/docs
-./identity-local-auth-risk-based-auth/docs/img
 ./identity-metadata-saml2
 ./identity-metadata-saml2/components
 ./identity-metadata-saml2/components/org.wso2.carbon.identity.idp.metadata.saml2
@@ -2065,4 +2059,4 @@
 ./tomcat-extension-samlsso/samples/sso-sample-apps/bookstore-app
 ./tomcat-extension-samlsso/samples/sso-sample-apps/musicstore-app
 
-7115 directories
+7034 directories

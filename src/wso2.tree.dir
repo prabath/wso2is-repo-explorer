@@ -526,6 +526,13 @@
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.challenge/org.wso2.carbon.identity.rest.api.user.challenge.v1
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.common
 ./identity-apps
+./identity-apps/apps
+./identity-apps/apps/user-portal
+./identity-apps/configs
+./identity-apps/modules
+./identity-apps/modules/theme
+./identity-apps/modules/theme/scripts
+./identity-apps/modules/theme/types
 ./identity-portals
 ./identity-rest-dispatcher
 ./identity-rest-dispatcher/components
@@ -1516,4 +1523,4 @@
 ./ux-product-is/Wireframes/ver 03
 ./ux-product-is/Wireframes/ver 04
 
-8915 directories
+8947 directories

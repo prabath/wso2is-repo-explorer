@@ -48,10 +48,10 @@ WSO2 Identity Server is 100% Open Source!. We maintain  product source code unde
 \> ./rex.sh update-index
 ```
 
-* **List** the git repo(s), along with all the corresponding patches since IS 5.2.0.
+* **List** the git repo(s), along with all the corresponding updates since IS 5.2.0.
 
 ```javascript
-\> ./rex.sh patches
+\> ./rex.sh updates
 ```
 
 * **List** the git repo(s), along with all the updates since IS 5.2.0 for the given Jar file.

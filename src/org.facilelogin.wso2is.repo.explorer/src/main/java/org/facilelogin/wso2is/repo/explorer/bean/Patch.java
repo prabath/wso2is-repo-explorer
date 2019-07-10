@@ -1,4 +1,4 @@
-package org.facilelogin.wso2is.repo.explorer;
+package org.facilelogin.wso2is.repo.explorer.bean;
 
 import java.util.Set;
 

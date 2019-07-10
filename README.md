@@ -45,7 +45,7 @@ WSO2 Identity Server is 100% Open Source!. We maintain  product source code unde
 * **Update** metadata related to all Identity Server repos. It's better to do an update at least weekly, to find the most up-to-date search results. 
 
 ```javascript
-\> ./rex.sh update-tree
+\> ./rex.sh update-index
 ```
 
 * **List** the git repo(s), along with all the corresponding patches since IS 5.2.0.
@@ -54,16 +54,16 @@ WSO2 Identity Server is 100% Open Source!. We maintain  product source code unde
 \> ./rex.sh patches
 ```
 
-* **List** the git repo(s), along with all the patches since IS 5.2.0 for the given Jar file.
+* **List** the git repo(s), along with all the updates since IS 5.2.0 for the given Jar file.
 
 ```javascript
-\> ./rex.sh patches -j  org.wso2.carbon.identity.recovery.ui
+\> ./rex.sh updates -c  org.wso2.carbon.identity.recovery.ui
 ```
 
-* **List** the patches along with all the components since IS 5.2.0 for the given repo.
+* **List** the updates along with all the components since IS 5.2.0 for the given repo.
 
 ```javascript
-\> ./rex.sh patches -r carbon-identity-framework
+\> ./rex.sh updates -r carbon-identity-framework
 ```
 
 ## TODOs

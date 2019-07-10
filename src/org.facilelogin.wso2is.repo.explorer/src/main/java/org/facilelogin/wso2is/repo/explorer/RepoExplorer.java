@@ -13,21 +13,21 @@ import java.util.Set;
 
 public class RepoExplorer {
 
-	private static final String WSO2_TREE_DIR = "/identity-repos/.repodata/wso2.tree.dir";
-	private static final String WSO2_EXT_TREE_DIR = "/identity-repos/.repodata/wso2-extensions.tree.dir";
-	private static final String PATCHES_TREE = "/identity-repos/.repodata/patch.tree";
+	private static final String WSO2_TREE_DIR = "/identity-repos/.repodata/wso2-components";
+	private static final String WSO2_EXT_TREE_DIR = "/identity-repos/.repodata/wso2-extensions-components";
+	private static final String PATCHES_TREE = "/identity-repos/.repodata/updates";
 
-	private static final String TREE_580_ = "/identity-repos/.repodata/is580.tree";
-	private static final String TREE_570_ = "/identity-repos/.repodata/is570.tree";
-	private static final String TREE_560_ = "/identity-repos/.repodata/is560.tree";
-	private static final String TREE_550_ = "/identity-repos/.repodata/is550.tree";
-	private static final String TREE_541_ = "/identity-repos/.repodata/is541.tree";
-	private static final String TREE_540_ = "/identity-repos/.repodata/is540.tree";
-	private static final String TREE_530_ = "/identity-repos/.repodata/is530.tree";
-	private static final String TREE_520_ = "/identity-repos/.repodata/is520.tree";
-	private static final String TREE_510_ = "/identity-repos/.repodata/is510.tree";
-	private static final String TREE_500_ = "/identity-repos/.repodata/is500.tree";
-	private static final String TREE_460_ = "/identity-repos/.repodata/is460.tree";
+	private static final String TREE_580_ = "/is580";
+	private static final String TREE_570_ = "/is570";
+	private static final String TREE_560_ = "/is560";
+	private static final String TREE_550_ = "/is550";
+	private static final String TREE_541_ = "/is541";
+	private static final String TREE_540_ = "/is540";
+	private static final String TREE_530_ = "/is530";
+	private static final String TREE_520_ = "/is520";
+	private static final String TREE_510_ = "/is510";
+	private static final String TREE_500_ = "/is500";
+	private static final String TREE_460_ = "/is460";
 
 	private static Map<String, Set<String>> repos = new HashMap<String, Set<String>>();
 	private static Map<String, Set<String>> productVersions = new HashMap<String, Set<String>>();

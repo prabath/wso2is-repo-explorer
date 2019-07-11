@@ -78,12 +78,12 @@ public class Printer {
 	 * 
 	 * @param componentName
 	 */
-	public void printPatchesByComponentName(String componentName) {
+	public void printPatchesByComponentName(String componentName, String version) {
 		Component comp = components.get(componentName);
 		if (comp != null && !comp.getPatches().isEmpty()) {
 			System.out.println("Repo Name: " + comp.getRepoName());
 			System.out.println("Component Name: " + comp.getComponentName());
-			System.out.println("Patches (" + comp.getPatches().size() + "): ");
+			System.out.println("Updates (" + comp.getPatches().size() + "): ");
 			List<Patch> patches = comp.getPatches();
 			for (Iterator<Patch> iterator2 = patches.iterator(); iterator2.hasNext();) {
 				Patch patch = iterator2.next();
@@ -106,49 +106,132 @@ public class Printer {
 
 	/**
 	 * 
-	 * @param repo
+	 * @param componentName
 	 */
-	public void printPatchesByRepo(String repo) {
+	public void printPatchesByComponentName(String componentName) {
+		printPatchesByComponentName(componentName, null);
+	}
+
+	/**
+	 * 
+	 * @param repo
+	 * @param productVesions
+	 */
+	public void printPatchesByRepo(String repo, String version) {
+
+		// find the all the components in the given repository, assuming its from wso2-extensions git org.
 		String repoName = "https://github.com/wso2-extensions/" + repo;
 		Set<String> compNames = repos.get(repoName);
 
 		if (compNames == null || compNames.size() == 0) {
+			// not found under wso2-extensions.
+			// find the all the components in the given repository, assuming its from wso2 git org.
 			repoName = "https://github.com/wso2/" + repo;
 			compNames = repos.get(repoName);
 		}
 
 		if (compNames != null && compNames.size() > 0) {
+			// now we have a valid git repo - and we know all the components under that.
 
-			System.out.println("Repo Name: " + repoName);
-			System.out.println();
+			// to keep track of all the patches provided under this repo.
+			int totalPatches = 0;
+			// to keep track of all the patches provided under this repo for the provided product version.
+			int productPatchesByRepo = 0;
 
-			for (Iterator<String> iterator = compNames.iterator(); iterator.hasNext();) {
-				Component jar = components.get(iterator.next());
-				List<Patch> patches = jar.getPatches();
+			StringBuffer buffer = new StringBuffer();
+
+			// iterate through all the components in the repo to find patches under each component.
+			for (Iterator<String> compIterator = compNames.iterator(); compIterator.hasNext();) {
+				Component component = components.get(compIterator.next());
+
+				// find all the patches under this component.
+				List<Patch> patches = component.getPatches();
+
+				// initializes patch buffer for each component.
+				StringBuffer patchBuffer = new StringBuffer();
+
 				if (patches != null && patches.size() > 0) {
-					System.out.println("  |-" + jar.getComponentName() + " [" + patches.size() + "]");
+					// this component has one or more patches.
 
-					for (Iterator<Patch> iterator2 = patches.iterator(); iterator2.hasNext();) {
-						Patch patch = iterator2.next();
+					int productPatchesByComponent = 0;
+					patchBuffer = new StringBuffer();
 
+					for (Iterator<Patch> patchIterator = patches.iterator(); patchIterator.hasNext();) {
+						Patch patch = patchIterator.next();
+
+						// we have a patch - increment the total repo patch count.
+						totalPatches++;
+
+						// find the applicable product version of this patch.
+						// there can be cases where the same patch is applicable to more than one product.
 						Set<String> products = patch.getProductVersion();
 
-						StringBuffer buffer = new StringBuffer();
+						StringBuffer verBuffer = new StringBuffer();
+
 						if (products != null && !products.isEmpty()) {
-							for (Iterator<String> prod = products.iterator(); prod.hasNext();) {
-								buffer.append(prod.next() + " ");
+							// we know the product(s), where this patch is applicable.
+							for (Iterator<String> prodIterator = products.iterator(); prodIterator.hasNext();) {
+								String prodVersion = prodIterator.next();
+								if (version != null) {
+									// we only need to filter the patches corresponding to the provided product version.
+									if (version.equalsIgnoreCase(prodVersion)) {
+										// we have patch applicable to the provided product version.
+										productPatchesByRepo++;
+										productPatchesByComponent++;
+										patchBuffer.append(
+												"         |-" + patch.getName() + " | " + patch.getJarVersion());
+										patchBuffer.append("\n");
+									}
+								} else {
+									// we do not worry about product version.
+									verBuffer.append(prodVersion + " ");
+								}
 							}
 						} else {
-							buffer.append("No Product Version");
+							verBuffer.append("No Product Version");
 						}
 
-						System.out.println("         |-" + patch.getName() + " | " + patch.getJarVersion() + " | "
-								+ buffer.toString());
+						if (version == null) {
+							patchBuffer.append("         |-" + patch.getName() + " | " + patch.getJarVersion() + " | "
+									+ verBuffer.toString());
+							patchBuffer.append("\n");
+						}
 					}
+
+					if (version != null) {
+						if (productPatchesByComponent > 0) {
+							buffer.append("  |-" + component.getComponentName() + " [" + productPatchesByComponent + "/"
+									+ patches.size() + "]");
+							buffer.append("\n");
+							buffer.append(patchBuffer.toString());
+						}
+					} else {
+						buffer.append("  |-" + component.getComponentName() + " [" + patches.size() + "]");
+						buffer.append("\n");
+						buffer.append(patchBuffer.toString());
+					}
+
 				}
 			}
+
+			if (version != null) {
+				System.out.println("Repo Name: " + repoName + "(" + productPatchesByRepo + "/" + totalPatches + ")");
+			} else {
+				System.out.println("Repo Name: " + repoName + "(" + totalPatches + ")");
+			}
+
+			System.out.println(buffer.toString());
+
 		} else {
 			System.out.println("No patches found for the given repo!");
 		}
+	}
+
+	/**
+	 * 
+	 * @param string
+	 */
+	public void printPatchesByRepo(String repo) {
+		printPatchesByRepo(repo, null);
 	}
 }

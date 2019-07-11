@@ -223,7 +223,7 @@ then
         ## fix the git url of carbon-kernel repo to reflect the 4.4.x branch.
 		sed -i -e 's|carbon-kernel/tree/master|carbon-kernel/tree/4.4.x|1' /wso2-extensions-components.results
         cat /wso2-extensions-components.results
-		rm /wso2-extensions-components.results wso2-components.results
+		rm /wso2-extensions-components.results /wso2-components.results
 		echo ""
 		echo "If you didn't find what you want, try to refine your search criteria. For example, instead of org.wso2.balana, try just, balana"
         echo ""
@@ -259,5 +259,5 @@ fi
 
 if [ "$1" == "updates" ] 
 then
-java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.RepoExplorer $2 $3
+java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.RepoExplorer $2 $3 $4 $5
 fi

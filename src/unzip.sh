@@ -4,10 +4,11 @@ do
 done
 cd ../unzipped
 find .  -type f ! -name '*.jar' -delete
-tree -if > ../wso2is-repo-explorer/src/patch.tree
+tree -if > ../../git/wso2is-repo-explorer/src/indexes/updates
 cd ..
 rm -rf unzipped
-cd wso2is-repo-explorer
+cd ../git/wso2is-repo-explorer
+git pull
 git add .
-git commit -m "updates"
+git commit -m "updates to updates index"
 git push

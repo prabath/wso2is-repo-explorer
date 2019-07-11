@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -36,8 +37,9 @@ public class Crawler {
 
 	protected Map<String, Set<String>> repos;
 	protected Map<String, Component> components;
-	
+
 	private Map<String, Set<String>> productVersions = new HashMap<String, Set<String>>();
+	protected Map<String, Set<String>> productsMap = new HashMap<String, Set<String>>();
 	private List<String> skipRepos = new ArrayList<>();
 
 	/**
@@ -202,6 +204,19 @@ public class Crawler {
 							Component comp = components.get(jar);
 							if (comp != null) {
 								comp.addPatch(new Patch(patchName, jarVersion, products));
+								for (Iterator<String> iterator = products.iterator(); iterator.hasNext();) {
+									String prod = (String) iterator.next();
+
+									if (productsMap.containsKey(prod)) {
+										productsMap.get(prod).add(patchName);
+									} else {
+										Set<String> patchSet  = new HashSet<String>();
+										patchSet.add(patchName);
+										productsMap.put(prod, patchSet);
+									}
+
+								}
+
 							}
 						}
 					}

@@ -13,10 +13,12 @@ public class Printer {
 
 	private Map<String, Set<String>> repos;
 	private Map<String, Component> components;
+	protected Map<String, Set<String>> productsMap;
 
 	public Printer(Crawler crawler) {
 		this.repos = crawler.repos;
 		this.components = crawler.components;
+		this.productsMap = crawler.productsMap;
 	}
 
 	/**
@@ -72,6 +74,33 @@ public class Printer {
 				+ " (" + topRepoPatchCount + ")");
 		System.out.println("Component with the most number of patches (since IS 5.2.0): " + topCompPatchCountName + " ("
 				+ topCompPatchCount + ") [" + topCompPatchCountRepoName + "]");
+	}
+
+	/**
+	 * 
+	 * @param componentName
+	 */
+	public void printPatchesByProduct(String version) {
+
+		if (version == null) {
+			Set<String> keys = productsMap.keySet();
+			for (Iterator<String> key = keys.iterator(); key.hasNext();) {
+				String k = key.next();
+				System.out.println(k + ":" + productsMap.get(k).size());
+			}
+		} else {
+			Set<String> patchSet = productsMap.get(version);
+			if (patchSet != null && !patchSet.isEmpty()) {
+				System.out.println("Product Version: " + version);
+				System.out.println("Number of Updates: " + patchSet.size());
+				System.out.println();
+				for (Iterator<String> patches = patchSet.iterator(); patches.hasNext();) {
+					System.out.println(patches.next());
+				}
+			} else {
+				System.out.println("No patches found for the given product version!");
+			}
+		}
 	}
 
 	/**

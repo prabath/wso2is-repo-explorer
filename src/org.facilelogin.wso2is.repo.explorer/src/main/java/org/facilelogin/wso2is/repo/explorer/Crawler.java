@@ -35,14 +35,24 @@ public class Crawler {
 	private static final String IS500 = "/is500";
 	private static final String IS460 = "/is460";
 
-	protected Map<String, Set<String>> repos = new HashMap<String, Set<String>>();
-	protected Map<String, Component> components = new HashMap<String, Component>();
-	protected Map<String, Set<String>> productsMap = new HashMap<String, Set<String>>();
+	protected Map<String, Set<String>> componentNamesByRepoMap = new HashMap<String, Set<String>>();
+	protected Map<String, Component> componentsWithPatchesMap = new HashMap<String, Component>();
+	protected Map<String, Set<Patch>> patchesByProductVersionMap = new HashMap<String, Set<Patch>>();
 
-
-	private Map<String, Set<String>> productVersions = new HashMap<String, Set<String>>();
+	private Map<String, Set<String>> productVersionsByJarMap = new HashMap<String, Set<String>>();
 	private List<String> skipRepos = new ArrayList<>();
 
+	int highestPatchCountByRepo = 0;
+	int highestPatchCountByComponent = 0;
+	int highestPatchCountByProduct = 0;
+
+	String highestPatchCountByRepoName;
+	String highestPatchCountByComponentName;
+	String highestPatchCountByComponentRepoName;
+
+	int totalPatchCount = 0;
+	Map<String, Integer> totalPatchCountByRepo = new HashMap<String, Integer>();
+	Map<String, Integer> totalPatchCountByComponent = new HashMap<String, Integer>();
 
 	/**
 	 * @throws IOException
@@ -101,17 +111,18 @@ public class Crawler {
 									repoName = prefix + repoName;
 								}
 
-								if (repos.containsKey(repoName)) {
-									if (!repos.get(repoName).contains(componentName)) {
-										repos.get(repoName).add(componentName);
-										components.put(componentName, new Component(repoName, componentName));
+								if (componentNamesByRepoMap.containsKey(repoName)) {
+									if (!componentNamesByRepoMap.get(repoName).contains(componentName)) {
+										componentNamesByRepoMap.get(repoName).add(componentName);
+										componentsWithPatchesMap.put(componentName,
+												new Component(repoName, componentName));
 									}
 								} else {
 									Set<String> componentSet;
 									componentSet = new HashSet<String>();
 									componentSet.add(componentName);
-									repos.put(repoName, componentSet);
-									components.put(componentName, new Component(repoName, componentName));
+									componentNamesByRepoMap.put(repoName, componentSet);
+									componentsWithPatchesMap.put(componentName, new Component(repoName, componentName));
 								}
 							}
 						}
@@ -142,16 +153,12 @@ public class Crawler {
 				if (line != null && line.length() > 2) {
 					if (line.startsWith("org.wso2.carbon") && line.endsWith(".jar")) {
 						line.replaceAll("-", "_");
-						if (productVersions.containsKey(line)) {
-							if (line.startsWith("org.wso2.carbon.user.mgt_")) {
-								productVersions.get(line).add(version);
-							} else {
-								productVersions.get(line).add(version);
-							}
+						if (productVersionsByJarMap.containsKey(line)) {
+							productVersionsByJarMap.get(line).add(version);
 						} else {
 							Set<String> versions = new HashSet<String>();
 							versions.add(version);
-							productVersions.put(line, versions);
+							productVersionsByJarMap.put(line, versions);
 						}
 					}
 				}
@@ -185,25 +192,31 @@ public class Crawler {
 							String jar = line.substring(line.indexOf("org.wso2.carbon"), line.length());
 							String jarVersion = null;
 							jar.replaceAll("-", "_");
-							Set<String> products = productVersions.get(jar);
+							Set<String> productVersions = productVersionsByJarMap.get(jar);
+
+							if (productVersions != null && productVersions.size() > 0) {
+								totalPatchCount++;
+							}
+
 							if (jar.indexOf("_") > 0) {
 								String[] parts = jar.split("_");
 								jar = parts[0];
 								jarVersion = parts[1];
 								jarVersion = jarVersion.substring(0, jarVersion.indexOf(".jar"));
 							}
-							Component comp = components.get(jar);
+							Component comp = componentsWithPatchesMap.get(jar);
 							if (comp != null) {
-								comp.addPatch(new Patch(patchName, jarVersion, products));
-								if (products != null && products.size() > 0) {
-									for (Iterator<String> iterator = products.iterator(); iterator.hasNext();) {
-										String prod = (String) iterator.next();
-										if (productsMap.containsKey(prod)) {
-											productsMap.get(prod).add(patchName);
+								Patch patch = new Patch(patchName, jarVersion, productVersions);
+								comp.addPatch(patch);
+								if (productVersions != null && productVersions.size() > 0) {
+									for (Iterator<String> iterator = productVersions.iterator(); iterator.hasNext();) {
+										String prodVersion = (String) iterator.next();
+										if (patchesByProductVersionMap.containsKey(prodVersion)) {
+											patchesByProductVersionMap.get(prodVersion).add(patch);
 										} else {
-											Set<String> patchSet = new HashSet<String>();
-											patchSet.add(patchName);
-											productsMap.put(prod, patchSet);
+											Set<Patch> patchSet = new HashSet<Patch>();
+											patchSet.add(patch);
+											patchesByProductVersionMap.put(prodVersion, patchSet);
 										}
 									}
 								}

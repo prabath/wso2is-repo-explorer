@@ -33,7 +33,7 @@ WSO2 Identity Server is 100% Open Source!. We maintain  product source code unde
 ```javascript
 \> ./rex.sh find org.wso2.carbon.identity.authenticator.mutualssl
 
-\> ./rex.sh find -j org.wso2.carbon.identity.authenticator.mutualssl
+\> ./rex.sh find -c org.wso2.carbon.identity.authenticator.mutualssl
 
 \> ./rex.sh find OAuth2TokenValidator
 

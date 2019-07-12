@@ -1,6 +1,8 @@
 package org.facilelogin.wso2is.repo.explorer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -110,26 +112,78 @@ public class Printer {
 	public void printPatchesByComponentName(String componentName, String version) {
 		Component comp = components.get(componentName);
 		if (comp != null && !comp.getPatches().isEmpty()) {
+			// each component has one ore more patches.
 			System.out.println("Repo Name: " + comp.getRepoName());
 			System.out.println("Component Name: " + comp.getComponentName());
-			System.out.println("Updates (" + comp.getPatches().size() + "): ");
 			List<Patch> patches = comp.getPatches();
-			for (Iterator<Patch> iterator2 = patches.iterator(); iterator2.hasNext();) {
-				Patch patch = iterator2.next();
+			Map<String, Set<Patch>> productPatches = new HashMap<String, Set<Patch>>();
+			int totalPatchCount = 0;
+			for (Iterator<Patch> patchIterator = patches.iterator(); patchIterator.hasNext();) {
+				Patch patch = patchIterator.next();
 				Set<String> products = patch.getProductVersion();
-				StringBuffer buffer = new StringBuffer();
+				totalPatchCount++;
 				if (products != null && !products.isEmpty()) {
-					for (Iterator<String> iterator = products.iterator(); iterator.hasNext();) {
-						buffer.append(iterator.next() + " ");
+					// we know the product(s), where this patch is applicable.
+					for (Iterator<String> prodIterator = products.iterator(); prodIterator.hasNext();) {
+						String prodVersion = prodIterator.next();
+						if (productPatches.containsKey(prodVersion)) {
+							productPatches.get(prodVersion).add(patch);
+						} else {
+							Set<Patch> patchSet = new HashSet<Patch>();
+							patchSet.add(patch);
+							productPatches.put(prodVersion, patchSet);
+						}
+					}
+				}
+			}
+
+			if (productPatches != null && !productPatches.isEmpty()) {
+				if (version != null) {
+					for (Map.Entry<String, Set<Patch>> entry : productPatches.entrySet()) {
+						String ver = entry.getKey();
+						if (ver.equalsIgnoreCase(version)) {
+							Set<Patch> pches = entry.getValue();
+							System.out.println(ver + " (" + pches.size() + "/" + totalPatchCount + ")");
+							for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
+								Patch patch = iterator.next();
+								System.out.println("  |-" + patch.getName() + " (" + patch.getJarVersion() + ")");
+							}
+						}
 					}
 				} else {
-					buffer.append("No Product Version");
-				}
+					for (Map.Entry<String, Set<Patch>> entry : productPatches.entrySet()) {
+						String ver = entry.getKey();
+						Set<Patch> pches = entry.getValue();
+						System.out.println(ver + " (" + pches.size() + "/" + totalPatchCount + ")");
+						for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
+							Patch patch = iterator.next();
+							System.out.println("  |-" + patch.getName() + " (" + patch.getJarVersion() + ")");
+						}
+					}
 
-				System.out.println(patch.getName() + " | " + patch.getJarVersion() + " | " + buffer.toString());
+					System.out.println();
+					System.out.println("Summary:");
+					System.out.println("Total WUM Updates:" + totalPatchCount);
+					System.out.println("IS_5.1.0: "
+							+ (productPatches.containsKey("IS_5.1.0") ? productPatches.get("IS_5.1.0").size() : "0"));
+					System.out.println("IS_5.2.0: "
+							+ (productPatches.containsKey("IS_5.2.0") ? productPatches.get("IS_5.2.0").size() : "0"));
+					System.out.println("IS_5.3.0: "
+							+ (productPatches.containsKey("IS_5.3.0") ? productPatches.get("IS_5.3.0").size() : "0"));
+					System.out.println("IS_5.4.0: "
+							+ (productPatches.containsKey("IS_5.4.0") ? productPatches.get("IS_5.4.0").size() : "0"));
+					System.out.println("IS_5.4.1: "
+							+ (productPatches.containsKey("IS_5.4.1") ? productPatches.get("IS_5.4.1").size() : "0"));
+					System.out.println("IS_5.5.0: "
+							+ (productPatches.containsKey("IS_5.5.0") ? productPatches.get("IS_5.5.0").size() : "0"));
+					System.out.println("IS_5.6.0: "
+							+ (productPatches.containsKey("IS_5.6.0") ? productPatches.get("IS_5.6.0").size() : "0"));
+					System.out.println("IS_5.7.0: "
+							+ (productPatches.containsKey("IS_5.7.0") ? productPatches.get("IS_5.7.0").size() : "0"));
+					System.out.println("IS_5.8.0: "
+							+ (productPatches.containsKey("IS_5.8.0") ? productPatches.get("IS_5.8.0").size() : "0"));
+				}
 			}
-		} else {
-			System.out.println("No patches found for the given component!");
 		}
 	}
 

@@ -11,7 +11,7 @@ cd ..
 rm -rf unzipped
 cd ../git/wso2is-repos
 ./rex.sh update
-cp -r .repodata/wso2* ../wso2is-repo-explorer/src/
+cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
 cd ../wso2is-repo-explorer
 git pull
 git add .

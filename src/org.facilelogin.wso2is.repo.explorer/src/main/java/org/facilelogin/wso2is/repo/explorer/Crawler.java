@@ -35,23 +35,14 @@ public class Crawler {
 	private static final String IS500 = "/is500";
 	private static final String IS460 = "/is460";
 
-	protected Map<String, Set<String>> repos;
-	protected Map<String, Component> components;
+	protected Map<String, Set<String>> repos = new HashMap<String, Set<String>>();
+	protected Map<String, Component> components = new HashMap<String, Component>();
+	protected Map<String, Set<String>> productsMap = new HashMap<String, Set<String>>();
+
 
 	private Map<String, Set<String>> productVersions = new HashMap<String, Set<String>>();
-	protected Map<String, Set<String>> productsMap = new HashMap<String, Set<String>>();
 	private List<String> skipRepos = new ArrayList<>();
 
-	/**
-	 * 
-	 * @param repos
-	 * @param productVersions
-	 * @param components
-	 */
-	public Crawler(Map<String, Set<String>> repos, Map<String, Component> components) {
-		this.repos = repos;
-		this.components = components;
-	}
 
 	/**
 	 * @throws IOException
@@ -204,17 +195,17 @@ public class Crawler {
 							Component comp = components.get(jar);
 							if (comp != null) {
 								comp.addPatch(new Patch(patchName, jarVersion, products));
-								for (Iterator<String> iterator = products.iterator(); iterator.hasNext();) {
-									String prod = (String) iterator.next();
-
-									if (productsMap.containsKey(prod)) {
-										productsMap.get(prod).add(patchName);
-									} else {
-										Set<String> patchSet  = new HashSet<String>();
-										patchSet.add(patchName);
-										productsMap.put(prod, patchSet);
+								if (products != null && products.size() > 0) {
+									for (Iterator<String> iterator = products.iterator(); iterator.hasNext();) {
+										String prod = (String) iterator.next();
+										if (productsMap.containsKey(prod)) {
+											productsMap.get(prod).add(patchName);
+										} else {
+											Set<String> patchSet = new HashSet<String>();
+											patchSet.add(patchName);
+											productsMap.put(prod, patchSet);
+										}
 									}
-
 								}
 
 							}

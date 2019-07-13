@@ -6,7 +6,7 @@ do
 done
 cd ../unzipped
 find .  -type f ! -name '*.jar' -delete
-tree -if > ../../git/wso2is-repo-explorer/src/indexes/updates
+tree -if | grep ".jar" > ../../git/wso2is-repo-explorer/src/indexes/updates
 cd ..
 rm -rf unzipped
 cd ../git/wso2is-repos

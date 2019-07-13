@@ -25,6 +25,8 @@ public class RepoExplorer {
 			printer.printPatchesByRepo(args[1]);
 		} else if (args.length == 1 && "-p".equals(args[0])) {
 			printer.printPatchesByProduct(null);
+		} else if (args.length == 2 && "-p".equals(args[0]) && !args[1].isEmpty()) {
+			printer.printPatchesByProduct(args[1].toUpperCase());
 		} else if (args.length == 4 && "-r".equals(args[0]) && !args[1].isEmpty() && "-p".equals(args[2])
 				&& !args[3].isEmpty()) {
 			printer.printPatchesByRepo(args[1], args[3]);

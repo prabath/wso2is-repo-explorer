@@ -55,11 +55,13 @@ if [ "$1" == "" ] || [ "$1" == "list" ]
 then
 	echo ""
 	echo "Identity/Security repos under WSO2:"
+	echo ""
 	## y.txt has the latest repo list.  
 	cat /y.txt
     rm /y.txt
 	echo ""
 	echo "Identity/Security repos under WSO2 Extensions:" 
+	echo ""
 	## z.txt has the latest repo list. 
 	cat /z.txt
     rm /z.txt
@@ -222,11 +224,14 @@ then
  
         ## fix the git url of carbon-kernel repo to reflect the 4.4.x branch.
 		sed -i -e 's|carbon-kernel/tree/master|carbon-kernel/tree/4.4.x|1' /wso2-extensions-components.results
-        cat /wso2-extensions-components.results
+		cat /wso2-extensions-components.results | grep -vE "jsp|html|jag|gif|png|images|pom.xml|css|src|.xml|.md|.java|.properties|modules|LICENSE"
 		rm /wso2-extensions-components.results /wso2-components.results
 		echo ""
 		echo "If you didn't find what you want, try to refine your search criteria. For example, instead of org.wso2.balana, try just, balana"
-        echo ""
+    	echo ""    
+		echo "Also to filter the results you can use the following:"
+		echo "./rex.sh find $3 | grep -vE 'STRING1|STRING2|STRING3'"
+		echo ""
 elif [ "$1" == "find" ] && [ "$2" != "" ]
 then
 ## find repos by the provided search string.
@@ -255,6 +260,9 @@ then
 		echo ""
 		echo "If you didn't find what you want, try to refine your search criteria. For example, instead of org.wso2.balana, try just, balana"
         echo ""
+		echo "Also to filter the results you can use the following:"
+		echo "./rex.sh find $2 | grep -vE 'STRING1|STRING2|STRING3'"
+		echo ""
 fi
 
 if [ "$1" == "updates" ] 

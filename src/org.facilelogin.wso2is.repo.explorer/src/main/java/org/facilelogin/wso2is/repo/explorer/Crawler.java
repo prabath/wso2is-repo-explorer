@@ -58,10 +58,10 @@ public class Crawler {
      * 
      */
     public void populateData() throws IOException {
-        
+
         skipRepos.add("identity-test-integration");
         skipRepos.add("identity-endpoint-authentication");
-        
+
         addRepo(WSO2_TREE_DIR, "https://github.com/wso2/");
         addRepo(WSO2_EXT_TREE_DIR, "https://github.com/wso2-extensions/");
         addProduct(IS460, "IS_4.6.0");
@@ -182,6 +182,8 @@ public class Crawler {
 
         BufferedReader reader = null;
         try {
+            // reads the patch list. this includes all the patches issued across all the products.
+            // the same patch number can have multiple lines - one line per jar.
             reader = new BufferedReader(new FileReader(filePath));
             String line = reader.readLine();
             while (line != null) {

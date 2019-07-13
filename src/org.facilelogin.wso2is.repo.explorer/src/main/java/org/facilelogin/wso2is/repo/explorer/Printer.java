@@ -16,8 +16,7 @@ public class Printer {
     public static final String ANSI_GREEN = "\u001B[32m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_BLUE   = "\u001B[34m";
-
+    public static final String ANSI_BLUE = "\u001B[34m";
 
     private Map<String, Set<String>> componentNamesByRepoMap;
     private Map<String, Component> componentsWithPatchesMap;
@@ -60,13 +59,13 @@ public class Printer {
             System.out.println();
         }
 
-        System.out.println(ANSI_BLUE +"Repository with the most number of patches (since IS 5.2.0): " + highestPatchCountByRepoName
-                + " (" + highestPatchCountByRepo + ")");
-        System.out.print(
-                "Component with the most number of patches (since IS 5.2.0): " + highestPatchCountByComponentName + " ("
-                        + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
+        System.out.println(ANSI_BLUE + "Repository with the most number of patches (since IS 5.2.0): "
+                + highestPatchCountByRepoName + " (" + highestPatchCountByRepo + ")");
+        System.out
+                .print("Component with the most number of patches (since IS 5.2.0): " + highestPatchCountByComponentName
+                        + " (" + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
         System.out.println(ANSI_RESET);
-        
+
     }
 
     /**
@@ -94,11 +93,12 @@ public class Printer {
         Component comp = componentsWithPatchesMap.get(componentName);
         if (comp != null && !comp.getPatches().isEmpty()) {
             // each component has one ore more patches.
-            
+
             // to keep track of all the patches provided under this repo for the provided product version.
             Integer totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
+            int count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
-            System.out.print("|--" + ANSI_CYAN + comp.getRepoName() + "(" + totalPatchCountByRepo + "/" + totalPatchCount + ")");
+            System.out.print("|--" + ANSI_CYAN + comp.getRepoName() + "(" + count + "/" + totalPatchCount + ")");
 
             System.out.println(ANSI_RESET);
 
@@ -141,6 +141,7 @@ public class Printer {
         List<Patch> patches = comp.getPatches();
         Map<String, Set<Patch>> productPatches = new HashMap<String, Set<Patch>>();
         int totalPatchCountByComponentByProducts = 0;
+
         int totalPatchCountByComponent = this.totalPatchCountByComponent.get(comp.getComponentName());
         int totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
 
@@ -245,8 +246,9 @@ public class Printer {
 
             // to keep track of all the patches provided under this repo for the provided product version.
             Integer totalPatchCountByRepo = this.totalPatchCountByRepo.get(repoName);
+            int count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
-            System.out.print("|--" + ANSI_CYAN + repoName + "(" + totalPatchCountByRepo + "/" + totalPatchCount + ")");
+            System.out.print("|--" + ANSI_CYAN + repoName + "(" + count + "/" + totalPatchCount + ")");
 
             System.out.println(ANSI_RESET);
 

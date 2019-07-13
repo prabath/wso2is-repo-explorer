@@ -7,6 +7,7 @@ do
   unzip -o -d "../unzipped" "$file"
 done
 cd ../unzipped
+tree -if | grep ".war" > ../../git/wso2is-repo-explorer/src/indexes/updates.war
 find .  -type f ! -name '*.jar' -delete
 tree -if | grep ".jar" > ../../git/wso2is-repo-explorer/src/indexes/updates
 cd ..

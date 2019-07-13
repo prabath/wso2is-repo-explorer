@@ -19,8 +19,8 @@ import org.facilelogin.wso2is.repo.explorer.bean.*;
  */
 public class Crawler {
 
-    private static final String WSO2_TREE_DIR = "/identity-repos/.repodata/wso2-components";
-    private static final String WSO2_EXT_TREE_DIR = "/identity-repos/.repodata/wso2-extensions-components";
+    private static final String WSO2_DIR = "/identity-repos/.repodata/wso2-components";
+    private static final String WSO2_EXT_DIR = "/identity-repos/.repodata/wso2-extensions-components";
     private static final String PATCHES = "/identity-repos/.repodata/updates";
 
     private static final String IS580 = "/is580";
@@ -38,16 +38,16 @@ public class Crawler {
     protected Map<String, Set<String>> componentNamesByRepoMap = new HashMap<String, Set<String>>();
     protected Map<String, Component> componentsWithPatchesMap = new HashMap<String, Component>();
     protected Map<String, Set<Patch>> patchesByProductVersionMap = new HashMap<String, Set<Patch>>();
-    protected Map<String, Integer> totalPatchCountByRepo = new HashMap<String, Integer>();
-    protected Map<String, Integer> totalPatchCountByComponent = new HashMap<String, Integer>();
+    protected Map<String, Long> totalPatchCountByRepo = new HashMap<String, Long>();
+    protected Map<String, Long> totalPatchCountByComponent = new HashMap<String, Long>();
     protected int totalPatchCount = 0;
 
     private Map<String, Set<String>> productVersionsByJarMap = new HashMap<String, Set<String>>();
     private List<String> skipRepos = new ArrayList<>();
 
-    Integer highestPatchCountByRepo = 0;
-    Integer highestPatchCountByComponent = 0;
-    Integer highestPatchCountByProduct = 0;
+    Long highestPatchCountByRepo = 0L;
+    Long highestPatchCountByComponent = 0L;
+    Long highestPatchCountByProduct = 0L;
 
     String highestPatchCountByRepoName;
     String highestPatchCountByComponentName;
@@ -62,8 +62,8 @@ public class Crawler {
         skipRepos.add("identity-test-integration");
         skipRepos.add("identity-endpoint-authentication");
 
-        addRepo(WSO2_TREE_DIR, "https://github.com/wso2/");
-        addRepo(WSO2_EXT_TREE_DIR, "https://github.com/wso2-extensions/");
+        addRepo(WSO2_DIR, "https://github.com/wso2/");
+        addRepo(WSO2_EXT_DIR, "https://github.com/wso2-extensions/");
         addProduct(IS460, "IS_4.6.0");
         addProduct(IS500, "IS_5.0.0");
         addProduct(IS510, "IS_5.1.0");
@@ -89,6 +89,7 @@ public class Crawler {
         BufferedReader reader = null;
         try {
             // read all the git repo from the provided file.
+            // this includes a line per each file in the git repos.
             reader = new BufferedReader(new FileReader(filePath));
             String line = reader.readLine();
             while (line != null) {
@@ -116,6 +117,7 @@ public class Crawler {
                                 if (componentNamesByRepoMap.containsKey(repoName)) {
                                     if (!componentNamesByRepoMap.get(repoName).contains(componentName)) {
                                         componentNamesByRepoMap.get(repoName).add(componentName);
+                                        // this map will be later populated with the patches.
                                         componentsWithPatchesMap.put(componentName,
                                                 new Component(repoName, componentName));
                                     }
@@ -124,6 +126,7 @@ public class Crawler {
                                     componentSet = new HashSet<String>();
                                     componentSet.add(componentName);
                                     componentNamesByRepoMap.put(repoName, componentSet);
+                                    // this map will be later populated with the patches.
                                     componentsWithPatchesMap.put(componentName, new Component(repoName, componentName));
                                 }
                             }
@@ -180,6 +183,7 @@ public class Crawler {
      */
     private void addPatches(String filePath) throws IOException {
 
+        System.out.println("IN METHOD");
         BufferedReader reader = null;
         try {
             // reads the patch list. this includes all the patches issued across all the products.
@@ -199,29 +203,44 @@ public class Crawler {
                             Set<String> productVersions = productVersionsByJarMap.get(jarName);
 
                             if (productVersions != null && productVersions.size() > 0) {
+                                // we only worry about patched jars in any of the IS releases from 5.0.0 to the latest.
                                 totalPatchCount++;
                             }
 
                             String compName = null;
 
+                            // find the component name and the version from the jar file name.
                             if (jarName.indexOf("_") > 0) {
                                 String[] parts = jarName.split("_");
                                 compName = parts[0];
                                 jarVersion = parts[1];
                                 jarVersion = jarVersion.substring(0, jarVersion.indexOf(".jar"));
                             }
+
+                            // component name here comes from the git repo.
+                            // we assume there are no two repos with the same component name.
                             Component comp = componentsWithPatchesMap.get(compName);
                             if (comp != null) {
                                 Patch patch = new Patch(patchName, jarVersion, productVersions);
                                 comp.addPatch(patch);
                                 String repoName = comp.getRepoName();
+
+                                if ("org.wso2.carbon.identity.application.authentication.framework".equals(compName)
+                                        && !"https://github.com/wso2/carbon-identity-framework".equals(repoName)) {
+                                    System.out.println("TEST");
+                                }
+
                                 if (totalPatchCountByComponent.containsKey(compName)) {
                                     totalPatchCountByComponent.put(compName,
                                             totalPatchCountByComponent.get(compName) + 1);
+                                } else {
+                                    totalPatchCountByComponent.put(compName, 1L);
+                                }
+
+                                if (totalPatchCountByRepo.containsKey(repoName)) {
                                     totalPatchCountByRepo.put(repoName, totalPatchCountByRepo.get(repoName) + 1);
                                 } else {
-                                    totalPatchCountByComponent.put(compName, 1);
-                                    totalPatchCountByRepo.put(repoName, 1);
+                                    totalPatchCountByRepo.put(repoName, 1L);
                                 }
 
                                 if (totalPatchCountByRepo.get(repoName) > highestPatchCountByRepo) {
@@ -229,7 +248,7 @@ public class Crawler {
                                     highestPatchCountByRepoName = repoName;
                                 }
 
-                                if (totalPatchCountByComponent.get(compName) > highestPatchCountByRepo) {
+                                if (totalPatchCountByComponent.get(compName) > highestPatchCountByComponent) {
                                     highestPatchCountByComponent = totalPatchCountByComponent.get(compName);
                                     highestPatchCountByComponentName = compName;
                                     highestPatchCountByComponentRepoName = repoName;

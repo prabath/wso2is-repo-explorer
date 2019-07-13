@@ -21,12 +21,12 @@ public class Printer {
     private Map<String, Set<String>> componentNamesByRepoMap;
     private Map<String, Component> componentsWithPatchesMap;
     private Map<String, Set<Patch>> patchesByProductVersionMap;
-    private Map<String, Integer> totalPatchCountByRepo;
-    private Map<String, Integer> totalPatchCountByComponent;
+    private Map<String, Long> totalPatchCountByRepo;
+    private Map<String, Long> totalPatchCountByComponent;
 
-    Integer highestPatchCountByRepo = 0;
-    Integer highestPatchCountByComponent = 0;
-    Integer highestPatchCountByProduct = 0;
+    Long highestPatchCountByRepo = 0L;
+    Long highestPatchCountByComponent = 0L;
+    Long highestPatchCountByProduct = 0L;
 
     String highestPatchCountByRepoName;
     String highestPatchCountByComponentName;
@@ -95,8 +95,8 @@ public class Printer {
             // each component has one ore more patches.
 
             // to keep track of all the patches provided under this repo for the provided product version.
-            Integer totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
-            int count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
+            Long totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
+            long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
             System.out.print("|--" + ANSI_CYAN + comp.getRepoName() + "(" + count + "/" + totalPatchCount + ")");
 
@@ -142,8 +142,8 @@ public class Printer {
         Map<String, Set<Patch>> productPatches = new HashMap<String, Set<Patch>>();
         int totalPatchCountByComponentByProducts = 0;
 
-        int totalPatchCountByComponent = this.totalPatchCountByComponent.get(comp.getComponentName());
-        int totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
+        long totalPatchCountByComponent = this.totalPatchCountByComponent.get(comp.getComponentName());
+        long totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
 
         for (Iterator<Patch> patchIterator = patches.iterator(); patchIterator.hasNext();) {
             Patch patch = patchIterator.next();
@@ -245,8 +245,8 @@ public class Printer {
             // now we have a valid git repo - and we know all the components under that.
 
             // to keep track of all the patches provided under this repo for the provided product version.
-            Integer totalPatchCountByRepo = this.totalPatchCountByRepo.get(repoName);
-            int count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
+            Long totalPatchCountByRepo = this.totalPatchCountByRepo.get(repoName);
+            long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
             System.out.print("|--" + ANSI_CYAN + repoName + "(" + count + "/" + totalPatchCount + ")");
 

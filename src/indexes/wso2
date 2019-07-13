@@ -17278,6 +17278,7 @@
 ./identity-apps/apps/user-portal
 ./identity-apps/apps/user-portal/package-lock.json
 ./identity-apps/apps/user-portal/package.json
+./identity-apps/apps/user-portal/pom.xml
 ./identity-apps/apps/user-portal/server.js
 ./identity-apps/apps/user-portal/src
 ./identity-apps/apps/user-portal/src/actions
@@ -17302,6 +17303,7 @@
 ./identity-apps/apps/user-portal/src/layouts
 ./identity-apps/apps/user-portal/src/layouts/index.ts
 ./identity-apps/apps/user-portal/src/layouts/inner.tsx
+./identity-apps/apps/user-portal/src/layouts/login.tsx
 ./identity-apps/apps/user-portal/src/locales
 ./identity-apps/apps/user-portal/src/locales/en.json
 ./identity-apps/apps/user-portal/src/models
@@ -17312,18 +17314,32 @@
 ./identity-apps/apps/user-portal/src/pages/app-listing.tsx
 ./identity-apps/apps/user-portal/src/pages/errors
 ./identity-apps/apps/user-portal/src/pages/errors/404.tsx
+./identity-apps/apps/user-portal/src/pages/home.tsx
 ./identity-apps/apps/user-portal/src/pages/index.ts
 ./identity-apps/apps/user-portal/src/pages/login.tsx
+./identity-apps/apps/user-portal/src/pages/signup.tsx
 ./identity-apps/apps/user-portal/src/pages/theme.tsx
 ./identity-apps/apps/user-portal/src/pages/user-listing.tsx
+./identity-apps/apps/user-portal/src/public
+./identity-apps/apps/user-portal/src/public/WEB-INF
+./identity-apps/apps/user-portal/src/public/WEB-INF/web.xml
 ./identity-apps/apps/user-portal/src/types
-./identity-apps/apps/user-portal/src/types/json.d.ts
+./identity-apps/apps/user-portal/src/types/globals.d.ts
+./identity-apps/apps/user-portal/src/types/imports.d.ts
 ./identity-apps/apps/user-portal/tsconfig.json
 ./identity-apps/apps/user-portal/tslint.json
 ./identity-apps/apps/user-portal/webpack.config.js
 ./identity-apps/configs
 ./identity-apps/configs/common.tsconfig.json
 ./identity-apps/configs/common.tslint.json
+./identity-apps/features
+./identity-apps/features/etc
+./identity-apps/features/etc/feature.properties
+./identity-apps/features/org.wso2.identity.apps.user.portal.server.feature
+./identity-apps/features/org.wso2.identity.apps.user.portal.server.feature/pom.xml
+./identity-apps/features/org.wso2.identity.apps.user.portal.server.feature/resources
+./identity-apps/features/org.wso2.identity.apps.user.portal.server.feature/resources/build.properties
+./identity-apps/features/org.wso2.identity.apps.user.portal.server.feature/resources/p2.inf
 ./identity-apps/issue_template.md
 ./identity-apps/lerna.json
 ./identity-apps/modules
@@ -17385,6 +17401,7 @@
 ./identity-apps/modules/theme/types/log.d.ts
 ./identity-apps/package-lock.json
 ./identity-apps/package.json
+./identity-apps/pom.xml
 ./identity-apps/pull_request_template.md
 ./identity-feature-category
 ./identity-feature-category/LICENSE
@@ -26252,4 +26269,4 @@
 ./ux-product-is/gh-deploy.bat
 ./ux-product-is/gh-deploy.sh
 
-8947 directories, 17305 files
+8953 directories, 17316 files

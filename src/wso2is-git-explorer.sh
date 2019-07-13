@@ -228,7 +228,10 @@ then
 		rm /wso2-extensions-components.results /wso2-components.results
 		echo ""
 		echo "If you didn't find what you want, try to refine your search criteria. For example, instead of org.wso2.balana, try just, balana"
-        echo ""
+    	echo ""    
+		echo "Also to filter the results you can use the following:"
+		echo "./rex.sh find $3 | grep -vE 'STRING1|STRING2|STRING3'"
+		echo ""
 elif [ "$1" == "find" ] && [ "$2" != "" ]
 then
 ## find repos by the provided search string.
@@ -257,6 +260,9 @@ then
 		echo ""
 		echo "If you didn't find what you want, try to refine your search criteria. For example, instead of org.wso2.balana, try just, balana"
         echo ""
+		echo "Also to filter the results you can use the following:"
+		echo "./rex.sh find $2 | grep -vE 'STRING1|STRING2|STRING3'"
+		echo ""
 fi
 
 if [ "$1" == "updates" ] 

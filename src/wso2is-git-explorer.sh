@@ -1,5 +1,26 @@
 #!/bin/bash
 
+cd /
+
+file="/identity-repos/.repodata/version.index"
+if [ ! -f "$file" ]
+then
+    rm -rf /identity-repos/.repodata
+	mkdir -p /identity-repos/.repodata
+	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/version
+	cp /version /identity-repos/.repodata/version.index
+fi
+    
+version_old=$(cat /identity-repos/.repodata/version.index)
+wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/version
+cp /version /identity-repos/.repodata/version.index
+version_new=$(cat /identity-repos/.repodata/version.index)
+if [ "$version_new" -gt "$version_old" ]
+then
+	rm -rf /identity-repos/.repodata
+fi
+
+
 file="/identity-repos/.repodata"
 
 ## if .repodata directory present - remove it when we do an update-index.

@@ -1,4 +1,6 @@
-cd /Users/prabath/wso2is-repo-explorer/svn/updates
+cd /Users/prabath/wso2is-repo-explorer/git/wso2is-repo-explorer
+git pull
+cd ../../svn/updates
 svn up
 for file in ./**/*.zip
 do
@@ -13,7 +15,6 @@ cd ../git/wso2is-repos
 ./rex.sh update
 cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
 cd ../wso2is-repo-explorer
-git pull
 git add .
 git commit -m "updates to indexes"
 git push

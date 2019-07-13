@@ -141,9 +141,6 @@ public class Printer {
         List<Patch> patches = comp.getPatches();
         Map<String, Set<Patch>> productPatches = new HashMap<String, Set<Patch>>();
         int totalPatchCountByComponentByProducts = 0;
-        if ("org.wso2.carbon.identity.application.authentication.endpoint.util".equals(comp.getComponentName())){
-            System.out.println("Hi");
-        }
         int totalPatchCountByComponent = this.totalPatchCountByComponent.get(comp.getComponentName());
         int totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
 

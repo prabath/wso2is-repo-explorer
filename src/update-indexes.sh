@@ -20,7 +20,7 @@ while read number; do
 done <./src/indexes/version
 increment=1 
 version_new=$(($version_old + $increment))
-cat "$version_new" > ./src/indexes/version
+echo "$version_new" > ./src/indexes/version
 git add .
 git commit -m "updates to indexes"
 git push

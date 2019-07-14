@@ -68,7 +68,7 @@ if [ "$version_old" -lt "$version_new" ]
 then
 	echo "A new Docker image is available and ready to update..."
 	touch /identity-repos/.repodata/image.update
-	echo "Re-run the tool..."
+	echo "Please re-run the tool..."
 	exit 1
 fi
     

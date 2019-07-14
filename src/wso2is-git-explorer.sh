@@ -2,6 +2,37 @@
 
 cd /
 
+## carries the latest version of the rex.sh.
+file="/identity-repos/.repodata/version.rex"
+if [ ! -f "$file" ]
+then
+	echo "version.rex file not found inside .repodata"
+	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/version
+	cp /version /identity-repos/.repodata/version.rex
+fi
+
+## find the local rex version.
+version_old=$(cat /identity-repos/.repodata/version.rex)
+## get the latest docker image version from the git repo.
+wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/version
+cp /version /identity-repos/.repodata/version.rex
+version_new=$(cat /identity-repos/.repodata/version.rex)
+if [ "$version_old" -lt "$version_new" ]
+then
+	echo "A new version of the rex.sh is available..."
+	echo "Get the latest from https://github.com/prabath/wso2is-repo-explorer/raw/master/rex.sh"
+	touch /identity-repos/.repodata/rex."$version_new"
+	exit 1
+fi
+
+#file= "/identity-repos/.repodata/rex."$version_new
+if [ -f "/identity-repos/.repodata/rex."$version_new ]
+then
+	echo "A new version of the rex.sh is available..."
+	echo "Get the latest from https://github.com/prabath/wso2is-repo-explorer/raw/master/rex.sh"
+	exit 1
+fi
+
 ## carries the latest version of the docker image.
 file="/identity-repos/.repodata/version.docker"
 if [ ! -f "$file" ]

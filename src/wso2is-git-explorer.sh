@@ -15,7 +15,7 @@ fi
 version_old=$(cat /identity-repos/.repodata/version.rex)
 ## get the latest docker image version from the git repo.
 wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/version
-cp /version /identity-repos/.repodata/version.rex
+mv /version /identity-repos/.repodata/version.rex
 version_new=$(cat /identity-repos/.repodata/version.rex)
 if [ "$version_old" -lt "$version_new" ]
 then
@@ -48,7 +48,7 @@ fi
 version_old=$(cat /identity-repos/.repodata/version.docker)
 ## get the latest docker image version from the git repo.
 wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/version
-cp /version /identity-repos/.repodata/version.docker
+mv /version /identity-repos/.repodata/version.docker
 version_new=$(cat /identity-repos/.repodata/version.docker)
 if [ "$version_old" -lt "$version_new" ]
 then
@@ -77,7 +77,7 @@ fi
 version_old=$(cat /identity-repos/.repodata/version.index)
 ## get the latest version from the git repo.
 wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/version
-cp /version /identity-repos/.repodata/version.index
+mv /version /identity-repos/.repodata/version.index
 version_new=$(cat /identity-repos/.repodata/version.index)
 if [ "$version_old" -lt "$version_new" ]
 then

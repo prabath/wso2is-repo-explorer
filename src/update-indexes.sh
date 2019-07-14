@@ -15,6 +15,8 @@ cd ../git/wso2is-repos
 ./rex.sh update
 cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
 cd ../wso2is-repo-explorer
+version_new=$(cat ./src/indexes/version) + 1
+cat "$version_new" > ./src/indexes/version
 git add .
 git commit -m "updates to indexes"
 git push

@@ -9,7 +9,7 @@ if [ ! -f "$file" ]
 then
 	echo "version.rex file not found inside .repodata"
 	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/version
-	cp /version /identity-repos/.repodata/version.rex
+	mv /version /identity-repos/.repodata/version.rex
 fi
 
 ## carries the latest version of the docker image.
@@ -20,7 +20,7 @@ then
 	## probably you are using an older version of this tool.
 	echo "version.docker file not found inside .repodata"
 	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/version
-	cp /version /identity-repos/.repodata/version.docker
+	mv /version /identity-repos/.repodata/version.docker
 fi
 
 ## carries the latest version of indexes.
@@ -33,7 +33,7 @@ then
 	## probably you are using an older version of this tool.
 	echo "version.index file not found inside .repodata"
 	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/version
-	cp /version /identity-repos/.repodata/version.index
+	mv /version /identity-repos/.repodata/version.index
 fi
 
 ## find the local rex version.

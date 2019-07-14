@@ -22,5 +22,5 @@ increment=1
 version_new=$(($version_old + $increment))
 echo "$version_new" > ./src/indexes/version
 git add .
-git commit -m "updates to indexes"
+git commit -m "automatic updates to indexes"
 git push

@@ -26,7 +26,7 @@ done <./src/indexes/version
 increment=1 
 version_new=$(($version_old + $increment))
 echo "$version_new" > ./src/indexes/version
-printf '%s %s\n' "$(date)" " version updated" >> /Users/prabath/wso2is-repo-explorer/update.index.log
+printf '%s %s %s\n' "$(date)" " version updated " "$version_new" >> /Users/prabath/wso2is-repo-explorer/update.index.log
 git add .
 git commit -m "automatic updates to indexes"
 git push

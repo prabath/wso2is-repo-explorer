@@ -1,9 +1,9 @@
 #!/bin/bash
 
-file=".repodata/rex.2"
+file=".repodata/rex.3"
 if [ -f "$file" ]
 then
-    rm -rf .repodata/rex.2
+    rm -rf .repodata/rex.3
 fi
 
 file=".repodata/image.update"

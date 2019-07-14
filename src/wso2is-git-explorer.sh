@@ -20,7 +20,7 @@ version_new=$(cat /identity-repos/.repodata/version.rex)
 if [ "$version_old" -lt "$version_new" ]
 then
 	echo "A new version of the rex.sh is available..."
-	echo "Get the latest from https://github.com/prabath/wso2is-repo-explorer/raw/master/rex.sh"
+	echo "Get the latest from https://github.com/prabath/wso2is-repo-explorer/raw/master/rex.sh and make it executable."
 	touch /identity-repos/.repodata/rex."$version_new"
 	exit 1
 fi
@@ -29,7 +29,7 @@ fi
 if [ -f "/identity-repos/.repodata/rex."$version_new ]
 then
 	echo "A new version of the rex.sh is available..."
-	echo "Get the latest from https://github.com/prabath/wso2is-repo-explorer/raw/master/rex.sh"
+	echo "Get the latest from https://github.com/prabath/wso2is-repo-explorer/raw/master/rex.sh and make it executable."
 	exit 1
 fi
 

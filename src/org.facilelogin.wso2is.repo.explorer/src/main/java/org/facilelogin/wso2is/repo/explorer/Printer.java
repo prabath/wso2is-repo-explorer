@@ -12,11 +12,12 @@ import org.facilelogin.wso2is.repo.explorer.bean.Patch;
 
 public class Printer {
 
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_BLUE = "\u001B[34m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_CYAN = "\u001B[36m";
+    private static final String ANSI_PURPLE = "\u001B[35m";
+    //private static final String ANSI_BLUE = "\u001B[34m";
+    private static final String ANSI_YELLOW = "\u001B[33m";
 
     private Map<String, Set<String>> componentNamesByRepoMap;
     private Map<String, Component> componentsWithPatchesMap;
@@ -59,7 +60,7 @@ public class Printer {
             System.out.println();
         }
 
-        System.out.println(ANSI_BLUE + "Repository with the most number of patches (since IS 5.2.0): "
+        System.out.println(ANSI_YELLOW + "Repository with the most number of patches (since IS 5.2.0): "
                 + highestPatchCountByRepoName + " (" + highestPatchCountByRepo + ")");
         System.out
                 .print("Component with the most number of patches (since IS 5.2.0): " + highestPatchCountByComponentName
@@ -105,13 +106,14 @@ public class Printer {
             Map<String, Set<Patch>> productPatches = doprintPatchesByComponentName(comp, version);
 
             System.out.println();
-            System.out.print(ANSI_BLUE + "Summary: ");
+            System.out.print(ANSI_YELLOW + "Summary: ");
             printProductPatchCount(productPatches);
             System.out.println(ANSI_RESET);
         }
     }
 
     private void printProductPatchCount(Map<String, Set<Patch>> productPatches) {
+        System.out.println(ANSI_YELLOW);
         System.out.print(
                 "IS_5.1.0: " + (productPatches.containsKey("IS_5.1.0") ? productPatches.get("IS_5.1.0").size() : "0"));
         System.out.print(" | IS_5.2.0: "
@@ -130,6 +132,7 @@ public class Printer {
                 + (productPatches.containsKey("IS_5.7.0") ? productPatches.get("IS_5.7.0").size() : "0"));
         System.out.println(" | IS_5.8.0: "
                 + (productPatches.containsKey("IS_5.8.0") ? productPatches.get("IS_5.8.0").size() : "0"));
+        System.out.println(ANSI_RESET);
     }
 
     /**

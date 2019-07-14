@@ -2,26 +2,61 @@
 
 cd /
 
+## carries the latest version of the docker image.
+file="/identity-repos/.repodata/version.docker"
+if [ ! -f "$file" ]
+then
+    ## there is no reason you should not be having this file.
+	## probably you are using an older version of this tool.
+	echo "version.docker file not found inside .repodata"
+	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/version
+	cp /version /identity-repos/.repodata/version.docker
+fi
+
+## find the local docker image version.
+version_old=$(cat /identity-repos/.repodata/version.docker)
+## get the latest docker image version from the git repo.
+wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/version
+cp /version /identity-repos/.repodata/version.docker
+version_new=$(cat /identity-repos/.repodata/version.docker)
+if [ "$version_old" -lt "$version_new" ]
+then
+	echo "A new Docker image is available and ready to update..."
+	touch /identity-repos/.repodata/image.update
+	echo "Re-run the tool..."
+	exit 1
+fi
+
+## carries the latest version of indexes.
+## if the version in the git repo is larger than the local version, the tool
+## will pull the updated indexes.
 file="/identity-repos/.repodata/version.index"
 if [ ! -f "$file" ]
 then
+    ## there is no reason you should not be having this file.
+	## probably you are using an older version of this tool.
+	echo "version.index file not found inside .repodata"
     rm -rf /identity-repos/.repodata
 	mkdir -p /identity-repos/.repodata
 	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/version
 	cp /version /identity-repos/.repodata/version.index
 fi
     
+## find the local version.
 version_old=$(cat /identity-repos/.repodata/version.index)
+## get the latest version from the git repo.
 wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/version
 cp /version /identity-repos/.repodata/version.index
 version_new=$(cat /identity-repos/.repodata/version.index)
-if [ "$version_new" -gt "$version_old" ]
+if [ "$version_old" -lt "$version_new" ]
 then
+	## removing .repodata will automatically, trigger the tool to get updated indexes.
+	echo "Updated indexs are available..."
 	rm -rf /identity-repos/.repodata
+	echo "Cleaned current indexes..."
 fi
 
-
-file="/identity-repos/.repodata"
+file="/identity-repos/.repodata/"
 
 ## if .repodata directory present - remove it when we do an update-index.
 ## we store all the indexing files in the .repodata directory.
@@ -32,9 +67,10 @@ fi
 
 ## if the .repodata directory is not present, we need to create it
 ## and pull data from the wso2is-repo-explorer git repo.
-file="/identity-repos/.repodata"
+file="/identity-repos/.repodata/version.index"
 if [ ! -f "$file" ]
 then
+    echo "Pulling updated indexes from the git repo..."
     cd /
 	mkdir -p /identity-repos/.repodata
 	## pull the file, which containes all the wum update details.
@@ -47,7 +83,8 @@ then
     wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/wso2-extensions	
 	## pull the file, which containes all the components details from wso2-extensions git org.
 	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/wso2-extensions-components
-
+	## get the latest version from the git repo.
+	wget -q https://raw.githubusercontent.com/prabath/wso2is-repo-explorer/master/src/indexes/version
 
     ## copy all the indexing files from the root to the local directory.
 	cp /updates /identity-repos/.repodata/updates
@@ -55,6 +92,10 @@ then
 	cp /wso2-components /identity-repos/.repodata/wso2-components
 	cp /wso2-extensions /identity-repos/.repodata/wso2-extensions
 	cp /wso2-extensions-components /identity-repos/.repodata/wso2-extensions-components
+	cp /version /identity-repos/.repodata/version.index
+
+	echo "Updated with the latest indexes..."
+	echo ""
 fi
 
 ## before a clone or an update - first we build a list of all avaiable repos.

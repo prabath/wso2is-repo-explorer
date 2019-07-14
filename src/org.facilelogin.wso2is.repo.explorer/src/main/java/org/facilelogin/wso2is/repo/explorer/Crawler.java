@@ -183,7 +183,6 @@ public class Crawler {
      */
     private void addPatches(String filePath) throws IOException {
 
-        System.out.println("IN METHOD");
         BufferedReader reader = null;
         try {
             // reads the patch list. this includes all the patches issued across all the products.

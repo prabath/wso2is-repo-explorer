@@ -56,8 +56,9 @@ public class Printer {
     public void printAllPatches() {
 
         for (Map.Entry<String, Set<String>> entry : componentNamesByRepoMap.entrySet()) {
-            doPrintPatchesByRepo(entry.getKey(), null);
-            System.out.println();
+            if (doPrintPatchesByRepo(entry.getKey(), null)) {
+                System.out.println();
+            }
         }
 
         System.out.println(ANSI_YELLOW + "Repository with the most number of updates (since IS 5.2.0): "

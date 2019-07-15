@@ -16,7 +16,7 @@ cd ..
 rm -rf unzipped
 echo "removed unziped directory" 
 cd ../git/wso2is-repos
-bash rex.sh update 
+docker run -v $(pwd):/identity-repos -it --rm  prabath/rex  update 
 echo "git repos updated" 
 cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
 cd ../wso2is-repo-explorer

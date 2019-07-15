@@ -1,4 +1,4 @@
-# Identity Server Repo Explorer (rEx) for Identity Server
+# Repo Explorer (rEx) for Identity Server (IS)
 
 # Happy rEx*ing*!
 

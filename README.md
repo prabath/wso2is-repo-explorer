@@ -81,7 +81,9 @@ Finds the git repo(s), by the given name. You can do this, even without cloning 
 ```
 ### Product Updates (Patches) 
 
-Lists the git repo(s), along with all the corresponding updates since IS 5.2.0. ***The product updates are provided via WSO2 Update Manager ([WUM](https://wso2.com/updates/wum)). These updates are not open source and provided only to the WSO2 customers and trial users. This tool does not provide any updates - but simply uses the publicly available metadata via the WUM tool to generate some useful information.***
+**The product updates are provided via WSO2 Update Manager ([WUM](https://wso2.com/updates/wum)). These updates are not open source and provided only to the WSO2 customers and trial users. This tool does not provide any updates - but simply uses the publicly available metadata via the WUM tool to generate some useful information.**
+
+Lists the git repo(s), along with all the corresponding updates since IS 5.2.0. 
 
 ```markdown
 ./rex.sh updates

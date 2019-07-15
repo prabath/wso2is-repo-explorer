@@ -249,7 +249,7 @@ public class Printer {
      * @param repoName
      * @param version
      */
-    private void doPrintPatchesByRepo(String repoName, String version) {
+    private boolean doPrintPatchesByRepo(String repoName, String version) {
 
         // find the all the components in the given repository, assuming its from wso2-extensions git org.
         Set<String> compNames = componentNamesByRepoMap.get(repoName);
@@ -261,18 +261,22 @@ public class Printer {
             Long totalPatchCountByRepo = this.totalPatchCountByRepo.get(repoName);
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
-            System.out.print("|--" + ANSI_CYAN + repoName + "(" + count + "/" + totalPatchCount + ")");
+            if (count > 0) {
+                System.out.print("|--" + ANSI_CYAN + repoName + "(" + count + "/" + totalPatchCount + ")");
+                System.out.println(ANSI_RESET);
 
-            System.out.println(ANSI_RESET);
-
-            // iterate through all the components in the repo to find patches under each component.
-            for (Iterator<String> compIterator = compNames.iterator(); compIterator.hasNext();) {
-                Component component = componentsWithPatchesMap.get(compIterator.next());
-                if (component != null && !component.getPatches().isEmpty()) {
-                    doprintPatchesByComponentName(component, version);
+                // iterate through all the components in the repo to find patches under each component.
+                for (Iterator<String> compIterator = compNames.iterator(); compIterator.hasNext();) {
+                    Component component = componentsWithPatchesMap.get(compIterator.next());
+                    if (component != null && !component.getPatches().isEmpty()) {
+                        doprintPatchesByComponentName(component, version);
+                    }
                 }
+                return true;
             }
         }
+
+        return false;
     }
 
     /**

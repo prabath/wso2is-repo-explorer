@@ -5727,6 +5727,7 @@
 ./WSO2-CARBON-UPDATE-4.4.0-4919/carbon.home/repository/components/plugins/org.wso2.carbon.identity.recovery_1.1.66.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4921/carbon.home/repository/components/plugins/org.wso2.carbon.apimgt.gateway_6.2.201.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4922/carbon.home/repository/components/plugins/org.wso2.carbon.identity.discovery_6.0.168.jar
+./WSO2-CARBON-UPDATE-4.4.0-4924/carbon.home/wso2/components/plugins/andes_3.2.19.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4927/carbon.home/wso2/components/plugins/synapse-nhttp-transport_2.1.7.wso2v80.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4928/carbon.home/wso2/components/plugins/synapse-core_2.1.7.wso2v111.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4929/carbon.home/repository/components/plugins/commons-fileupload_1.2.2.wso2v1.jar

@@ -43,5 +43,5 @@ do
   git add .
   git commit -m "adding last updated time for indexes" 
   git push 
-  sleep 600
+  sleep 14400
 done

@@ -38,6 +38,7 @@ do
   git push 
   echo "pushed to git"
   cd $REX_HOME/git/prabath.github.io
+  git pull
   message=$(echo Last indexed at $(date))
   sed -i '' "s/Last indexed at.*/$message/" index.md
   git add .

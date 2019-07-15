@@ -5740,3 +5740,12 @@
 ./WSO2-CARBON-UPDATE-4.4.0-4947/carbon.home/repository/components/plugins/org.wso2.carbon.apimgt.hostobjects_6.4.50.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4947/carbon.home/repository/components/plugins/org.wso2.carbon.apimgt.impl_6.4.50.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4948/carbon.home/wso2/components/plugins/synapse-nhttp-transport_2.1.7.wso2v48.jar
+./WSO2-CARBON-UPDATE-4.4.0-4951/carbon.home/repository/components/plugins/com.wso2.finance.open.banking.uk.consent.enforcement_1.3.0.jar
+./WSO2-CARBON-UPDATE-4.4.0-4953/carbon.home/repository/components/dropins/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.9.9.jar
+./WSO2-CARBON-UPDATE-4.4.0-4953/carbon.home/repository/components/dropins/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.9.9.jar
+./WSO2-CARBON-UPDATE-4.4.0-4953/carbon.home/repository/components/dropins/jackson-annotations-2.9.9.jar
+./WSO2-CARBON-UPDATE-4.4.0-4953/carbon.home/repository/components/dropins/jackson-core-2.9.9.jar
+./WSO2-CARBON-UPDATE-4.4.0-4953/carbon.home/repository/components/dropins/jackson-databind-2.9.9.jar
+./WSO2-CARBON-UPDATE-4.4.0-4953/carbon.home/repository/components/dropins/org.wso2.carbon.identity.application.authenticator.fido-5.1.14.jar
+./WSO2-CARBON-UPDATE-4.4.0-4953/carbon.home/repository/components/dropins/org.wso2.carbon.identity.application.authenticator.fido2-5.1.14.jar
+./WSO2-CARBON-UPDATE-4.4.0-4953/carbon.home/repository/components/dropins/yubico-webauthn-1.3.0.wso2v1.jar

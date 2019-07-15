@@ -16,7 +16,7 @@ cd ..
 rm -rf unzipped
 echo "removed unziped directory" 
 cd ../git/wso2is-repos
-./rex.sh update 
+bash rex.sh update 
 echo "git repos updated" 
 cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
 cd ../wso2is-repo-explorer

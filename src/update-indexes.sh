@@ -1,4 +1,4 @@
-while:
+while true
 do
   cd /Users/prabath/wso2is-repo-explorer/git/wso2is-repo-explorer
   touch /Users/prabath/wso2is-repo-explorer/update.index.log

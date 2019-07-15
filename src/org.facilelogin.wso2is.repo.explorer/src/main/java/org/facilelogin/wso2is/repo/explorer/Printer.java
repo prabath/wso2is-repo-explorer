@@ -81,8 +81,9 @@ public class Printer {
             Set<Patch> patchSet = patchesByProductVersionMap.get(version);
             if (patchSet != null && !patchSet.isEmpty()) {
                 for (Map.Entry<String, Set<String>> entry : componentNamesByRepoMap.entrySet()) {
-                    doPrintPatchesByRepo(entry.getKey(), version);
-                    System.out.println();
+                    if (doPrintPatchesByRepo(entry.getKey(), version)) {
+                        System.out.println();
+                    }
                 }
             } else {
                 System.out.println("No updates found for the given product version!");

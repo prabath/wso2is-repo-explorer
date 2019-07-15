@@ -33,5 +33,5 @@ do
   git commit -m "automatic updates to indexes" 
   git push 
   echo "pushed to git"
-  sleep 4h
+  sleep 600
 done

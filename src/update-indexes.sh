@@ -1,7 +1,11 @@
+if [ -z "$REX_HOME" ] ; then
+  echo "REX_HOME env variable not set!"
+  exit 1
+fi
+
 while true
 do
-  cd /Users/prabath/wso2is-repo-explorer/git/wso2is-repo-explorer
-  touch /Users/prabath/wso2is-repo-explorer/update.index.log
+  cd $REX_HOME/git/wso2is-repo-explorer
   git pull
   cd ../../svn/updates
   svn up
@@ -33,5 +37,11 @@ do
   git commit -m "automatic updates to indexes" 
   git push 
   echo "pushed to git"
+  cd $REX_HOME/git/prabath.github.io
+  message=$(echo Last indexed at $(date))
+  sed -i '' "s/Last indexed at.*/$message/" index.md
+  git add .
+  git commit -m "adding last updated time for indexes" 
+  git push 
   sleep 600
 done

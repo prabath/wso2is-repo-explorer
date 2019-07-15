@@ -28,6 +28,6 @@ version_new=$(($version_old + $increment))
 echo "$version_new" > ./src/indexes/version
 echo "version updated" 
 git add .
-git commit -m "automatic updates to indexes" >> /Users/prabath/wso2is-repo-explorer/update.index.log
-git push >> /Users/prabath/wso2is-repo-explorer/update.index.log
+git commit -m "automatic updates to indexes" 
+git push 
 echo "pushed to git" 

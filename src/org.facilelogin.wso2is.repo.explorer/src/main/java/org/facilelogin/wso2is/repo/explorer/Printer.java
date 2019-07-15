@@ -22,8 +22,9 @@ public class Printer {
     private Map<String, Set<String>> componentNamesByRepoMap;
     private Map<String, Component> componentsWithPatchesMap;
     private Map<String, Set<Patch>> patchesByProductVersionMap;
-    private Map<String, Long> totalPatchCountByRepo;
-    private Map<String, Long> totalPatchCountByComponent;
+    private Map<String, Long> totalPatchCountByRepoMap;
+    private Map<String, Long> totalPatchCountByComponentMap;
+    private Map<String, Set<String>> productsWithPatchesByRepoMap;
 
     Long highestPatchCountByRepo = 0L;
     Long highestPatchCountByComponent = 0L;
@@ -41,13 +42,14 @@ public class Printer {
         this.componentsWithPatchesMap = crawler.componentsWithPatchesMap;
         this.patchesByProductVersionMap = crawler.patchesByProductVersionMap;
         this.totalPatchCount = crawler.totalPatchCount;
-        this.totalPatchCountByRepo = crawler.totalPatchCountByRepo;
-        this.totalPatchCountByComponent = crawler.totalPatchCountByComponent;
+        this.totalPatchCountByRepoMap = crawler.totalPatchCountByRepoMap;
+        this.totalPatchCountByComponentMap = crawler.totalPatchCountByComponentMap;
         this.highestPatchCountByRepo = crawler.highestPatchCountByRepo;
         this.highestPatchCountByRepoName = crawler.highestPatchCountByRepoName;
         this.highestPatchCountByComponent = crawler.highestPatchCountByComponent;
         this.highestPatchCountByComponentName = crawler.highestPatchCountByComponentName;
         this.highestPatchCountByComponentRepoName = crawler.highestPatchCountByComponentRepoName;
+        this.productsWithPatchesByRepoMap = crawler.productsWithPatchesByRepoMap;
     }
 
     /**
@@ -98,7 +100,7 @@ public class Printer {
             // each component has one ore more patches.
 
             // to keep track of all the patches provided under this repo for the provided product version.
-            Long totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
+            Long totalPatchCountByRepo = this.totalPatchCountByRepoMap.get(comp.getRepoName());
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
             System.out.print("|--" + ANSI_CYAN + comp.getRepoName() + "(" + count + "/" + totalPatchCount + ")");
@@ -147,8 +149,8 @@ public class Printer {
         Map<String, Set<Patch>> productPatches = new HashMap<String, Set<Patch>>();
         int totalPatchCountByComponentByProducts = 0;
 
-        long totalPatchCountByComponent = this.totalPatchCountByComponent.get(comp.getComponentName());
-        long totalPatchCountByRepo = this.totalPatchCountByRepo.get(comp.getRepoName());
+        long totalPatchCountByComponent = this.totalPatchCountByComponentMap.get(comp.getComponentName());
+        long totalPatchCountByRepo = this.totalPatchCountByRepoMap.get(comp.getRepoName());
 
         for (Iterator<Patch> patchIterator = patches.iterator(); patchIterator.hasNext();) {
             Patch patch = patchIterator.next();
@@ -189,12 +191,15 @@ public class Printer {
                     String ver = entry.getKey();
                     if (ver.equalsIgnoreCase(version)) {
                         Set<Patch> pches = entry.getValue();
-                        System.out.print("|  |  |--" + ANSI_PURPLE + ver + " (" + pches.size() + "/"
-                                + totalPatchCountByComponentByProducts + ")");
-                        System.out.println(ANSI_RESET);
-                        for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
-                            Patch patch = iterator.next();
-                            System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + ")");
+                        if (pches.size() > 0) {
+                            System.out.print("|  |  |--" + ANSI_PURPLE + ver + " (" + pches.size() + "/"
+                                    + totalPatchCountByComponentByProducts + ")");
+                            System.out.println(ANSI_RESET);
+                            for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
+                                Patch patch = iterator.next();
+                                System.out
+                                        .println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + ")");
+                            }
                         }
                     }
                 }
@@ -202,12 +207,15 @@ public class Printer {
                 for (Map.Entry<String, Set<Patch>> entry : productPatches.entrySet()) {
                     String ver = entry.getKey();
                     Set<Patch> pches = entry.getValue();
-                    System.out.print("|  |  |--" + ANSI_PURPLE + ver + " (" + pches.size() + "/"
-                            + totalPatchCountByComponentByProducts + ")");
-                    System.out.println(ANSI_RESET);
-                    for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
-                        Patch patch = iterator.next();
-                        System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + ")");
+                    if (pches.size() > 0) {
+                        // no need to print if there are no patches.
+                        System.out.print("|  |  |--" + ANSI_PURPLE + ver + " (" + pches.size() + "/"
+                                + totalPatchCountByComponentByProducts + ")");
+                        System.out.println(ANSI_RESET);
+                        for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
+                            Patch patch = iterator.next();
+                            System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + ")");
+                        }
                     }
                 }
 
@@ -260,8 +268,15 @@ public class Printer {
             // now we have a valid git repo - and we know all the components under that.
 
             // to keep track of all the patches provided under this repo for the provided product version.
-            Long totalPatchCountByRepo = this.totalPatchCountByRepo.get(repoName);
+            Long totalPatchCountByRepo = this.totalPatchCountByRepoMap.get(repoName);
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
+
+            if (version != null) {
+                Set<String> productsWithPatches = productsWithPatchesByRepoMap.get(repoName);
+                if (productsWithPatches == null || !productsWithPatches.contains(version)) {
+                    return false;
+                }
+            }
 
             if (count > 0) {
                 System.out.print("|--" + ANSI_CYAN + repoName + "(" + count + "/" + totalPatchCount + ")");

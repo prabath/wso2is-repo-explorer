@@ -38,8 +38,10 @@ public class Crawler {
     protected Map<String, Set<String>> componentNamesByRepoMap = new HashMap<String, Set<String>>();
     protected Map<String, Component> componentsWithPatchesMap = new HashMap<String, Component>();
     protected Map<String, Set<Patch>> patchesByProductVersionMap = new HashMap<String, Set<Patch>>();
-    protected Map<String, Long> totalPatchCountByRepo = new HashMap<String, Long>();
-    protected Map<String, Long> totalPatchCountByComponent = new HashMap<String, Long>();
+    protected Map<String, Long> totalPatchCountByRepoMap = new HashMap<String, Long>();
+    protected Map<String, Long> totalPatchCountByComponentMap = new HashMap<String, Long>();
+    protected Map<String, Set<String>> productsWithPatchesByRepoMap = new HashMap<String, Set<String>>();
+
     protected int totalPatchCount = 0;
 
     private Map<String, Set<String>> productVersionsByJarMap = new HashMap<String, Set<String>>();
@@ -229,26 +231,28 @@ public class Crawler {
                                     System.out.println("TEST");
                                 }
 
-                                if (totalPatchCountByComponent.containsKey(compName)) {
-                                    totalPatchCountByComponent.put(compName,
-                                            totalPatchCountByComponent.get(compName) + 1);
+                                // keeps track total number of patches by component name.
+                                if (totalPatchCountByComponentMap.containsKey(compName)) {
+                                    totalPatchCountByComponentMap.put(compName,
+                                            totalPatchCountByComponentMap.get(compName) + 1);
                                 } else {
-                                    totalPatchCountByComponent.put(compName, 1L);
+                                    totalPatchCountByComponentMap.put(compName, 1L);
                                 }
 
-                                if (totalPatchCountByRepo.containsKey(repoName)) {
-                                    totalPatchCountByRepo.put(repoName, totalPatchCountByRepo.get(repoName) + 1);
+                                // keeps track total number of patches by repo name.
+                                if (totalPatchCountByRepoMap.containsKey(repoName)) {
+                                    totalPatchCountByRepoMap.put(repoName, totalPatchCountByRepoMap.get(repoName) + 1);
                                 } else {
-                                    totalPatchCountByRepo.put(repoName, 1L);
+                                    totalPatchCountByRepoMap.put(repoName, 1L);
                                 }
 
-                                if (totalPatchCountByRepo.get(repoName) > highestPatchCountByRepo) {
-                                    highestPatchCountByRepo = totalPatchCountByRepo.get(repoName);
+                                if (totalPatchCountByRepoMap.get(repoName) > highestPatchCountByRepo) {
+                                    highestPatchCountByRepo = totalPatchCountByRepoMap.get(repoName);
                                     highestPatchCountByRepoName = repoName;
                                 }
 
-                                if (totalPatchCountByComponent.get(compName) > highestPatchCountByComponent) {
-                                    highestPatchCountByComponent = totalPatchCountByComponent.get(compName);
+                                if (totalPatchCountByComponentMap.get(compName) > highestPatchCountByComponent) {
+                                    highestPatchCountByComponent = totalPatchCountByComponentMap.get(compName);
                                     highestPatchCountByComponentName = compName;
                                     highestPatchCountByComponentRepoName = repoName;
                                 }
@@ -262,6 +266,14 @@ public class Crawler {
                                             Set<Patch> patchSet = new HashSet<Patch>();
                                             patchSet.add(patch);
                                             patchesByProductVersionMap.put(prodVersion, patchSet);
+                                        }
+
+                                        if (productsWithPatchesByRepoMap.containsKey(repoName)) {
+                                            productsWithPatchesByRepoMap.get(repoName).add(prodVersion);
+                                        } else {
+                                            Set<String> prodSet = new HashSet<String>();
+                                            prodSet.add(prodVersion);
+                                            productsWithPatchesByRepoMap.put(repoName, prodSet);
                                         }
                                     }
                                 }

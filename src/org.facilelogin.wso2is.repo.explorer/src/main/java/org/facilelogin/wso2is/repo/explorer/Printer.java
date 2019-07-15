@@ -168,9 +168,17 @@ public class Printer {
         }
 
         if (totalPatchCountByComponent > 0) {
-            System.out.print("|  |--" + ANSI_GREEN + comp.getComponentName() + " (" + totalPatchCountByComponent + "/"
-                    + totalPatchCountByRepo + ")");
-            System.out.println(ANSI_RESET);
+            if (version != null) {
+                if (productPatches.get(version) != null && !productPatches.get(version).isEmpty()) {
+                    System.out.print("|  |--" + ANSI_GREEN + comp.getComponentName() + " (" + totalPatchCountByComponent
+                            + "/" + totalPatchCountByRepo + ")");
+                    System.out.println(ANSI_RESET);
+                }
+            } else {
+                System.out.print("|  |--" + ANSI_GREEN + comp.getComponentName() + " (" + totalPatchCountByComponent
+                        + "/" + totalPatchCountByRepo + ")");
+                System.out.println(ANSI_RESET);
+            }
         }
 
         if (productPatches != null && !productPatches.isEmpty()) {

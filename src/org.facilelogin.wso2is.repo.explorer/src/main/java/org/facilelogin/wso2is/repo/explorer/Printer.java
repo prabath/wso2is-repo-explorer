@@ -16,7 +16,7 @@ public class Printer {
     private static final String ANSI_GREEN = "\u001B[32m";
     private static final String ANSI_CYAN = "\u001B[36m";
     private static final String ANSI_PURPLE = "\u001B[35m";
-    //private static final String ANSI_BLUE = "\u001B[34m";
+    // private static final String ANSI_BLUE = "\u001B[34m";
     private static final String ANSI_YELLOW = "\u001B[33m";
 
     private Map<String, Set<String>> componentNamesByRepoMap;
@@ -60,10 +60,10 @@ public class Printer {
             System.out.println();
         }
 
-        System.out.println(ANSI_YELLOW + "Repository with the most number of patches (since IS 5.2.0): "
+        System.out.println(ANSI_YELLOW + "Repository with the most number of updates (since IS 5.2.0): "
                 + highestPatchCountByRepoName + " (" + highestPatchCountByRepo + ")");
         System.out
-                .print("Component with the most number of patches (since IS 5.2.0): " + highestPatchCountByComponentName
+                .print("Component with the most number of updates (since IS 5.2.0): " + highestPatchCountByComponentName
                         + " (" + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
         System.out.println(ANSI_RESET);
 
@@ -85,7 +85,7 @@ public class Printer {
                     System.out.println();
                 }
             } else {
-                System.out.println("No patches found for the given product version!");
+                System.out.println("No updates found for the given product version!");
             }
         }
     }
@@ -167,9 +167,11 @@ public class Printer {
             }
         }
 
-        System.out.print("|  |--" + ANSI_GREEN + comp.getComponentName() + " (" + totalPatchCountByComponent + "/"
-                + totalPatchCountByRepo + ")");
-        System.out.println(ANSI_RESET);
+        if (totalPatchCountByComponent > 0) {
+            System.out.print("|  |--" + ANSI_GREEN + comp.getComponentName() + " (" + totalPatchCountByComponent + "/"
+                    + totalPatchCountByRepo + ")");
+            System.out.println(ANSI_RESET);
+        }
 
         if (productPatches != null && !productPatches.isEmpty()) {
             if (version != null) {

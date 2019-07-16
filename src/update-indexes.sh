@@ -13,7 +13,11 @@ do
   mkdir -p ../unzipped 
   for file in ./**/*.zip
   do
-      unzip -o -d "../unzipped" "$file"
+      file_name=$(echo $file | sed 's/.*\///' | sed -e 's|.zip||g')
+      if [ ! -d "../unzipped/$file_name" ]
+	    then
+        unzip -o -d "../unzipped" "$file"
+      fi
   done
   echo " files unzipped successfully" 
   cd ../unzipped

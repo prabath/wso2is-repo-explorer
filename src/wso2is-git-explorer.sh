@@ -15,7 +15,7 @@ cd /
 mkdir -p /identity-repos/.repodata
 
 ## clone, list, update, update-index functions are not availble for the offline mode.
-if ["$online_mode" = true]
+if [ "$online_mode" = true ]
 then
 	## carries the latest version of the rex.sh.
 	file="/identity-repos/.repodata/version.rex"

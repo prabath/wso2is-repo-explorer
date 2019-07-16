@@ -3,7 +3,7 @@
 file=".repodata/rex.5"
 if [ -f "$file" ]
 then
-    rm -rf .repodata/rex.4
+    rm -rf .repodata/rex.5
 fi
 
 file=".repodata/image.update"

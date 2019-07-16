@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file=".repodata/rex.4"
+file=".repodata/rex.5"
 if [ -f "$file" ]
 then
     rm -rf .repodata/rex.4

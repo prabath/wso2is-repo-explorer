@@ -66,17 +66,17 @@ public class Crawler {
 
         addRepo(WSO2_DIR, "https://github.com/wso2/");
         addRepo(WSO2_EXT_DIR, "https://github.com/wso2-extensions/");
-        addProduct(IS460, "IS_4.6.0");
-        addProduct(IS500, "IS_5.0.0");
-        addProduct(IS510, "IS_5.1.0");
-        addProduct(IS520, "IS_5.2.0");
-        addProduct(IS530, "IS_5.3.0");
-        addProduct(IS540, "IS_5.4.0");
-        addProduct(IS541, "IS_5.4.1");
-        addProduct(IS550, "IS_5.5.0");
-        addProduct(IS560, "IS_5.6.0");
-        addProduct(IS570, "IS_5.7.0");
-        addProduct(IS580, "IS_5.8.0");
+        addProduct(IS460, RepoExplorer.IS_460);
+        addProduct(IS500, RepoExplorer.IS_500);
+        addProduct(IS510, RepoExplorer.IS_510);
+        addProduct(IS520, RepoExplorer.IS_520);
+        addProduct(IS530, RepoExplorer.IS_530);
+        addProduct(IS540, RepoExplorer.IS_540);
+        addProduct(IS541, RepoExplorer.IS_541);
+        addProduct(IS550, RepoExplorer.IS_550);
+        addProduct(IS560, RepoExplorer.IS_560);
+        addProduct(IS570, RepoExplorer.IS_570);
+        addProduct(IS580, RepoExplorer.IS_580);
         addPatches(PATCHES);
     }
 
@@ -226,11 +226,6 @@ public class Crawler {
                                 comp.addPatch(patch);
                                 String repoName = comp.getRepoName();
 
-                                if ("org.wso2.carbon.identity.application.authentication.framework".equals(compName)
-                                        && !"https://github.com/wso2/carbon-identity-framework".equals(repoName)) {
-                                    System.out.println("TEST");
-                                }
-
                                 // keeps track total number of patches by component name.
                                 if (totalPatchCountByComponentMap.containsKey(compName)) {
                                     totalPatchCountByComponentMap.put(compName,
@@ -246,11 +241,13 @@ public class Crawler {
                                     totalPatchCountByRepoMap.put(repoName, 1L);
                                 }
 
+                                // find the repo with the highest patch count and record the repo name.
                                 if (totalPatchCountByRepoMap.get(repoName) > highestPatchCountByRepo) {
                                     highestPatchCountByRepo = totalPatchCountByRepoMap.get(repoName);
                                     highestPatchCountByRepoName = repoName;
                                 }
 
+                                // find the component with the highest patch count and record the component name.
                                 if (totalPatchCountByComponentMap.get(compName) > highestPatchCountByComponent) {
                                     highestPatchCountByComponent = totalPatchCountByComponentMap.get(compName);
                                     highestPatchCountByComponentName = compName;
@@ -259,6 +256,8 @@ public class Crawler {
 
                                 if (productVersions != null && productVersions.size() > 0) {
                                     for (Iterator<String> iterator = productVersions.iterator(); iterator.hasNext();) {
+                                        // a give component can have multiple patches by different product versions.
+                                        // record the patches by the product version.
                                         String prodVersion = (String) iterator.next();
                                         if (patchesByProductVersionMap.containsKey(prodVersion)) {
                                             patchesByProductVersionMap.get(prodVersion).add(patch);
@@ -268,6 +267,8 @@ public class Crawler {
                                             patchesByProductVersionMap.put(prodVersion, patchSet);
                                         }
 
+                                        // record product versions with at least on patch, against the repo name.
+                                        // we need these stats for the presentation.
                                         if (productsWithPatchesByRepoMap.containsKey(repoName)) {
                                             productsWithPatchesByRepoMap.get(repoName).add(prodVersion);
                                         } else {

@@ -9,7 +9,8 @@ do
   git pull
   cd ../../svn/updates
   svn up
-  echo "svn updated successfully" 
+  echo "svn updated successfully"
+  mkdir -p ../unzipped 
   for file in ./**/*.zip
   do
       unzip -o -d "../unzipped" "$file"

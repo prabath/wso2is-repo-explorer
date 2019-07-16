@@ -118,24 +118,24 @@ public class Printer {
 
     private void printProductPatchCount(Map<String, Set<Patch>> productPatches) {
         System.out.println(ANSI_YELLOW);
-        System.out.print(
-                "IS_5.1.0: " + (productPatches.containsKey("IS_5.1.0") ? productPatches.get("IS_5.1.0").size() : "0"));
-        System.out.print(" | IS_5.2.0: "
-                + (productPatches.containsKey("IS_5.2.0") ? productPatches.get("IS_5.2.0").size() : "0"));
-        System.out.print(" | IS_5.3.0: "
-                + (productPatches.containsKey("IS_5.3.0") ? productPatches.get("IS_5.3.0").size() : "0"));
-        System.out.print(" | IS_5.4.0: "
-                + (productPatches.containsKey("IS_5.4.0") ? productPatches.get("IS_5.4.0").size() : "0"));
-        System.out.print(" | IS_5.4.1: "
-                + (productPatches.containsKey("IS_5.4.1") ? productPatches.get("IS_5.4.1").size() : "0"));
-        System.out.print(" | IS_5.5.0: "
-                + (productPatches.containsKey("IS_5.5.0") ? productPatches.get("IS_5.5.0").size() : "0"));
-        System.out.print(" | IS_5.6.0: "
-                + (productPatches.containsKey("IS_5.6.0") ? productPatches.get("IS_5.6.0").size() : "0"));
-        System.out.print(" | IS_5.7.0: "
-                + (productPatches.containsKey("IS_5.7.0") ? productPatches.get("IS_5.7.0").size() : "0"));
-        System.out.println(" | IS_5.8.0: "
-                + (productPatches.containsKey("IS_5.8.0") ? productPatches.get("IS_5.8.0").size() : "0"));
+        System.out.print(RepoExplorer.IS_510 + ": " + (productPatches.containsKey(RepoExplorer.IS_510)
+                ? productPatches.get(RepoExplorer.IS_510).size() : "0"));
+        System.out.print(" | " + RepoExplorer.IS_520 + ": " + (productPatches.containsKey(RepoExplorer.IS_520)
+                ? productPatches.get(RepoExplorer.IS_520).size() : "0"));
+        System.out.print(" | " + RepoExplorer.IS_530 + ": " + (productPatches.containsKey(RepoExplorer.IS_530)
+                ? productPatches.get(RepoExplorer.IS_530).size() : "0"));
+        System.out.print(" | " + RepoExplorer.IS_540 + ": " + (productPatches.containsKey(RepoExplorer.IS_540)
+                ? productPatches.get(RepoExplorer.IS_540).size() : "0"));
+        System.out.print(" | " + RepoExplorer.IS_541 + ": " + (productPatches.containsKey(RepoExplorer.IS_541)
+                ? productPatches.get(RepoExplorer.IS_541).size() : "0"));
+        System.out.print(" | " + RepoExplorer.IS_550 + ": " + (productPatches.containsKey(RepoExplorer.IS_550)
+                ? productPatches.get(RepoExplorer.IS_550).size() : "0"));
+        System.out.print(" | " + RepoExplorer.IS_560 + ": " + (productPatches.containsKey(RepoExplorer.IS_560)
+                ? productPatches.get(RepoExplorer.IS_560).size() : "0"));
+        System.out.print(" | " + RepoExplorer.IS_570 + ": " + (productPatches.containsKey(RepoExplorer.IS_570)
+                ? productPatches.get(RepoExplorer.IS_570).size() : "0"));
+        System.out.println(" | " + RepoExplorer.IS_580 + ": " + (productPatches.containsKey(RepoExplorer.IS_580)
+                ? productPatches.get(RepoExplorer.IS_580).size() : "0"));
         System.out.println(ANSI_RESET);
     }
 

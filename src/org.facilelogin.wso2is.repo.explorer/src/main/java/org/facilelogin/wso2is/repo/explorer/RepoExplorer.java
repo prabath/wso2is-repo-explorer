@@ -3,6 +3,19 @@ package org.facilelogin.wso2is.repo.explorer;
 import java.io.IOException;
 
 public class RepoExplorer {
+    
+    protected static final String IS_580 = "IS_5.8.0";
+    protected static final String IS_570 = "IS_5.7.0";
+    protected static final String IS_560 = "IS_5.6.0";
+    protected static final String IS_550 = "IS_5.50.";
+    protected static final String IS_541 = "IS_5.4.1";
+    protected static final String IS_540 = "IS_5.4.0";
+    protected static final String IS_530 = "IS_5.3.0";
+    protected static final String IS_520 = "IS_5.2.0";
+    protected static final String IS_510 = "IS_5.1.0";
+    protected static final String IS_500 = "IS_5.0.0";
+    protected static final String IS_460 = "IS_4.6.0";
+    
 	/**
 	 * 
 	 * @param args

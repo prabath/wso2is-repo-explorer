@@ -21,8 +21,29 @@ do
   done
   echo " files unzipped successfully" 
   cd ../unzipped
-  find .  -type f ! -name '*.jar' -delete
+  find .  -type f ! -name '*.jar' ! -name '*.war' -delete
   tree -if | grep ".jar" > ../../git/wso2is-repo-explorer/src/indexes/updates
+
+  mkdir -p ../jars 
+  for file in ./**/*.jar
+  do 
+      dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p'
+      if [ ! -d "../jars/$dir" ]
+	    then
+  	    unzip -o -d "../jars/$dir" "$file"
+      fi
+  done
+
+  mkdir -p ../wars 
+  for file in ./**/*.war
+  do 
+      dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p'
+      if [ ! -d "../wars/$dir" ]
+	    then
+  	    unzip -o -d "../wars/$dir" "$file"
+      fi
+  done
+
   cd ..
   #rm -rf unzipped
   #echo "removed unziped directory" 

@@ -27,7 +27,7 @@ do
   mkdir -p ../jars 
   for file in ./**/*.jar
   do 
-      dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p'
+      dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../jars/$dir" ]
 	    then
   	    unzip -o -d "../jars/$dir" "$file"
@@ -37,7 +37,7 @@ do
   mkdir -p ../wars 
   for file in ./**/*.war
   do 
-      dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p'
+      dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../wars/$dir" ]
 	    then
   	    unzip -o -d "../wars/$dir" "$file"

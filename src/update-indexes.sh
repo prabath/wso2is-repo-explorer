@@ -21,7 +21,7 @@ do
       fi
   done
 
-  echo "files unzipped successfully" 
+  echo "patch files unzipped successfully" 
 
   cd ../unzipped
   find .  -type f ! -name '*.jar' ! -name '*.war' -delete
@@ -34,10 +34,12 @@ do
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../jars/$dir" ]
       then
-            echo $file
+        echo $file
   	    unzip -o -d "../jars/$dir" "$file"
       fi
   done
+
+  echo "jar files unzipped successfully" 
 
   mkdir -p ../wars 
   war_files=$(find . -name "*.war")
@@ -46,10 +48,12 @@ do
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../wars/$dir" ]
       then
-            echo $file
+        echo $file
   	    unzip -o -d "../wars/$dir" "$file"
       fi
   done
+
+  echo "war files unzipped successfully" 
 
   cd ../jars
   find .  -type f ! -name 'pom.properties' -delete

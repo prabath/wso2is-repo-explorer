@@ -27,6 +27,7 @@ do
   mkdir -p ../jars 
   for file in ./**/*.jar
   do 
+      echo $file
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../jars/$dir" ]
 	    then

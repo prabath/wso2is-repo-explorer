@@ -15,17 +15,21 @@ do
   do
       file_name=$(echo $file | sed 's/.*\///' | sed -e 's|.zip||g')
       if [ ! -d "../unzipped/$file_name" ]
-	    then
+      then
+        echo $file
         unzip -o -d "../unzipped" "$file"
       fi
   done
-  echo " files unzipped successfully" 
+
+  echo "files unzipped successfully" 
+
   cd ../unzipped
   find .  -type f ! -name '*.jar' ! -name '*.war' -delete
   tree -if | grep ".jar" > ../../git/wso2is-repo-explorer/src/indexes/updates
 
   mkdir -p ../jars 
-  for file in ./**/*.jar
+  jar_files=$(find . -name "*.jar")
+  for file in $jar_files
   do 
       echo $file
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
@@ -36,7 +40,8 @@ do
   done
 
   mkdir -p ../wars 
-  for file in ./**/*.war
+  war_files=$(find . -name "*.war")
+  for file in $war_files
   do 
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../wars/$dir" ]
@@ -45,11 +50,14 @@ do
       fi
   done
 
-  cd ..
-  #rm -rf unzipped
-  #echo "removed unziped directory" 
-  cd ../git/wso2is-repos
-  #./rex.sh update 
+  cd ../jars
+  find .  -type f ! -name 'pom.xml' -delete
+
+  cd ../wars 
+  find .  -type f ! -name 'pom.xml' -delete
+
+  cd ../../git/wso2is-repos
+  ./rex.sh update 
   echo "git repos updated" 
   cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
   cd ../wso2is-repo-explorer

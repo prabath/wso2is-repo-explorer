@@ -43,6 +43,7 @@ do
   war_files=$(find . -name "*.war")
   for file in $war_files
   do 
+      echo $file
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../wars/$dir" ]
       then

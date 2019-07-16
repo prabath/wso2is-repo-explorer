@@ -30,7 +30,7 @@ do
       echo $file
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../jars/$dir" ]
-	    then
+      then
   	    unzip -o -d "../jars/$dir" "$file"
       fi
   done
@@ -40,7 +40,7 @@ do
   do 
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../wars/$dir" ]
-	    then
+      then
   	    unzip -o -d "../wars/$dir" "$file"
       fi
   done
@@ -49,7 +49,7 @@ do
   #rm -rf unzipped
   #echo "removed unziped directory" 
   cd ../git/wso2is-repos
-  ./rex.sh update 
+  #./rex.sh update 
   echo "git repos updated" 
   cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
   cd ../wso2is-repo-explorer

@@ -54,8 +54,8 @@ do
   cd ../jars
   find .  -type f ! -name 'pom.properties' -delete
 
-  #cd ../wars 
-  #find .  -type f ! -name 'pom.properties' -delete
+  cd ../wars 
+  find .  -type f ! -name 'pom.properties' -delete
 
   cd ../../git/wso2is-repos
   ./rex.sh update 

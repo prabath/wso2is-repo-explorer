@@ -20,8 +20,8 @@ do
   find .  -type f ! -name '*.jar' -delete
   tree -if | grep ".jar" > ../../git/wso2is-repo-explorer/src/indexes/updates
   cd ..
-  rm -rf unzipped
-  echo "removed unziped directory" 
+  #rm -rf unzipped
+  #echo "removed unziped directory" 
   cd ../git/wso2is-repos
   ./rex.sh update 
   echo "git repos updated" 

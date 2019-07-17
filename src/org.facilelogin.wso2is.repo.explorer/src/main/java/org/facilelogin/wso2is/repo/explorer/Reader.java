@@ -17,7 +17,7 @@ import org.facilelogin.wso2is.repo.explorer.bean.*;
  * @author prabathsiriwardana
  *
  */
-public class Crawler {
+public class Reader {
 
     private static final String WSO2_DIR = "/identity-repos/.repodata/wso2-components";
     private static final String WSO2_EXT_DIR = "/identity-repos/.repodata/wso2-extensions-components";

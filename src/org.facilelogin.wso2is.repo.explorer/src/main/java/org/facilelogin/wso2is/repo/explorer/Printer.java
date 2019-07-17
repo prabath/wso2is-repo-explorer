@@ -37,7 +37,7 @@ public class Printer {
 
     int totalPatchCount = 0;
 
-    public Printer(Crawler crawler) {
+    public Printer(Reader crawler) {
         this.componentNamesByRepoMap = crawler.componentNamesByRepoMap;
         this.componentsWithPatchesMap = crawler.componentsWithPatchesMap;
         this.patchesByProductVersionMap = crawler.patchesByProductVersionMap;

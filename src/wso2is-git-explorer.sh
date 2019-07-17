@@ -152,9 +152,9 @@ then
 		for  n in 1 2 3 4 5
 		do
 		## get the repo list from the wso2 git org.
-		curl -s -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel\|charon\|carbon-secvault\|carbon-commons\|balana" >>/y.txt
+		curl -s -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel\|charon\|carbon-secvault\|carbon-commons\|balana\|samples-is\|consent\|multitenancy" >>/y.txt
 		## get the repo list from the wso2-extensions git org.
-		curl -s -u $gituser:$gitpassword  https://api.github.com/orgs/wso2-extensions/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)' | grep "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel" >>/z.txt
+		curl -s -u $gituser:$gitpassword  https://api.github.com/orgs/wso2-extensions/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)' | grep "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel\|charon\|carbon-secvault\|carbon-commons\|balana\|samples-is\|consent\|multitenancy" >>/z.txt
 		clear
 		done
 	fi

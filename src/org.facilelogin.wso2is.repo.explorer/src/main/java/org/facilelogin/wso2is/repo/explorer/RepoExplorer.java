@@ -24,7 +24,7 @@ public class RepoExplorer {
 	public static void main(String[] args) throws IOException {
 
 		// populate all the data.
-		Crawler crawler = new Crawler();
+		Reader crawler = new Reader();
 		crawler.populateData();
 
 		Printer printer = new Printer(crawler);

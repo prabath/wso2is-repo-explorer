@@ -144,6 +144,8 @@ then
 		echo ""
 	fi
 
+	search_string=$(cat /repo-search_string)
+
 	## before a clone or an update - first we build a list of all avaiable repos.
 	if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "update" ]
 	then
@@ -152,9 +154,9 @@ then
 		for  n in 1 2 3 4 5
 		do
 		## get the repo list from the wso2 git org.
-		curl -s -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep  "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel\|charon\|carbon-secvault\|carbon-commons\|balana\|samples-is\|consent\|multitenancy" >>/y.txt
+		curl -s -u $gituser:$gitpassword  https://api.github.com/orgs/wso2/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)'| grep  "$search_string" >>/y.txt
 		## get the repo list from the wso2-extensions git org.
-		curl -s -u $gituser:$gitpassword  https://api.github.com/orgs/wso2-extensions/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)' | grep "security\|identity\|auth\|provisioning\|user|\userstore\|saml\|oauth\|charon\|directory\|product-is\|carbon-kernel\|charon\|carbon-secvault\|carbon-commons\|balana\|samples-is\|consent\|multitenancy" >>/z.txt
+		curl -s -u $gituser:$gitpassword  https://api.github.com/orgs/wso2-extensions/repos\?type\=all\&\page\=$n\&per_page\=100 | jq --raw-output '.[] | (.clone_url)' | grep "$search_string" >>/z.txt
 		clear
 		done
 	fi

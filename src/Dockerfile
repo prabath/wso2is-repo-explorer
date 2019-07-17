@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk-alpine
+USER 9000
 
 RUN  mkdir /identity-repos
 COPY run.sh /run.sh

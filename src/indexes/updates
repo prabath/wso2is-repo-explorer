@@ -5709,6 +5709,10 @@
 ./WSO2-CARBON-UPDATE-4.4.0-4900/carbon.home/repository/components/plugins/org.wso2.carbon.apimgt.impl_6.0.4.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4903/carbon.home/repository/components/plugins/org.wso2.carbon.identity.application.authentication.framework_5.12.153.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4903/carbon.home/repository/components/plugins/org.wso2.carbon.identity.sso.saml_5.4.22.jar
+./WSO2-CARBON-UPDATE-4.4.0-4904/carbon.home/wso2/components/plugins/org.wso2.carbon.apimgt.handlers_3.1.51.jar
+./WSO2-CARBON-UPDATE-4.4.0-4904/carbon.home/wso2/components/plugins/org.wso2.carbon.certificate.mgt.core_3.1.51.jar
+./WSO2-CARBON-UPDATE-4.4.0-4904/carbon.home/wso2/components/plugins/org.wso2.carbon.device.mgt.analytics.data.publisher_3.1.51.jar
+./WSO2-CARBON-UPDATE-4.4.0-4904/carbon.home/wso2/components/plugins/org.wso2.carbon.device.mgt.core_3.1.51.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4905/carbon.home/wso2/analytics/lib/siddhi-store-rdbms-5.1.6.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4906/carbon.home/repository/components/dropins/com.wso2.finance.open.banking.mtlscert.validator-1.2.0.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4907/carbon.home/repository/components/dropins/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.9.9.jar

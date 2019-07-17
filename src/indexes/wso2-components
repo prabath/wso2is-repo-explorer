@@ -527,6 +527,7 @@
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.common
 ./identity-apps
 ./identity-apps/apps
+./identity-apps/apps/login-portal
 ./identity-apps/apps/user-portal
 ./identity-apps/configs
 ./identity-apps/modules
@@ -1398,6 +1399,8 @@
 ./security-tools/internal/scan-manager/scanners
 ./security-tools/internal/scan-manager/scanners/common
 ./security-tools/internal/scan-manager/scanners/loader
+./security-tools/internal/scan-manager/scanners/qualys
+./security-tools/internal/scan-manager/scanners/qualys/bin
 ./security-tools/internal/scan-manager/scanners/veracode
 ./security-tools/internal/scan-manager/scanners/veracode/bin
 ./security-tools/internal/scan-manager/webapp
@@ -1523,4 +1526,4 @@
 ./ux-product-is/Wireframes/ver 03
 ./ux-product-is/Wireframes/ver 04
 
-8953 directories
+8991 directories

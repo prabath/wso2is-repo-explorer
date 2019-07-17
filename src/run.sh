@@ -144,7 +144,7 @@ then
 		echo ""
 	fi
 
-	search_string=$(cat /repo-search_string)
+	search_string=$(cat /repo-search-string)
 
 	## before a clone or an update - first we build a list of all avaiable repos.
 	if [ "$1" == "" ] ||[ "$1" == "clone" ] ||[ "$1" == "list" ] || [ "$1" == "update" ]

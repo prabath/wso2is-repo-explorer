@@ -43,6 +43,4 @@ RUN apk update \
     && apk add jq \
     && rm -rf /var/cache/apk/*
 
-USER 9000
-
 ENTRYPOINT ["bash" , "run.sh"]

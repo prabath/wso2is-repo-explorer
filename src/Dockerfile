@@ -1,5 +1,4 @@
 FROM openjdk:8-jdk-alpine
-USER 9000
 
 RUN  mkdir /identity-repos
 COPY run.sh /run.sh
@@ -15,6 +14,8 @@ COPY indexes/is550 /is550
 COPY indexes/is560 /is560
 COPY indexes/is570 /is570
 COPY indexes/is580 /is580
+
+USER 9000
 
 COPY org.facilelogin.wso2is.repo.explorer/target/org.facilelogin.wso2is.repo.explorer-1.0.0.jar /org.facilelogin.wso2is.repo.explorer-1.0.0.jar
 

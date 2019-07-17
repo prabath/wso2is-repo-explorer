@@ -5731,6 +5731,7 @@
 ./WSO2-CARBON-UPDATE-4.4.0-4919/carbon.home/repository/components/plugins/org.wso2.carbon.identity.claim.metadata.mgt_5.12.387.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4919/carbon.home/repository/components/plugins/org.wso2.carbon.identity.handler.event.account.lock_1.1.15.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4919/carbon.home/repository/components/plugins/org.wso2.carbon.identity.recovery_1.1.66.jar
+./WSO2-CARBON-UPDATE-4.4.0-4920/carbon.home/repository/components/plugins/org.wso2.carbon.identity.sso.saml_5.1.2.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4921/carbon.home/repository/components/plugins/org.wso2.carbon.apimgt.gateway_6.2.201.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4922/carbon.home/repository/components/plugins/org.wso2.carbon.identity.discovery_6.0.168.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4924/carbon.home/wso2/components/plugins/andes_3.2.19.jar

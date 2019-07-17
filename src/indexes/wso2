@@ -18949,6 +18949,8 @@
 ./product-is/modules/integration/tests-integration/tests-backend/src/test/resources/artifacts/IS/identityMgt/identity-mgt-account-lock-enabled.properties
 ./product-is/modules/integration/tests-integration/tests-backend/src/test/resources/artifacts/IS/identityMgt/identity-mgt-default.properties
 ./product-is/modules/integration/tests-integration/tests-backend/src/test/resources/artifacts/IS/identityMgt/identity-mgt-enabled.properties
+./product-is/modules/integration/tests-integration/tests-backend/src/test/resources/artifacts/IS/identityMgt/identity-permissions.xml
+./product-is/modules/integration/tests-integration/tests-backend/src/test/resources/artifacts/IS/identityMgt/identity-permissions.xml.j2
 ./product-is/modules/integration/tests-integration/tests-backend/src/test/resources/artifacts/IS/identityMgt/identity-ssoservice-entityid-changed.xml
 ./product-is/modules/integration/tests-integration/tests-backend/src/test/resources/artifacts/IS/identityMgt/user-mgt-default.xml
 ./product-is/modules/integration/tests-integration/tests-backend/src/test/resources/artifacts/IS/identityMgt/user_mgt_regex_changed.toml
@@ -26269,4 +26271,4 @@
 ./ux-product-is/gh-deploy.bat
 ./ux-product-is/gh-deploy.sh
 
-8953 directories, 17316 files
+8953 directories, 17318 files

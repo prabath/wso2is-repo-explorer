@@ -5625,6 +5625,7 @@
 ./WSO2-CARBON-UPDATE-4.4.0-4821/carbon.home/repository/components/plugins/org.wso2.carbon.identity.application.mgt_5.12.387.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4822/carbon.home/repository/components/plugins/synapse-core_2.1.7.wso2v80.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4823/carbon.home/repository/components/plugins/org.wso2.carbon.identity.application.authentication.framework_5.12.153.jar
+./WSO2-CARBON-UPDATE-4.4.0-4824/carbon.home/repository/components/plugins/org.wso2.carbon.identity.oauth_6.0.53.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4826/carbon.home/repository/components/plugins/org.wso2.carbon.identity.oauth_6.0.168.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4827/carbon.home/repository/components/plugins/org.wso2.carbon.ui_4.4.35.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4828/carbon.home/repository/components/plugins/com.wso2.finance.open.banking.berlin.consent.enforcement_1.2.0.jar

@@ -5692,6 +5692,7 @@
 ./WSO2-CARBON-UPDATE-4.4.0-4884/carbon.home/repository/components/plugins/synapse-core_2.1.7.wso2v7.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4886/carbon.home/repository/components/plugins/org.wso2.carbon.identity.application.authentication.framework_5.12.387.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4886/carbon.home/repository/components/plugins/org.wso2.carbon.identity.sso.saml_5.4.43.jar
+./WSO2-CARBON-UPDATE-4.4.0-4887/carbon.home/repository/components/plugins/com.wso2.finance.open.banking.uk.consent.mgt_1.3.0.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4888/carbon.home/repository/components/plugins/axis2-transport-jms_1.1.0.wso2v17.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4889/carbon.home/repository/components/plugins/org.wso2.carbon.core_4.4.35.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4890/carbon.home/repository/components/plugins/com.wso2.finance.open.banking.request.object.validator_1.3.0.jar
@@ -5769,3 +5770,4 @@
 ./WSO2-CARBON-UPDATE-4.4.0-4957/carbon.home/client-lib/andes-client-3.2.19.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4958/carbon.home/wso2/components/plugins/org.wso2.carbon.rest.api.ui_4.6.150.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4960/carbon.home/wso2/components/plugins/org.wso2.carbon.rest.api.ui_4.6.105.jar
+./WSO2-CARBON-UPDATE-4.4.0-4963/carbon.home/repository/components/plugins/org.wso2.carbon.identity.application.mgt_5.12.153.jar

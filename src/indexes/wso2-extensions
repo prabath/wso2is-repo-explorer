@@ -3659,6 +3659,7 @@
 ./identity-event-handler-notification/components/email-mgt/org.wso2.carbon.email.mgt/src/main/java/org/wso2/carbon/email/mgt/constants
 ./identity-event-handler-notification/components/email-mgt/org.wso2.carbon.email.mgt/src/main/java/org/wso2/carbon/email/mgt/constants/I18nMgtConstants.java
 ./identity-event-handler-notification/components/email-mgt/org.wso2.carbon.email.mgt/src/main/java/org/wso2/carbon/email/mgt/exceptions
+./identity-event-handler-notification/components/email-mgt/org.wso2.carbon.email.mgt/src/main/java/org/wso2/carbon/email/mgt/exceptions/DuplicateEmailTemplateException.java
 ./identity-event-handler-notification/components/email-mgt/org.wso2.carbon.email.mgt/src/main/java/org/wso2/carbon/email/mgt/exceptions/I18nEmailMgtClientException.java
 ./identity-event-handler-notification/components/email-mgt/org.wso2.carbon.email.mgt/src/main/java/org/wso2/carbon/email/mgt/exceptions/I18nEmailMgtException.java
 ./identity-event-handler-notification/components/email-mgt/org.wso2.carbon.email.mgt/src/main/java/org/wso2/carbon/email/mgt/exceptions/I18nEmailMgtServerException.java
@@ -20184,4 +20185,4 @@
 ./tomcat-extension-samlsso/samples/sso-sample-apps/musicstore-app/src/main/webapp/index.html
 ./tomcat-extension-samlsso/samples/sso-sample-apps/pom.xml
 
-7034 directories, 13150 files
+7034 directories, 13151 files

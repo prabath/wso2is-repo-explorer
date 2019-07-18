@@ -548,6 +548,9 @@
 ./identity-api-server/components/org.wso2.carbon.identity.api.server.common
 ./identity-api-user
 ./identity-api-user/components
+./identity-api-user/components/org.wso2.carbon.identity.api.user.approval
+./identity-api-user/components/org.wso2.carbon.identity.api.user.approval/org.wso2.carbon.identity.api.user.approval.common
+./identity-api-user/components/org.wso2.carbon.identity.api.user.approval/org.wso2.carbon.identity.rest.api.user.approval.v1
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.association/org.wso2.carbon.identity.api.user.association.v1
 ./identity-api-user/components/org.wso2.carbon.identity.api.user.authorized.apps
@@ -2174,4 +2177,4 @@
 ./ux-product-is/Wireframes/ver 03
 ./ux-product-is/Wireframes/ver 04
 
-10439 directories
+10484 directories

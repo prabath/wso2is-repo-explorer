@@ -5178,6 +5178,7 @@
 ./identity-inbound-auth-oauth/components/org.wso2.carbon.identity.oauth/src/main/java/org/wso2/carbon/identity/oauth2/token/handlers/grant/saml/SAML2BearerGrantHandler.java
 ./identity-inbound-auth-oauth/components/org.wso2.carbon.identity.oauth/src/main/java/org/wso2/carbon/identity/oauth2/token/handlers/grant/saml/SAML2TokenCallbackHandler.java
 ./identity-inbound-auth-oauth/components/org.wso2.carbon.identity.oauth/src/main/java/org/wso2/carbon/identity/oauth2/util
+./identity-inbound-auth-oauth/components/org.wso2.carbon.identity.oauth/src/main/java/org/wso2/carbon/identity/oauth2/util/AppPortalConstants.java
 ./identity-inbound-auth-oauth/components/org.wso2.carbon.identity.oauth/src/main/java/org/wso2/carbon/identity/oauth2/util/ClaimsUtil.java
 ./identity-inbound-auth-oauth/components/org.wso2.carbon.identity.oauth/src/main/java/org/wso2/carbon/identity/oauth2/util/JdbcUtils.java
 ./identity-inbound-auth-oauth/components/org.wso2.carbon.identity.oauth/src/main/java/org/wso2/carbon/identity/oauth2/util/NamedPreparedStatement.java
@@ -20183,4 +20184,4 @@
 ./tomcat-extension-samlsso/samples/sso-sample-apps/musicstore-app/src/main/webapp/index.html
 ./tomcat-extension-samlsso/samples/sso-sample-apps/pom.xml
 
-7034 directories, 13149 files
+7034 directories, 13150 files

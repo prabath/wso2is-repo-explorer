@@ -5770,4 +5770,5 @@
 ./WSO2-CARBON-UPDATE-4.4.0-4957/carbon.home/client-lib/andes-client-3.2.19.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4958/carbon.home/wso2/components/plugins/org.wso2.carbon.rest.api.ui_4.6.150.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4960/carbon.home/wso2/components/plugins/org.wso2.carbon.rest.api.ui_4.6.105.jar
+./WSO2-CARBON-UPDATE-4.4.0-4961/carbon.home/repository/components/plugins/org.wso2.carbon.identity.core_5.11.148.jar
 ./WSO2-CARBON-UPDATE-4.4.0-4963/carbon.home/repository/components/plugins/org.wso2.carbon.identity.application.mgt_5.12.153.jar

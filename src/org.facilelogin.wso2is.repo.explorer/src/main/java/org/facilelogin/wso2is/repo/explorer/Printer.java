@@ -1,5 +1,6 @@
 package org.facilelogin.wso2is.repo.explorer;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -250,9 +251,19 @@ public class Printer {
 
                 for (Map.Entry<String, Set<Patch>> mt : monthlyPatches.entrySet()) {
                     String month = mt.getKey();
-                    int patchCount = mt.getValue().size();
-                    if (patchCount > 0) {
-                        System.out.print("|  |--" + ANSI_GREEN + month + " (" + patchCount + ")");
+                    int patchedJarCount = mt.getValue().size();
+                    if (patchedJarCount > 0) {
+                        Set<Patch> patches = mt.getValue();
+                        List<String> uniquePatches = new ArrayList<String>();
+                        for (Iterator<Patch> iterator = patches.iterator(); iterator.hasNext();) {
+                            Patch patch = iterator.next();
+                            if (!uniquePatches.contains(patch.getName())) {
+                                uniquePatches.add(patch.getName());
+                            }
+
+                        }
+
+                        System.out.print("|  |--" + ANSI_GREEN + month + " (" + uniquePatches.size() + ")");
                         System.out.println(ANSI_RESET);
                     }
                 }

@@ -259,6 +259,7 @@ public class Printer {
                             Patch patch = iterator.next();
                             if (!uniquePatches.contains(patch.getName())) {
                                 uniquePatches.add(patch.getName());
+                                System.out.println(patch.getName());
                             }
 
                         }

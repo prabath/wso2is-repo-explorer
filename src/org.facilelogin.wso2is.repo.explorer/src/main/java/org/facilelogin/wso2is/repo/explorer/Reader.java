@@ -242,23 +242,23 @@ public class Reader {
      * @param patch
      */
     protected void updatePatchesByTimeMap(Patch patch) {
-        if (patchesByTimeMap.containsKey(patch.getYear())) {
+        if (patchesByTimeMap.containsKey(Integer.toString(patch.getYear()))) {
             // we already have the map for the year.
-            Map<String, Set<Patch>> yearMap = patchesByTimeMap.get(Integer.toString(patch.getYear()));
-            if (yearMap != null && yearMap.containsKey(patch.getMonth())) {
-                yearMap.get(patch.getMonth()).add(patch);
+            Map<String, Set<Patch>> monthlyPatches = patchesByTimeMap.get(Integer.toString(patch.getYear()));
+            if (monthlyPatches != null && monthlyPatches.containsKey(patch.getMonth())) {
+                monthlyPatches.get(patch.getMonth()).add(patch);
             } else {
                 Set<Patch> patchSet = new HashSet<Patch>();
                 patchSet.add(patch);
-                yearMap.put(patch.getMonth(), patchSet);
+                monthlyPatches.put(patch.getMonth(), patchSet);
             }
         } else {
             // we do not have map for the year.
-            Map<String, Set<Patch>> yearMap = new HashMap<String, Set<Patch>>();
+            Map<String, Set<Patch>> monthlyPatches = new HashMap<String, Set<Patch>>();
             Set<Patch> patchSet = new HashSet<Patch>();
             patchSet.add(patch);
-            yearMap.put(patch.getMonth(), patchSet);
-            patchesByTimeMap.put(Integer.toString(patch.getYear()), yearMap);
+            monthlyPatches.put(patch.getMonth(), patchSet);
+            patchesByTimeMap.put(Integer.toString(patch.getYear()), monthlyPatches);
         }
     }
 

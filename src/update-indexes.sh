@@ -59,7 +59,7 @@ do
   find .  -type f ! -name 'pom.properties' -delete
   tree -if | grep ".properties" > properties.updates
   cp $REX_HOME/git/wso2is-repo-explorer/src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar .
-  java -cp src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
+  java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
   rm org.facilelogin.wso2is.repo.explorer-1.0.0.jar
   rm properties.updates
   mv updates $REX_HOME/git/wso2is-repo-explorer/src/updates
@@ -68,7 +68,7 @@ do
   find .  -type f ! -name 'pom.properties' -delete
   tree -if | grep ".properties" > properties.updates
   cp $REX_HOME/git/wso2is-repo-explorer/src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar .
-  java -cp src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
+  java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
   rm org.facilelogin.wso2is.repo.explorer-1.0.0.jar
   rm properties.updates
   cat updates >> $REX_HOME/git/wso2is-repo-explorer/src/updates

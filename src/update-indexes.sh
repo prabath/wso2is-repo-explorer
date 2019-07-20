@@ -61,7 +61,7 @@ do
   cp $REX_HOME/git/wso2is-repo-explorer/src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar .
   java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
   rm org.facilelogin.wso2is.repo.explorer-1.0.0.jar
-  #rm properties.updates
+  rm properties.updates
   mv updates $REX_HOME/git/wso2is-repo-explorer/src/indexes/updates
 
   cd ../wars 
@@ -70,8 +70,9 @@ do
   cp $REX_HOME/git/wso2is-repo-explorer/src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar .
   java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
   rm org.facilelogin.wso2is.repo.explorer-1.0.0.jar
-  #rm properties.updates
+  rm properties.updates
   cat updates >> $REX_HOME/git/wso2is-repo-explorer/src/indexes/updates
+  rm updates
 
   cd ../../git/wso2is-repos
   ./rex.sh update 

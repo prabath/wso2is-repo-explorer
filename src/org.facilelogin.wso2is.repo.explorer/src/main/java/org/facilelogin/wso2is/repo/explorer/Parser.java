@@ -30,6 +30,8 @@ public class Parser {
             writer = new FileWriter(OUTPUT_FILE);
             reader = new BufferedReader(new FileReader(INPUT_FILE));
             String line = reader.readLine();
+            System.out.println(System.getProperty("user.home"));
+            System.out.println(line);
             while (line != null) {
                 if (line.endsWith(".properties")) {
                     line = line.replace("./", "");
@@ -65,11 +67,14 @@ public class Parser {
 
             }
             reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             if (reader != null) {
                 reader.close();
             }
             if (writer != null) {
+                writer.flush();
                 writer.close();
             }
         }

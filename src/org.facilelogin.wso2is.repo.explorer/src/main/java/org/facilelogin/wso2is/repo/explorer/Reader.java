@@ -201,7 +201,7 @@ public class Reader {
                 if (lines[1].indexOf("org.wso2.carbon") > -1) {
                     String compName = lines[1];
                     String jarVersion = lines[2];
-                    Set<String> productVersions = productVersionsByJarMap.get(compName + "_" + jarVersion);
+                    Set<String> productVersions = productVersionsByJarMap.get(compName + "_" + jarVersion + ".jar");
 
                     if (productVersions != null && productVersions.size() > 0) {
                         // we only worry about patched jars in any of the IS releases from 5.0.0 to the latest.

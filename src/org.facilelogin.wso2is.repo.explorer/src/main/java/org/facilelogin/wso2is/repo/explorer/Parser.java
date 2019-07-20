@@ -30,16 +30,10 @@ public class Parser {
         BufferedReader reader = null;
         PrintStream writer = null;
 
-        System.out.println(System.getProperty("java.class.path"));
-
-        Path path = FileSystems.getDefault().getPath(".").toAbsolutePath();
-        System.out.println(path.toString());
-
         try {
             writer = new PrintStream(new File(OUTPUT_FILE));
             reader = new BufferedReader(new FileReader(INPUT_FILE));
             String line = reader.readLine();
-            System.out.println(line);
             while (line != null) {
                 if (line.endsWith(".properties")) {
                     line = line.replace("./", "");

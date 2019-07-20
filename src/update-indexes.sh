@@ -75,6 +75,13 @@ do
 
   cd ../../git/wso2is-repos
   ./rex.sh update 
+
+  file=".repodata/image.update"
+	if [ -f "$file" ]
+  then
+  ./rex.sh update 
+  fi
+
   echo "git repos updated" 
   cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
   cd ../wso2is-repo-explorer

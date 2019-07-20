@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.Properties;
 
 public class Parser {
@@ -25,12 +27,17 @@ public class Parser {
 
         BufferedReader reader = null;
         FileWriter writer = null;
+        
+        System.out.println(System.getProperty("java.class.path"));
+        
+        Path path = FileSystems.getDefault().getPath(".").toAbsolutePath();
+        System.out.println(path.toString());
+
 
         try {
             writer = new FileWriter(OUTPUT_FILE);
             reader = new BufferedReader(new FileReader(INPUT_FILE));
             String line = reader.readLine();
-            System.out.println(System.getProperty("user.home"));
             System.out.println(line);
             while (line != null) {
                 if (line.endsWith(".properties")) {
@@ -39,13 +46,13 @@ public class Parser {
                     BufferedReader propReader = null;
                     try {
                         propReader = new BufferedReader(new FileReader(line));
-
                         Properties properties = new Properties();
                         properties.load(propReader);
-
                         String version = (String) properties.get("version");
                         String componentName = (String) properties.get("artifactId");
+                        propReader.close();
 
+                        propReader = new BufferedReader(new FileReader(line));
                         String propLine = propReader.readLine();
                         propLine = propReader.readLine();
                         if (propLine != null) {

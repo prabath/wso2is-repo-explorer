@@ -259,7 +259,9 @@ public class Printer {
                             Patch patch = iterator.next();
                             if (!uniquePatches.contains(patch.getName())) {
                                 uniquePatches.add(patch.getName());
-                                System.out.println(patch.getName());
+                                if (patch.getMonth().equals("Jul") && patch.getYear() == 2019) {
+                                    System.out.println(patch.getName());
+                                }
                             }
 
                         }

@@ -1,7 +1,7 @@
 git pull
 cd org.facilelogin.wso2is.repo.explorer
-cp target/org.facilelogin.wso2is.repo.explorer-1.0.0.jar ../lib/
 mvn clean install
+cp target/org.facilelogin.wso2is.repo.explorer-1.0.0.jar ../lib/
 cd ..
 docker build -t rex .
 docker tag rex prabath/rex

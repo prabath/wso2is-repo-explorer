@@ -195,10 +195,10 @@ public class Reader {
             String line = reader.readLine();
             while (line != null) {
                 // patch_number|component_name|version|month_of_the_year|year
-                String[] lines = line.split("|");
+                String[] lines = line.split("\\|");
                 String patchName = lines[0];
 
-                if (lines[1].indexOf("org.wso2.carbon") > 0) {
+                if (lines[1].indexOf("org.wso2.carbon") > -1) {
                     String compName = lines[1];
                     String jarVersion = lines[2];
                     Set<String> productVersions = productVersionsByJarMap.get(compName + "_" + jarVersion);
@@ -227,6 +227,7 @@ public class Reader {
                         updatePatchesByTimeMap(patch);
                     }
                 }
+                line = reader.readLine();
             }
             reader.close();
         } finally {

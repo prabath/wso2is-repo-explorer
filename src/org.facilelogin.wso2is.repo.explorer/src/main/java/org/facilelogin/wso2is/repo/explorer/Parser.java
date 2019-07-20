@@ -1,9 +1,11 @@
 package org.facilelogin.wso2is.repo.explorer;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Properties;
@@ -26,16 +28,15 @@ public class Parser {
     private void parsePomProperties() throws IOException {
 
         BufferedReader reader = null;
-        FileWriter writer = null;
-        
+        PrintStream writer = null;
+
         System.out.println(System.getProperty("java.class.path"));
-        
+
         Path path = FileSystems.getDefault().getPath(".").toAbsolutePath();
         System.out.println(path.toString());
 
-
         try {
-            writer = new FileWriter(OUTPUT_FILE);
+            writer = new PrintStream(new File(OUTPUT_FILE));
             reader = new BufferedReader(new FileReader(INPUT_FILE));
             String line = reader.readLine();
             System.out.println(line);
@@ -60,7 +61,7 @@ public class Parser {
                             String props[] = propLine.split(" ");
                             String month = props[1];
                             String year = props[5];
-                            writer.write(patchName + "|" + componentName + "|" + version + "|" + month + "|" + year);
+                            writer.println(patchName + "|" + componentName + "|" + version + "|" + month + "|" + year);
                         }
 
                     } finally {

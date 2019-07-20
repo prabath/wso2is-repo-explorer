@@ -25,7 +25,7 @@ do
 
   cd ../unzipped
   find .  -type f ! -name '*.jar' ! -name '*.war' -delete
-  tree -if | grep ".jar" > ../../git/wso2is-repo-explorer/src/indexes/updates
+  #tree -if | grep ".jar" > ../../git/wso2is-repo-explorer/src/indexes/updates
 
   mkdir -p ../jars 
   jar_files=$(find . -name "*.jar")
@@ -61,8 +61,8 @@ do
   cp $REX_HOME/git/wso2is-repo-explorer/src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar .
   java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
   rm org.facilelogin.wso2is.repo.explorer-1.0.0.jar
-  rm properties.updates
-  mv updates $REX_HOME/git/wso2is-repo-explorer/src/updates
+  #rm properties.updates
+  mv updates $REX_HOME/git/wso2is-repo-explorer/src/indexes/updates
 
   cd ../wars 
   find .  -type f ! -name 'pom.properties' -delete
@@ -70,8 +70,8 @@ do
   cp $REX_HOME/git/wso2is-repo-explorer/src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar .
   java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
   rm org.facilelogin.wso2is.repo.explorer-1.0.0.jar
-  rm properties.updates
-  cat updates >> $REX_HOME/git/wso2is-repo-explorer/src/updates
+  #rm properties.updates
+  cat updates >> $REX_HOME/git/wso2is-repo-explorer/src/indexes/updates
 
   cd ../../git/wso2is-repos
   ./rex.sh update 

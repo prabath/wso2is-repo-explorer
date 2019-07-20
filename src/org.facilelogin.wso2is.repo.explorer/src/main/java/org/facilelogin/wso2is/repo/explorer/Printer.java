@@ -120,24 +120,24 @@ public class Printer {
 
     private void printProductPatchCount(Map<String, Set<Patch>> productPatches) {
         System.out.println(ANSI_YELLOW);
-        System.out.print(Rex.IS_510 + ": " + (productPatches.containsKey(Rex.IS_510)
-                ? productPatches.get(Rex.IS_510).size() : "0"));
-        System.out.print(" | " + Rex.IS_520 + ": " + (productPatches.containsKey(Rex.IS_520)
-                ? productPatches.get(Rex.IS_520).size() : "0"));
-        System.out.print(" | " + Rex.IS_530 + ": " + (productPatches.containsKey(Rex.IS_530)
-                ? productPatches.get(Rex.IS_530).size() : "0"));
-        System.out.print(" | " + Rex.IS_540 + ": " + (productPatches.containsKey(Rex.IS_540)
-                ? productPatches.get(Rex.IS_540).size() : "0"));
-        System.out.print(" | " + Rex.IS_541 + ": " + (productPatches.containsKey(Rex.IS_541)
-                ? productPatches.get(Rex.IS_541).size() : "0"));
-        System.out.print(" | " + Rex.IS_550 + ": " + (productPatches.containsKey(Rex.IS_550)
-                ? productPatches.get(Rex.IS_550).size() : "0"));
-        System.out.print(" | " + Rex.IS_560 + ": " + (productPatches.containsKey(Rex.IS_560)
-                ? productPatches.get(Rex.IS_560).size() : "0"));
-        System.out.print(" | " + Rex.IS_570 + ": " + (productPatches.containsKey(Rex.IS_570)
-                ? productPatches.get(Rex.IS_570).size() : "0"));
-        System.out.println(" | " + Rex.IS_580 + ": " + (productPatches.containsKey(Rex.IS_580)
-                ? productPatches.get(Rex.IS_580).size() : "0"));
+        System.out.print(Rex.IS_510 + ": "
+                + (productPatches.containsKey(Rex.IS_510) ? productPatches.get(Rex.IS_510).size() : "0"));
+        System.out.print(" | " + Rex.IS_520 + ": "
+                + (productPatches.containsKey(Rex.IS_520) ? productPatches.get(Rex.IS_520).size() : "0"));
+        System.out.print(" | " + Rex.IS_530 + ": "
+                + (productPatches.containsKey(Rex.IS_530) ? productPatches.get(Rex.IS_530).size() : "0"));
+        System.out.print(" | " + Rex.IS_540 + ": "
+                + (productPatches.containsKey(Rex.IS_540) ? productPatches.get(Rex.IS_540).size() : "0"));
+        System.out.print(" | " + Rex.IS_541 + ": "
+                + (productPatches.containsKey(Rex.IS_541) ? productPatches.get(Rex.IS_541).size() : "0"));
+        System.out.print(" | " + Rex.IS_550 + ": "
+                + (productPatches.containsKey(Rex.IS_550) ? productPatches.get(Rex.IS_550).size() : "0"));
+        System.out.print(" | " + Rex.IS_560 + ": "
+                + (productPatches.containsKey(Rex.IS_560) ? productPatches.get(Rex.IS_560).size() : "0"));
+        System.out.print(" | " + Rex.IS_570 + ": "
+                + (productPatches.containsKey(Rex.IS_570) ? productPatches.get(Rex.IS_570).size() : "0"));
+        System.out.println(" | " + Rex.IS_580 + ": "
+                + (productPatches.containsKey(Rex.IS_580) ? productPatches.get(Rex.IS_580).size() : "0"));
         System.out.println(ANSI_RESET);
     }
 
@@ -234,6 +234,31 @@ public class Printer {
      */
     public void printPatchesByComponentName(String componentName) {
         printPatchesByComponentName(componentName, null);
+    }
+
+    /**
+     * 
+     */
+    public void printPatchCountByTime() {
+
+        for (Map.Entry<String, Map<String, Set<Patch>>> yr : patchesByTimeMap.entrySet()) {
+            String year = yr.getKey();
+            Map<String, Set<Patch>> monthlyPatches = yr.getValue();
+            if (monthlyPatches.size() > 0) {
+                System.out.print("|--" + ANSI_CYAN + year);
+                System.out.println(ANSI_RESET);
+
+                for (Map.Entry<String, Set<Patch>> mt : monthlyPatches.entrySet()) {
+                    String month = mt.getKey();
+                    int patchCount = mt.getValue().size();
+                    if (patchCount > 0) {
+                        System.out.print("|  |--" + ANSI_GREEN + month + " (" + patchCount + ")");
+                        System.out.println(ANSI_RESET);
+                    }
+                }
+
+            }
+        }
     }
 
     /**

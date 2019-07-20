@@ -43,6 +43,8 @@ public class Rex {
         } else if (args.length == 4 && "-r".equals(args[0]) && !args[1].isEmpty() && "-p".equals(args[2])
                 && !args[3].isEmpty()) {
             printer.printPatchesByRepo(args[1], args[3]);
+        } else if (args.length == 1 && "-t".equals(args[0])) {
+            printer.printPatchCountByTime();
         } else {
             printer.printAllPatches();
         }

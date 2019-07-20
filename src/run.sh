@@ -382,5 +382,5 @@ fi
 
 if [ "$1" == "updates" ] 
 then
-java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.RepoExplorer $2 $3 $4 $5
+java -cp org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Rex $2 $3 $4 $5
 fi

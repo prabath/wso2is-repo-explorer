@@ -38,6 +38,7 @@ public class Reader {
     protected Map<String, Set<String>> componentNamesByRepoMap = new HashMap<String, Set<String>>();
     protected Map<String, Component> componentsWithPatchesMap = new HashMap<String, Component>();
     protected Map<String, Set<Patch>> patchesByProductVersionMap = new HashMap<String, Set<Patch>>();
+    protected Map<String, Map<String, Set<Patch>>> patchesByTimeMap = new HashMap<String, Map<String, Set<Patch>>>();
     protected Map<String, Long> totalPatchCountByRepoMap = new HashMap<String, Long>();
     protected Map<String, Long> totalPatchCountByComponentMap = new HashMap<String, Long>();
     protected Map<String, Set<String>> productsWithPatchesByRepoMap = new HashMap<String, Set<String>>();
@@ -66,17 +67,17 @@ public class Reader {
 
         addRepo(WSO2_DIR, "https://github.com/wso2/");
         addRepo(WSO2_EXT_DIR, "https://github.com/wso2-extensions/");
-        addProduct(IS460, RepoExplorer.IS_460);
-        addProduct(IS500, RepoExplorer.IS_500);
-        addProduct(IS510, RepoExplorer.IS_510);
-        addProduct(IS520, RepoExplorer.IS_520);
-        addProduct(IS530, RepoExplorer.IS_530);
-        addProduct(IS540, RepoExplorer.IS_540);
-        addProduct(IS541, RepoExplorer.IS_541);
-        addProduct(IS550, RepoExplorer.IS_550);
-        addProduct(IS560, RepoExplorer.IS_560);
-        addProduct(IS570, RepoExplorer.IS_570);
-        addProduct(IS580, RepoExplorer.IS_580);
+        addProduct(IS460, Rex.IS_460);
+        addProduct(IS500, Rex.IS_500);
+        addProduct(IS510, Rex.IS_510);
+        addProduct(IS520, Rex.IS_520);
+        addProduct(IS530, Rex.IS_530);
+        addProduct(IS540, Rex.IS_540);
+        addProduct(IS541, Rex.IS_541);
+        addProduct(IS550, Rex.IS_550);
+        addProduct(IS560, Rex.IS_560);
+        addProduct(IS570, Rex.IS_570);
+        addProduct(IS580, Rex.IS_580);
         addPatches(PATCHES);
     }
 
@@ -86,7 +87,7 @@ public class Reader {
      * @param prefix
      * @throws IOException
      */
-    private void addRepo(String filePath, String prefix) throws IOException {
+    protected void addRepo(String filePath, String prefix) throws IOException {
 
         BufferedReader reader = null;
         try {
@@ -149,7 +150,7 @@ public class Reader {
      * @param filePath
      * @throws IOException
      */
-    private void addProduct(String filePath, String version) throws IOException {
+    protected void addProduct(String filePath, String version) throws IOException {
 
         BufferedReader reader = null;
         try {
@@ -179,11 +180,12 @@ public class Reader {
     }
 
     /**
+     * patch_number|component_name|version|month_of_the_year|year
      * 
      * @param filePath
      * @throws IOException
      */
-    private void addPatches(String filePath) throws IOException {
+    protected void addPatches(String filePath) throws IOException {
 
         BufferedReader reader = null;
         try {
@@ -192,95 +194,37 @@ public class Reader {
             reader = new BufferedReader(new FileReader(filePath));
             String line = reader.readLine();
             while (line != null) {
-                line = reader.readLine();
-                if (line != null && line.length() > 2) {
-                    line = line.replace("./", "");
-                    if (line.indexOf("/") > 0) {
-                        String patchName = line.substring(0, line.indexOf("/"));
-                        if (line.indexOf("org.wso2.carbon") > 0 && line.endsWith(".jar")) {
-                            String jarName = line.substring(line.indexOf("org.wso2.carbon"), line.length());
-                            String jarVersion = null;
-                            jarName.replaceAll("-", "_");
-                            Set<String> productVersions = productVersionsByJarMap.get(jarName);
+                // patch_number|component_name|version|month_of_the_year|year
+                String[] lines = line.split("|");
+                String patchName = lines[0];
 
-                            if (productVersions != null && productVersions.size() > 0) {
-                                // we only worry about patched jars in any of the IS releases from 5.0.0 to the latest.
-                                totalPatchCount++;
-                            }
+                if (lines[1].indexOf("org.wso2.carbon") > 0) {
+                    String compName = lines[1];
+                    String jarVersion = lines[2];
+                    Set<String> productVersions = productVersionsByJarMap.get(compName + "_" + jarVersion);
 
-                            String compName = null;
+                    if (productVersions != null && productVersions.size() > 0) {
+                        // we only worry about patched jars in any of the IS releases from 5.0.0 to the latest.
+                        totalPatchCount++;
+                    }
 
-                            // find the component name and the version from the jar file name.
-                            if (jarName.indexOf("_") > 0) {
-                                String[] parts = jarName.split("_");
-                                compName = parts[0];
-                                jarVersion = parts[1];
-                                jarVersion = jarVersion.substring(0, jarVersion.indexOf(".jar"));
-                            }
-
-                            // component name here comes from the git repo.
-                            // we assume there are no two repos with the same component name.
-                            Component comp = componentsWithPatchesMap.get(compName);
-                            if (comp != null) {
-                                Patch patch = new Patch(patchName, jarVersion, productVersions);
-                                comp.addPatch(patch);
-                                String repoName = comp.getRepoName();
-
-                                // keeps track total number of patches by component name.
-                                if (totalPatchCountByComponentMap.containsKey(compName)) {
-                                    totalPatchCountByComponentMap.put(compName,
-                                            totalPatchCountByComponentMap.get(compName) + 1);
-                                } else {
-                                    totalPatchCountByComponentMap.put(compName, 1L);
-                                }
-
-                                // keeps track total number of patches by repo name.
-                                if (totalPatchCountByRepoMap.containsKey(repoName)) {
-                                    totalPatchCountByRepoMap.put(repoName, totalPatchCountByRepoMap.get(repoName) + 1);
-                                } else {
-                                    totalPatchCountByRepoMap.put(repoName, 1L);
-                                }
-
-                                // find the repo with the highest patch count and record the repo name.
-                                if (totalPatchCountByRepoMap.get(repoName) > highestPatchCountByRepo) {
-                                    highestPatchCountByRepo = totalPatchCountByRepoMap.get(repoName);
-                                    highestPatchCountByRepoName = repoName;
-                                }
-
-                                // find the component with the highest patch count and record the component name.
-                                if (totalPatchCountByComponentMap.get(compName) > highestPatchCountByComponent) {
-                                    highestPatchCountByComponent = totalPatchCountByComponentMap.get(compName);
-                                    highestPatchCountByComponentName = compName;
-                                    highestPatchCountByComponentRepoName = repoName;
-                                }
-
-                                if (productVersions != null && productVersions.size() > 0) {
-                                    for (Iterator<String> iterator = productVersions.iterator(); iterator.hasNext();) {
-                                        // a give component can have multiple patches by different product versions.
-                                        // record the patches by the product version.
-                                        String prodVersion = (String) iterator.next();
-                                        if (patchesByProductVersionMap.containsKey(prodVersion)) {
-                                            patchesByProductVersionMap.get(prodVersion).add(patch);
-                                        } else {
-                                            Set<Patch> patchSet = new HashSet<Patch>();
-                                            patchSet.add(patch);
-                                            patchesByProductVersionMap.put(prodVersion, patchSet);
-                                        }
-
-                                        // record product versions with at least on patch, against the repo name.
-                                        // we need these stats for the presentation.
-                                        if (productsWithPatchesByRepoMap.containsKey(repoName)) {
-                                            productsWithPatchesByRepoMap.get(repoName).add(prodVersion);
-                                        } else {
-                                            Set<String> prodSet = new HashSet<String>();
-                                            prodSet.add(prodVersion);
-                                            productsWithPatchesByRepoMap.put(repoName, prodSet);
-                                        }
-                                    }
-                                }
-
-                            }
-                        }
+                    // component name here comes from the git repo.
+                    // we assume there are no two repos with the same component name.
+                    Component comp = componentsWithPatchesMap.get(compName);
+                    if (comp != null) {
+                        String repoName = comp.getRepoName();
+                        Patch patch = new Patch(patchName, jarVersion, productVersions);
+                        patch.setMonth(lines[3]);
+                        patch.setYear(Integer.parseInt(lines[4]));
+                        patch.setRepoName(repoName);
+                        patch.setCompName(compName);
+                        comp.addPatch(patch);
+                        // update patch count.
+                        updatePatchCount(repoName, compName);
+                        // update product version map.
+                        updatePatchesByProductVersionMap(patch, productVersions);
+                        // update time map with patches.
+                        updatePatchesByTimeMap(patch);
                     }
                 }
             }
@@ -291,4 +235,98 @@ public class Reader {
             }
         }
     }
+
+    /**
+     * 
+     * @param patch
+     */
+    protected void updatePatchesByTimeMap(Patch patch) {
+        if (patchesByTimeMap.containsKey(patch.getYear())) {
+            // we already have the map for the year.
+            Map<String, Set<Patch>> yearMap = patchesByTimeMap.get(Integer.toString(patch.getYear()));
+            if (yearMap != null && yearMap.containsKey(patch.getMonth())) {
+                yearMap.get(patch.getMonth()).add(patch);
+            } else {
+                Set<Patch> patchSet = new HashSet<Patch>();
+                patchSet.add(patch);
+                yearMap.put(patch.getMonth(), patchSet);
+            }
+        } else {
+            // we do not have map for the year.
+            Map<String, Set<Patch>> yearMap = new HashMap<String, Set<Patch>>();
+            Set<Patch> patchSet = new HashSet<Patch>();
+            patchSet.add(patch);
+            yearMap.put(patch.getMonth(), patchSet);
+            patchesByTimeMap.put(Integer.toString(patch.getYear()), yearMap);
+        }
+    }
+
+    /**
+     * 
+     * @param patch
+     * @param productVersions
+     */
+    protected void updatePatchesByProductVersionMap(Patch patch, Set<String> productVersions) {
+        if (productVersions != null && productVersions.size() > 0) {
+            String repoName = patch.getRepoName();
+            // we are here because we have shipped this jar file in multiple products.
+            for (Iterator<String> iterator = productVersions.iterator(); iterator.hasNext();) {
+                // a give component can have multiple patches by different product versions.
+                // record the patches by the product version.
+                String prodVersion = (String) iterator.next();
+                if (patchesByProductVersionMap.containsKey(prodVersion)) {
+                    patchesByProductVersionMap.get(prodVersion).add(patch);
+                } else {
+                    Set<Patch> patchSet = new HashSet<Patch>();
+                    patchSet.add(patch);
+                    patchesByProductVersionMap.put(prodVersion, patchSet);
+                }
+
+                // record product versions with at least on patch, against the repo name.
+                // we need these stats for the presentation.
+                if (productsWithPatchesByRepoMap.containsKey(repoName)) {
+                    productsWithPatchesByRepoMap.get(repoName).add(prodVersion);
+                } else {
+                    Set<String> prodSet = new HashSet<String>();
+                    prodSet.add(prodVersion);
+                    productsWithPatchesByRepoMap.put(repoName, prodSet);
+                }
+            }
+        }
+    }
+
+    /**
+     * 
+     * @param repoName
+     * @param compName
+     */
+    protected void updatePatchCount(String repoName, String compName) {
+        // keeps track total number of patches by component name.
+        if (totalPatchCountByComponentMap.containsKey(compName)) {
+            totalPatchCountByComponentMap.put(compName, totalPatchCountByComponentMap.get(compName) + 1);
+        } else {
+            totalPatchCountByComponentMap.put(compName, 1L);
+        }
+
+        // keeps track total number of patches by repo name.
+        if (totalPatchCountByRepoMap.containsKey(repoName)) {
+            totalPatchCountByRepoMap.put(repoName, totalPatchCountByRepoMap.get(repoName) + 1);
+        } else {
+            totalPatchCountByRepoMap.put(repoName, 1L);
+        }
+
+        // find the repo with the highest patch count and record the repo name.
+        if (totalPatchCountByRepoMap.get(repoName) > highestPatchCountByRepo) {
+            highestPatchCountByRepo = totalPatchCountByRepoMap.get(repoName);
+            highestPatchCountByRepoName = repoName;
+        }
+
+        // find the component with the highest patch count and record the component name.
+        if (totalPatchCountByComponentMap.get(compName) > highestPatchCountByComponent) {
+            highestPatchCountByComponent = totalPatchCountByComponentMap.get(compName);
+            highestPatchCountByComponentName = compName;
+            highestPatchCountByComponentRepoName = repoName;
+        }
+    }
+
 }

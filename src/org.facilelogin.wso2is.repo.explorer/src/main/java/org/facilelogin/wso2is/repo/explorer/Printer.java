@@ -25,6 +25,7 @@ public class Printer {
     private Map<String, Long> totalPatchCountByRepoMap;
     private Map<String, Long> totalPatchCountByComponentMap;
     private Map<String, Set<String>> productsWithPatchesByRepoMap;
+    private Map<String, Map<String, Set<Patch>>> patchesByTimeMap;
 
     Long highestPatchCountByRepo = 0L;
     Long highestPatchCountByComponent = 0L;
@@ -37,19 +38,20 @@ public class Printer {
 
     int totalPatchCount = 0;
 
-    public Printer(Reader crawler) {
-        this.componentNamesByRepoMap = crawler.componentNamesByRepoMap;
-        this.componentsWithPatchesMap = crawler.componentsWithPatchesMap;
-        this.patchesByProductVersionMap = crawler.patchesByProductVersionMap;
-        this.totalPatchCount = crawler.totalPatchCount;
-        this.totalPatchCountByRepoMap = crawler.totalPatchCountByRepoMap;
-        this.totalPatchCountByComponentMap = crawler.totalPatchCountByComponentMap;
-        this.highestPatchCountByRepo = crawler.highestPatchCountByRepo;
-        this.highestPatchCountByRepoName = crawler.highestPatchCountByRepoName;
-        this.highestPatchCountByComponent = crawler.highestPatchCountByComponent;
-        this.highestPatchCountByComponentName = crawler.highestPatchCountByComponentName;
-        this.highestPatchCountByComponentRepoName = crawler.highestPatchCountByComponentRepoName;
-        this.productsWithPatchesByRepoMap = crawler.productsWithPatchesByRepoMap;
+    public Printer(Reader reader) {
+        this.componentNamesByRepoMap = reader.componentNamesByRepoMap;
+        this.componentsWithPatchesMap = reader.componentsWithPatchesMap;
+        this.patchesByProductVersionMap = reader.patchesByProductVersionMap;
+        this.totalPatchCount = reader.totalPatchCount;
+        this.totalPatchCountByRepoMap = reader.totalPatchCountByRepoMap;
+        this.totalPatchCountByComponentMap = reader.totalPatchCountByComponentMap;
+        this.highestPatchCountByRepo = reader.highestPatchCountByRepo;
+        this.highestPatchCountByRepoName = reader.highestPatchCountByRepoName;
+        this.highestPatchCountByComponent = reader.highestPatchCountByComponent;
+        this.highestPatchCountByComponentName = reader.highestPatchCountByComponentName;
+        this.highestPatchCountByComponentRepoName = reader.highestPatchCountByComponentRepoName;
+        this.productsWithPatchesByRepoMap = reader.productsWithPatchesByRepoMap;
+        this.patchesByTimeMap = reader.patchesByTimeMap;
     }
 
     /**
@@ -118,24 +120,24 @@ public class Printer {
 
     private void printProductPatchCount(Map<String, Set<Patch>> productPatches) {
         System.out.println(ANSI_YELLOW);
-        System.out.print(RepoExplorer.IS_510 + ": " + (productPatches.containsKey(RepoExplorer.IS_510)
-                ? productPatches.get(RepoExplorer.IS_510).size() : "0"));
-        System.out.print(" | " + RepoExplorer.IS_520 + ": " + (productPatches.containsKey(RepoExplorer.IS_520)
-                ? productPatches.get(RepoExplorer.IS_520).size() : "0"));
-        System.out.print(" | " + RepoExplorer.IS_530 + ": " + (productPatches.containsKey(RepoExplorer.IS_530)
-                ? productPatches.get(RepoExplorer.IS_530).size() : "0"));
-        System.out.print(" | " + RepoExplorer.IS_540 + ": " + (productPatches.containsKey(RepoExplorer.IS_540)
-                ? productPatches.get(RepoExplorer.IS_540).size() : "0"));
-        System.out.print(" | " + RepoExplorer.IS_541 + ": " + (productPatches.containsKey(RepoExplorer.IS_541)
-                ? productPatches.get(RepoExplorer.IS_541).size() : "0"));
-        System.out.print(" | " + RepoExplorer.IS_550 + ": " + (productPatches.containsKey(RepoExplorer.IS_550)
-                ? productPatches.get(RepoExplorer.IS_550).size() : "0"));
-        System.out.print(" | " + RepoExplorer.IS_560 + ": " + (productPatches.containsKey(RepoExplorer.IS_560)
-                ? productPatches.get(RepoExplorer.IS_560).size() : "0"));
-        System.out.print(" | " + RepoExplorer.IS_570 + ": " + (productPatches.containsKey(RepoExplorer.IS_570)
-                ? productPatches.get(RepoExplorer.IS_570).size() : "0"));
-        System.out.println(" | " + RepoExplorer.IS_580 + ": " + (productPatches.containsKey(RepoExplorer.IS_580)
-                ? productPatches.get(RepoExplorer.IS_580).size() : "0"));
+        System.out.print(Rex.IS_510 + ": " + (productPatches.containsKey(Rex.IS_510)
+                ? productPatches.get(Rex.IS_510).size() : "0"));
+        System.out.print(" | " + Rex.IS_520 + ": " + (productPatches.containsKey(Rex.IS_520)
+                ? productPatches.get(Rex.IS_520).size() : "0"));
+        System.out.print(" | " + Rex.IS_530 + ": " + (productPatches.containsKey(Rex.IS_530)
+                ? productPatches.get(Rex.IS_530).size() : "0"));
+        System.out.print(" | " + Rex.IS_540 + ": " + (productPatches.containsKey(Rex.IS_540)
+                ? productPatches.get(Rex.IS_540).size() : "0"));
+        System.out.print(" | " + Rex.IS_541 + ": " + (productPatches.containsKey(Rex.IS_541)
+                ? productPatches.get(Rex.IS_541).size() : "0"));
+        System.out.print(" | " + Rex.IS_550 + ": " + (productPatches.containsKey(Rex.IS_550)
+                ? productPatches.get(Rex.IS_550).size() : "0"));
+        System.out.print(" | " + Rex.IS_560 + ": " + (productPatches.containsKey(Rex.IS_560)
+                ? productPatches.get(Rex.IS_560).size() : "0"));
+        System.out.print(" | " + Rex.IS_570 + ": " + (productPatches.containsKey(Rex.IS_570)
+                ? productPatches.get(Rex.IS_570).size() : "0"));
+        System.out.println(" | " + Rex.IS_580 + ": " + (productPatches.containsKey(Rex.IS_580)
+                ? productPatches.get(Rex.IS_580).size() : "0"));
         System.out.println(ANSI_RESET);
     }
 
@@ -197,8 +199,8 @@ public class Printer {
                             System.out.println(ANSI_RESET);
                             for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
                                 Patch patch = iterator.next();
-                                System.out
-                                        .println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + ")");
+                                System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + "/"
+                                        + patch.getMonth() + "," + patch.getYear() + ")");
                             }
                         }
                     }
@@ -214,7 +216,8 @@ public class Printer {
                         System.out.println(ANSI_RESET);
                         for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
                             Patch patch = iterator.next();
-                            System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + ")");
+                            System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + "/"
+                                    + patch.getMonth() + "," + patch.getYear() + ")");
                         }
                     }
                 }

@@ -57,18 +57,32 @@ do
 
   cd ../jars
   find .  -type f ! -name 'pom.properties' -delete
+  tree -if | grep ".properties" > properties.updates
+  cp $REX_HOME/git/wso2is-repo-explorer/src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar .
+  java -cp src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
+  rm org.facilelogin.wso2is.repo.explorer-1.0.0.jar
+  rm properties.updates
+  mv updates $REX_HOME/git/wso2is-repo-explorer/src/updates
 
   cd ../wars 
   find .  -type f ! -name 'pom.properties' -delete
+  tree -if | grep ".properties" > properties.updates
+  cp $REX_HOME/git/wso2is-repo-explorer/src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar .
+  java -cp src/lib/org.facilelogin.wso2is.repo.explorer-1.0.0.jar org.facilelogin.wso2is.repo.explorer.Parser
+  rm org.facilelogin.wso2is.repo.explorer-1.0.0.jar
+  rm properties.updates
+  cat updates >> $REX_HOME/git/wso2is-repo-explorer/src/updates
 
   cd ../../git/wso2is-repos
   ./rex.sh update 
   echo "git repos updated" 
   cp -r .repodata/wso2* ../wso2is-repo-explorer/src/indexes/
   cd ../wso2is-repo-explorer
+
   while read number; do
     version_old=$number
   done <./src/indexes/version
+
   increment=1 
   version_new=$(($version_old + $increment))
   echo "$version_new" > ./src/indexes/version

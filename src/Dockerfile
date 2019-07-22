@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
 
 RUN  mkdir /identity-repos
-COPY run.sh /run.sh
+COPY scripts/run.sh /run.sh
 COPY repo-search-string /repo-search-string
 COPY indexes/is460 /is460
 COPY indexes/is500 /is500

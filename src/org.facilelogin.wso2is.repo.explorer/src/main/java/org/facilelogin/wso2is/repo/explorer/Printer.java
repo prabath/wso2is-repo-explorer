@@ -13,12 +13,12 @@ import org.facilelogin.wso2is.repo.explorer.bean.Patch;
 
 public class Printer {
 
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String ANSI_GREEN = "\u001B[32m";
-    private static final String ANSI_CYAN = "\u001B[36m";
-    private static final String ANSI_PURPLE = "\u001B[35m";
-    // private static final String ANSI_BLUE = "\u001B[34m";
-    private static final String ANSI_YELLOW = "\u001B[33m";
+     private static final String ANSI_RESET = "\u001B[0m";
+     private static final String ANSI_GREEN = "\u001B[32m";
+     private static final String ANSI_CYAN = "\u001B[36m";
+     private static final String ANSI_PURPLE = "\u001B[35m";
+     //private static final String ANSI_BLUE = "\u001B[34m";
+     private static final String ANSI_YELLOW = "\u001B[33m";
 
     private Map<String, Set<String>> componentNamesByRepoMap;
     private Map<String, Component> componentsWithPatchesMap;
@@ -38,6 +38,7 @@ public class Printer {
     String highestPatchCountByProductName;
 
     int totalPatchCount = 0;
+    boolean color = true;
 
     public Printer(Reader reader) {
         this.componentNamesByRepoMap = reader.componentNamesByRepoMap;
@@ -53,6 +54,23 @@ public class Printer {
         this.highestPatchCountByComponentRepoName = reader.highestPatchCountByComponentRepoName;
         this.productsWithPatchesByRepoMap = reader.productsWithPatchesByRepoMap;
         this.patchesByTimeMap = reader.patchesByTimeMap;
+
+        if (System.getenv("REX_NOCOLOR") != null && System.getenv("REX_NOCOLOR").equalsIgnoreCase("false")) {
+            color = false;
+        }
+    }
+
+    /**
+     * 
+     * @param colorCode
+     * @return
+     */
+    private String color(String colorCode) {
+        if (color) {
+            return colorCode;
+        } else {
+            return "";
+        }
     }
 
     /**
@@ -66,12 +84,12 @@ public class Printer {
             }
         }
 
-        System.out.println(ANSI_YELLOW + "Repository with the most number of updates (since IS 5.2.0): "
+        System.out.println(color(ANSI_YELLOW) + "Repository with the most number of updates (since IS 5.2.0): "
                 + highestPatchCountByRepoName + " (" + highestPatchCountByRepo + ")");
         System.out
                 .print("Component with the most number of updates (since IS 5.2.0): " + highestPatchCountByComponentName
                         + " (" + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
-        System.out.println(ANSI_RESET);
+        System.out.println(color(ANSI_RESET));
 
     }
 
@@ -106,21 +124,21 @@ public class Printer {
             Long totalPatchCountByRepo = this.totalPatchCountByRepoMap.get(comp.getRepoName());
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
-            System.out.print("|--" + ANSI_CYAN + comp.getRepoName() + "(" + count + "/" + totalPatchCount + ")");
+            System.out.print("|--" + color(ANSI_CYAN) + comp.getRepoName() + "(" + count + "/" + totalPatchCount + ")");
 
-            System.out.println(ANSI_RESET);
+            System.out.println(color(ANSI_RESET));
 
             Map<String, Set<Patch>> productPatches = doprintPatchesByComponentName(comp, version);
 
             System.out.println();
-            System.out.print(ANSI_YELLOW + "Summary: ");
+            System.out.print(color(ANSI_YELLOW) + "Summary: ");
             printProductPatchCount(productPatches);
-            System.out.println(ANSI_RESET);
+            System.out.println(color(ANSI_RESET));
         }
     }
 
     private void printProductPatchCount(Map<String, Set<Patch>> productPatches) {
-        System.out.println(ANSI_YELLOW);
+        System.out.println(color(ANSI_YELLOW));
         System.out.print(Rex.IS_510 + ": "
                 + (productPatches.containsKey(Rex.IS_510) ? productPatches.get(Rex.IS_510).size() : "0"));
         System.out.print(" | " + Rex.IS_520 + ": "
@@ -139,7 +157,7 @@ public class Printer {
                 + (productPatches.containsKey(Rex.IS_570) ? productPatches.get(Rex.IS_570).size() : "0"));
         System.out.println(" | " + Rex.IS_580 + ": "
                 + (productPatches.containsKey(Rex.IS_580) ? productPatches.get(Rex.IS_580).size() : "0"));
-        System.out.println(ANSI_RESET);
+        System.out.println(color(ANSI_RESET));
     }
 
     /**
@@ -177,14 +195,14 @@ public class Printer {
         if (totalPatchCountByComponent > 0) {
             if (version != null) {
                 if (productPatches.get(version) != null && !productPatches.get(version).isEmpty()) {
-                    System.out.print("|  |--" + ANSI_GREEN + comp.getComponentName() + " (" + totalPatchCountByComponent
+                    System.out.print("|  |--" + color(ANSI_GREEN) + comp.getComponentName() + " (" + totalPatchCountByComponent
                             + "/" + totalPatchCountByRepo + ")");
-                    System.out.println(ANSI_RESET);
+                    System.out.println(color(ANSI_RESET));
                 }
             } else {
-                System.out.print("|  |--" + ANSI_GREEN + comp.getComponentName() + " (" + totalPatchCountByComponent
+                System.out.print("|  |--" + color(ANSI_GREEN) + comp.getComponentName() + " (" + totalPatchCountByComponent
                         + "/" + totalPatchCountByRepo + ")");
-                System.out.println(ANSI_RESET);
+                System.out.println(color(ANSI_RESET));
             }
         }
 
@@ -195,9 +213,9 @@ public class Printer {
                     if (ver.equalsIgnoreCase(version)) {
                         Set<Patch> pches = entry.getValue();
                         if (pches.size() > 0) {
-                            System.out.print("|  |  |--" + ANSI_PURPLE + ver + " (" + pches.size() + "/"
+                            System.out.print("|  |  |--" + color(ANSI_PURPLE) + ver + " (" + pches.size() + "/"
                                     + totalPatchCountByComponentByProducts + ")");
-                            System.out.println(ANSI_RESET);
+                            System.out.println(color(ANSI_RESET));
                             for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
                                 Patch patch = iterator.next();
                                 System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + "/"
@@ -212,9 +230,9 @@ public class Printer {
                     Set<Patch> pches = entry.getValue();
                     if (pches.size() > 0) {
                         // no need to print if there are no patches.
-                        System.out.print("|  |  |--" + ANSI_PURPLE + ver + " (" + pches.size() + "/"
+                        System.out.print("|  |  |--" + color(ANSI_PURPLE) + ver + " (" + pches.size() + "/"
                                 + totalPatchCountByComponentByProducts + ")");
-                        System.out.println(ANSI_RESET);
+                        System.out.println(color(ANSI_RESET));
                         for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
                             Patch patch = iterator.next();
                             System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + "/"
@@ -246,8 +264,8 @@ public class Printer {
             String year = yr.getKey();
             Map<String, Set<Patch>> monthlyPatches = yr.getValue();
             if (monthlyPatches.size() > 0) {
-                System.out.print("|--" + ANSI_CYAN + year);
-                System.out.println(ANSI_RESET);
+                System.out.print("|--" + color(ANSI_CYAN) + year);
+                System.out.println(color(ANSI_RESET));
 
                 for (Map.Entry<String, Set<Patch>> mt : monthlyPatches.entrySet()) {
                     String month = mt.getKey();
@@ -266,8 +284,8 @@ public class Printer {
 
                         }
 
-                        System.out.print("|  |--" + ANSI_GREEN + month + " (" + uniquePatches.size() + ")");
-                        System.out.println(ANSI_RESET);
+                        System.out.print("|  |--" + color(ANSI_GREEN) + month + " (" + uniquePatches.size() + ")");
+                        System.out.println(color(ANSI_RESET));
                     }
                 }
 
@@ -321,8 +339,8 @@ public class Printer {
             }
 
             if (count > 0) {
-                System.out.print("|--" + ANSI_CYAN + repoName + "(" + count + "/" + totalPatchCount + ")");
-                System.out.println(ANSI_RESET);
+                System.out.print("|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalPatchCount + ")");
+                System.out.println(color(ANSI_RESET));
 
                 // iterate through all the components in the repo to find patches under each component.
                 for (Iterator<String> compIterator = compNames.iterator(); compIterator.hasNext();) {

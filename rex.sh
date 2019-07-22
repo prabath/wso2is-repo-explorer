@@ -15,4 +15,4 @@ then
 	docker pull prabath/rex
 fi
 
-docker run -v $(pwd):/identity-repos -it --rm -e REX_ONLINE=$REX_ONLINE prabath/rex $1 $2 $3 $4 $5 $6 $7
+docker run -v $(pwd):/identity-repos -it --rm -e REX_ONLINE=$REX_ONLINE -e REX_NOCOLOR=$REX_NOCOLOR prabath/rex $1 $2 $3 $4 $5 $6 $7

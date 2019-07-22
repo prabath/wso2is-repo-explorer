@@ -412,6 +412,6 @@ wsdl4j_1.6.2.wso2v4.jar
 wso2-uri-templates_1.6.2.jar
 wss4j_1.5.11.wso2v6.jar
 xmlbeans_2.3.0.wso2v1.jar
-org.wso2.carbon.identity.application.authentication.endpoint_4.2.2
-org.wso2.carbon.identity.oauth.endpoint_4.2.3
-org.wso2.carbon.identity.scim.provider_4.2.2
+org.wso2.carbon.identity.application.authentication.endpoint_4.2.2.jar
+org.wso2.carbon.identity.oauth.endpoint_4.2.3.jar
+org.wso2.carbon.identity.scim.provider_4.2.2.jar

@@ -83,12 +83,15 @@ public class Printer {
                 System.out.println();
             }
         }
-        System.out.println(color(ANSI_YELLOW) + "Repository with the most number of updates (since IS 5.2.0): "
-                + highestPatchCountByRepoName + " (" + highestPatchCountByRepo + ")");
-        System.out
-                .print("Component with the most number of updates (since IS 5.2.0): " + highestPatchCountByComponentName
-                        + " (" + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
-        System.out.println(color(ANSI_RESET));
+
+        if (!printAnomaliesOnly) {
+            System.out.println(color(ANSI_YELLOW) + "Repository with the most number of updates (since IS 5.2.0): "
+                    + highestPatchCountByRepoName + " (" + highestPatchCountByRepo + ")");
+            System.out.print(
+                    "Component with the most number of updates (since IS 5.2.0): " + highestPatchCountByComponentName
+                            + " (" + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
+            System.out.println(color(ANSI_RESET));
+        }
 
     }
 
@@ -280,7 +283,7 @@ public class Printer {
 
         if (totalPatchCountByComponent > 0) {
             if (productPatches == null || productPatches.isEmpty()) {
-                System.out.println(comp);
+                System.out.println(comp.getComponentName());
             }
         }
 
@@ -379,8 +382,11 @@ public class Printer {
             }
 
             if (count > 0) {
-                System.out.print("|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalPatchCount + ")");
-                System.out.println(color(ANSI_RESET));
+
+                if (!printAnomaliesOnly) {
+                    System.out.print("|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalPatchCount + ")");
+                    System.out.println(color(ANSI_RESET));
+                }
 
                 // iterate through all the components in the repo to find patches under each component.
                 for (Iterator<String> compIterator = compNames.iterator(); compIterator.hasNext();) {

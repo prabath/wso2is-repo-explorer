@@ -590,3 +590,5 @@ org.wso2.carbon.extension.identity.authenticator.x509Certificate.endpoint_2.0.8.
 org.wso2.carbon.bootstrap-4.4.35.jar
 org.wso2.carbon.identity.user.rename.core-1.1.37.jar
 org.wso2.carbon.identity.configuration.mgt.core-5.12.153.jar
+org.wso2.carbon.identity.conditional.auth.functions.user.store-0.1.29.jar
+org.wso2.carbon.identity.configuration.mgt.endpoint-5.12.153.jar

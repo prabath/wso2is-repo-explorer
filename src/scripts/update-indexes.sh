@@ -75,7 +75,7 @@ do
   rm updates
 
   cd ../../git/wso2is-repos
-  #./rex.sh update 
+  ./rex.sh update 
 
   file=".repodata/image.update"
 	if [ -f "$file" ]

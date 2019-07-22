@@ -415,3 +415,4 @@ xmlbeans_2.3.0.wso2v1.jar
 org.wso2.carbon.identity.application.authentication.endpoint_4.2.2.jar
 org.wso2.carbon.identity.oauth.endpoint_4.2.3.jar
 org.wso2.carbon.identity.scim.provider_4.2.2.jar
+org.wso2.carbon.bootstrap-4.2.0.jar

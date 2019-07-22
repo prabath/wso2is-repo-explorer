@@ -510,3 +510,4 @@ shindig-server_1.0.18.jar
 org.wso2.carbon.extension.identity.authenticator.smsotp.endpoint_2.0.4.jar
 org.wso2.carbon.extension.identity.authenticator.totp.endpoint_2.0.1.jar
 org.wso2.carbon.identity.scim.provider_5.1.2.jar
+org.wso2.carbon.bootstrap-4.4.9.jar

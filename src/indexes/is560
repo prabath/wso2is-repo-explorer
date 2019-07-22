@@ -575,3 +575,4 @@ org.wso2.carbon.extension.identity.authenticator.smsotp.endpoint_2.0.12.jar
 org.wso2.carbon.extension.identity.authenticator.totp.endpoint_2.0.11.jar
 org.wso2.carbon.identity.scim.provider_5.3.28.jar
 org.wso2.carbon.extension.identity.authenticator.x509Certificate.endpoint_2.0.6.jar
+org.wso2.carbon.bootstrap-4.4.32.jar

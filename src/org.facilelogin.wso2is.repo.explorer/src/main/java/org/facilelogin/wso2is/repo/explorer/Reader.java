@@ -163,16 +163,10 @@ public class Reader {
                         line.replaceAll("-", "_");
                         if (productVersionsByJarMap.containsKey(line)) {
                             productVersionsByJarMap.get(line).add(version);
-                            if (line.indexOf("org.wso2.carbon.healthcheck.api") > -1) {
-                                System.out.println("Added jar " + line);
-                            }
                         } else {
                             Set<String> versions = new HashSet<String>();
                             versions.add(version);
                             productVersionsByJarMap.put(line, versions);
-                            if (line.indexOf("org.wso2.carbon.healthcheck.api") > -1) {
-                                System.out.println("Added jar " + line);
-                            }
                         }
                     }
                 }
@@ -212,11 +206,6 @@ public class Reader {
                     if (productVersions != null && productVersions.size() > 0) {
                         // we only worry about patched jars in any of the IS releases from 5.0.0 to the latest.
                         totalPatchCount++;
-                    } else {
-                        String tmp = compName + "_" + jarVersion + ".jar";
-                        if (tmp.equals("org.wso2.carbon.healthcheck.api.endpoint_1.0.3.jar")) {
-                            System.out.println("No product version found for " + compName + "_" + jarVersion + ".jar");
-                        }
                     }
 
                     // component name here comes from the git repo.

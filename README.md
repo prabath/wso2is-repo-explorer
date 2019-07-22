@@ -15,17 +15,21 @@ Step-2: Copy rex.sh to a directory where you want to maintain Identity Server gi
 wget https://github.com/prabath/wso2is-repo-explorer/raw/master/rex.sh
 chmod +x rex.sh
 ```
-Also please make sure that you have Internet access, while running the tool.
+Also please make sure that you have Internet access, while running the tool. To run the tool with no Internet connection, after the first run, set the REX_ONLONE environment variable to false. The **clone**, **list**, **update**, **update-index** functions are not availble for the offline mode. By defeault REX_ONLONE is set to true - and **the tool to function you must run it at least once in the online mode**.
+```markdown
+export REX_ONLINE=false
+```
+By default the output on the console is in color. Sometimes when you want to redirect the output to a file, it is useful to remove color. Set the REX_COLOR environment variable to false to turn off color.
 
+```markdown
+export REX_COLOR=false
+```
 ## Updates
 
 There are three components need to be updated. The rex.sh - will have minimal updates. Any changes to the core of the tool would require updating the Docker image. The indexes will get updated every four hours.
 
-The tool will detect all the updates and will automatically install them.
+The tool will detect all the updates and will automatically install them (only if the tool is running under online mode).
 
-```markdown
-Last indexed at Mon Jul 15 00:10:21 PDT 2019
-```
 The following command updates metadata related to all Identity Server repos. Usually you do not need to do it manually, as the tool detects any new updates and automatically updates the indexes.
 
 ```markdown

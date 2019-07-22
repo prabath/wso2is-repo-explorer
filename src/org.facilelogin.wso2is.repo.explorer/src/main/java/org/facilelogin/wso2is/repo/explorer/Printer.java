@@ -80,7 +80,9 @@ public class Printer {
 
         for (Map.Entry<String, Set<String>> entry : componentNamesByRepoMap.entrySet()) {
             if (doPrintPatchesByRepo(entry.getKey(), null, printAnomaliesOnly)) {
-                System.out.println();
+                if (!printAnomaliesOnly) {
+                    System.out.println();
+                }
             }
         }
 

@@ -55,7 +55,7 @@ public class Printer {
         this.productsWithPatchesByRepoMap = reader.productsWithPatchesByRepoMap;
         this.patchesByTimeMap = reader.patchesByTimeMap;
 
-        if (System.getenv("REX_NOCOLOR") != null && System.getenv("REX_NOCOLOR").equalsIgnoreCase("false")) {
+        if (System.getenv("REX_NOCOLOR") != null && System.getenv("REX_NOCOLOR").equalsIgnoreCase("true")) {
             color = false;
         }
     }

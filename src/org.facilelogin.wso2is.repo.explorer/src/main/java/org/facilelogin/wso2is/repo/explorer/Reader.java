@@ -160,13 +160,20 @@ public class Reader {
                 line = reader.readLine();
                 if (line != null && line.length() > 2) {
                     if (line.startsWith("org.wso2.carbon") && line.endsWith(".jar")) {
-                        line.replaceAll("-", "_");
+                        line = line.replaceAll("-", "_");
                         if (productVersionsByJarMap.containsKey(line)) {
                             productVersionsByJarMap.get(line).add(version);
+                            if (line.startsWith("org.wso2.carbon.identity.local.auth.api.core")) {
+                                System.out.println(line);
+                            }
+
                         } else {
                             Set<String> versions = new HashSet<String>();
                             versions.add(version);
                             productVersionsByJarMap.put(line, versions);
+                            if (line.startsWith("org.wso2.carbon.identity.local.auth.api.core")) {
+                                System.out.println(line);
+                            }
                         }
                     }
                 }
@@ -206,6 +213,10 @@ public class Reader {
                     if (productVersions != null && productVersions.size() > 0) {
                         // we only worry about patched jars in any of the IS releases from 5.0.0 to the latest.
                         totalPatchCount++;
+                    } else {
+                        if (compName.equals("org.wso2.carbon.identity.local.auth.api.core")) {
+                            System.out.println("NO PRODUCT " + compName + " VERSION " + jarVersion);
+                        }
                     }
 
                     // component name here comes from the git repo.

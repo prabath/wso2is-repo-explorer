@@ -124,7 +124,7 @@ public class Printer {
             Long totalPatchCountByRepo = this.totalPatchCountByRepoMap.get(comp.getRepoName());
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
-            System.out.print("|--" + color(ANSI_CYAN) + comp.getRepoName() + "(" + count + "/" + totalPatchCount + ")");
+            System.out.print("|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalPatchCount + ")");
 
             System.out.println(color(ANSI_RESET));
 

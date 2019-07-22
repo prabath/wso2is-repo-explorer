@@ -45,8 +45,10 @@ public class Rex {
             printer.printPatchesByRepo(args[1], args[3]);
         } else if (args.length == 1 && "-t".equals(args[0])) {
             printer.printPatchCountByTime();
+        } else if (args.length == 1 && "-a".equals(args[0])) {
+            printer.printAllPatches(true);
         } else {
-            printer.printAllPatches();
+            printer.printAllPatches(false);
         }
     }
 

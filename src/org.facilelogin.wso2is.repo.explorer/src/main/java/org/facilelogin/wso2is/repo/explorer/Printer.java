@@ -13,12 +13,12 @@ import org.facilelogin.wso2is.repo.explorer.bean.Patch;
 
 public class Printer {
 
-     private static final String ANSI_RESET = "\u001B[0m";
-     private static final String ANSI_GREEN = "\u001B[32m";
-     private static final String ANSI_CYAN = "\u001B[36m";
-     private static final String ANSI_PURPLE = "\u001B[35m";
-     //private static final String ANSI_BLUE = "\u001B[34m";
-     private static final String ANSI_YELLOW = "\u001B[33m";
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_CYAN = "\u001B[36m";
+    private static final String ANSI_PURPLE = "\u001B[35m";
+    // private static final String ANSI_BLUE = "\u001B[34m";
+    private static final String ANSI_YELLOW = "\u001B[33m";
 
     private Map<String, Set<String>> componentNamesByRepoMap;
     private Map<String, Component> componentsWithPatchesMap;
@@ -76,14 +76,13 @@ public class Printer {
     /**
      * 
      */
-    public void printAllPatches() {
+    public void printAllPatches(boolean printAnomaliesOnly) {
 
         for (Map.Entry<String, Set<String>> entry : componentNamesByRepoMap.entrySet()) {
-            if (doPrintPatchesByRepo(entry.getKey(), null)) {
+            if (doPrintPatchesByRepo(entry.getKey(), null, printAnomaliesOnly)) {
                 System.out.println();
             }
         }
-
         System.out.println(color(ANSI_YELLOW) + "Repository with the most number of updates (since IS 5.2.0): "
                 + highestPatchCountByRepoName + " (" + highestPatchCountByRepo + ")");
         System.out
@@ -105,7 +104,7 @@ public class Printer {
             Set<Patch> patchSet = patchesByProductVersionMap.get(version);
             if (patchSet != null && !patchSet.isEmpty()) {
                 for (Map.Entry<String, Set<String>> entry : componentNamesByRepoMap.entrySet()) {
-                    if (doPrintPatchesByRepo(entry.getKey(), version)) {
+                    if (doPrintPatchesByRepo(entry.getKey(), version, false)) {
                         System.out.println();
                     }
                 }
@@ -124,7 +123,8 @@ public class Printer {
             Long totalPatchCountByRepo = this.totalPatchCountByRepoMap.get(comp.getRepoName());
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
-            System.out.print("|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalPatchCount + ")");
+            System.out
+                    .print("|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalPatchCount + ")");
 
             System.out.println(color(ANSI_RESET));
 
@@ -195,13 +195,13 @@ public class Printer {
         if (totalPatchCountByComponent > 0) {
             if (version != null) {
                 if (productPatches.get(version) != null && !productPatches.get(version).isEmpty()) {
-                    System.out.print("|  |--" + color(ANSI_GREEN) + comp.getComponentName() + " (" + totalPatchCountByComponent
-                            + "/" + totalPatchCountByRepo + ")");
+                    System.out.print("|  |--" + color(ANSI_GREEN) + comp.getComponentName() + " ("
+                            + totalPatchCountByComponent + "/" + totalPatchCountByRepo + ")");
                     System.out.println(color(ANSI_RESET));
                 }
             } else {
-                System.out.print("|  |--" + color(ANSI_GREEN) + comp.getComponentName() + " (" + totalPatchCountByComponent
-                        + "/" + totalPatchCountByRepo + ")");
+                System.out.print("|  |--" + color(ANSI_GREEN) + comp.getComponentName() + " ("
+                        + totalPatchCountByComponent + "/" + totalPatchCountByRepo + ")");
                 System.out.println(color(ANSI_RESET));
             }
         }
@@ -241,6 +241,46 @@ public class Printer {
                     }
                 }
 
+            }
+        }
+
+        return productPatches;
+    }
+
+    /**
+     * 
+     * @param comp
+     * @param version
+     * @return
+     */
+    private Map<String, Set<Patch>> doPrintAnomalies(Component comp, String version) {
+
+        List<Patch> patches = comp.getPatches();
+        Map<String, Set<Patch>> productPatches = new HashMap<String, Set<Patch>>();
+
+        long totalPatchCountByComponent = this.totalPatchCountByComponentMap.get(comp.getComponentName());
+
+        for (Iterator<Patch> patchIterator = patches.iterator(); patchIterator.hasNext();) {
+            Patch patch = patchIterator.next();
+            Set<String> products = patch.getProductVersion();
+            if (products != null && !products.isEmpty()) {
+                // we know the product(s), where this patch is applicable.
+                for (Iterator<String> prodIterator = products.iterator(); prodIterator.hasNext();) {
+                    String prodVersion = prodIterator.next();
+                    if (productPatches.containsKey(prodVersion)) {
+                        productPatches.get(prodVersion).add(patch);
+                    } else {
+                        Set<Patch> patchSet = new HashSet<Patch>();
+                        patchSet.add(patch);
+                        productPatches.put(prodVersion, patchSet);
+                    }
+                }
+            }
+        }
+
+        if (totalPatchCountByComponent > 0) {
+            if (productPatches == null || productPatches.isEmpty()) {
+                System.out.println(comp);
             }
         }
 
@@ -311,7 +351,7 @@ public class Printer {
             compNames = componentNamesByRepoMap.get(repoName);
         }
 
-        doPrintPatchesByRepo(repoName, version);
+        doPrintPatchesByRepo(repoName, version, false);
     }
 
     /**
@@ -319,7 +359,7 @@ public class Printer {
      * @param repoName
      * @param version
      */
-    private boolean doPrintPatchesByRepo(String repoName, String version) {
+    private boolean doPrintPatchesByRepo(String repoName, String version, boolean printAnomaliesOnly) {
 
         // find the all the components in the given repository, assuming its from wso2-extensions git org.
         Set<String> compNames = componentNamesByRepoMap.get(repoName);
@@ -346,7 +386,11 @@ public class Printer {
                 for (Iterator<String> compIterator = compNames.iterator(); compIterator.hasNext();) {
                     Component component = componentsWithPatchesMap.get(compIterator.next());
                     if (component != null && !component.getPatches().isEmpty()) {
-                        doprintPatchesByComponentName(component, version);
+                        if (printAnomaliesOnly) {
+                            doPrintAnomalies(component, version);
+                        } else {
+                            doprintPatchesByComponentName(component, version);
+                        }
                     }
                 }
                 return true;

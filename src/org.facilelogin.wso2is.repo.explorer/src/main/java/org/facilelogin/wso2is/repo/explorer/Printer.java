@@ -38,6 +38,8 @@ public class Printer {
     String highestPatchCountByProductName;
 
     int totalPatchCount = 0;
+    int totalProductPatchCount = 0;
+
     boolean color = true;
 
     public Printer(Reader reader) {
@@ -92,6 +94,8 @@ public class Printer {
             System.out.print(
                     "Component with the most number of updates (since IS 5.2.0): " + highestPatchCountByComponentName
                             + " (" + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
+            System.out.println(
+                    color(ANSI_YELLOW) + "Total unumber of product patches since IS 5.2.0: " + totalProductPatchCount);
             System.out.println(color(ANSI_RESET));
         }
 
@@ -234,6 +238,7 @@ public class Printer {
                     String ver = entry.getKey();
                     Set<Patch> pches = entry.getValue();
                     if (pches.size() > 0) {
+                        totalProductPatchCount++;
                         // no need to print if there are no patches.
                         System.out.print("|  |  |--" + color(ANSI_PURPLE) + ver + " (" + pches.size() + "/"
                                 + totalPatchCountByComponentByProducts + ")");

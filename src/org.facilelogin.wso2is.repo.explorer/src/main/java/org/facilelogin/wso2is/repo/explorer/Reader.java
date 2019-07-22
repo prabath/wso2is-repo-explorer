@@ -47,6 +47,8 @@ public class Reader {
 
     private Map<String, Set<String>> productVersionsByJarMap = new HashMap<String, Set<String>>();
     private List<String> skipRepos = new ArrayList<>();
+    private List<String> skipComponents = new ArrayList<>();
+
 
     Long highestPatchCountByRepo = 0L;
     Long highestPatchCountByComponent = 0L;
@@ -64,6 +66,20 @@ public class Reader {
 
         skipRepos.add("identity-test-integration");
         skipRepos.add("identity-endpoint-authentication");
+        
+        skipComponents.add("org.wso2.carbon.remote-tasks.stub");
+        skipComponents.add("org.wso2.carbon.ndatasource.capp.deployer");
+        skipComponents.add("org.wso2.carbon.application.mgt.ui");
+        skipComponents.add("org.wso2.carbon.hostobjects.sso");
+        skipComponents.add("org.wso2.carbon.event.core");
+        skipComponents.add("org.wso2.carbon.application.mgt");
+        skipComponents.add("org.wso2.carbon.ntask.core");
+        skipComponents.add("org.wso2.carbon.tools.wsdlvalidator.ui");
+        skipComponents.add("org.wso2.carbon.messageflows.ui");
+        skipComponents.add("org.wso2.carbon.ndatasource.ui");
+        skipComponents.add("org.wso2.carbon.tryit");
+        skipComponents.add("org.wso2.carbon.tools.wsdlvalidator");
+        
 
         addRepo(WSO2_DIR, "https://github.com/wso2/");
         addRepo(WSO2_EXT_DIR, "https://github.com/wso2-extensions/");
@@ -110,6 +126,11 @@ public class Reader {
                                 // component name may not be the end of the line.
                                 componentName = componentName.substring(0, componentName.indexOf("/"));
                             }
+                            
+                            if (skipComponents.contains(componentName)) {
+                                break;
+                            }
+                            
                             // we do not need to add all repos.
                             if (!skipRepos.contains(repoName)) {
                                 // this is how we construct the repo url.

@@ -49,6 +49,8 @@ public class Rex {
             printer.printPatchCountByTime();
         } else if (args.length == 1 && "-r".equals(args[0])) {
             printer.printPatchesCountByRepoTop10();
+        } else if (args.length == 1 && "-r2".equals(args[0])) {
+            printer.printPatchesWithMoreThanOneRepo();
         } else if (args.length == 1 && "-a".equals(args[0])) {
             printer.printAllPatches(true);
         } else {

@@ -29,6 +29,7 @@ public class Printer {
     private Map<String, Long> totalPatchCountByComponentMap;
     private Map<String, Set<String>> productsWithPatchesByRepoMap;
     private Map<String, Map<String, Set<Patch>>> patchesByTimeMap;
+    protected Map<String, Set<String>> repoNamesByPatchMap;
 
     Long highestPatchCountByRepo = 0L;
     Long highestPatchCountByComponent = 0L;
@@ -58,6 +59,7 @@ public class Printer {
         this.highestPatchCountByComponentRepoName = reader.highestPatchCountByComponentRepoName;
         this.productsWithPatchesByRepoMap = reader.productsWithPatchesByRepoMap;
         this.patchesByTimeMap = reader.patchesByTimeMap;
+        this.repoNamesByPatchMap = reader.repoNamesByPatchMap;
 
         if (System.getenv("REX_COLOR") != null && System.getenv("REX_COLOR").equalsIgnoreCase("false")) {
             color = false;
@@ -79,6 +81,29 @@ public class Printer {
         } else {
             return "";
         }
+    }
+
+    /**
+     * 
+     */
+    public void printPatchesWithMoreThanOneRepo() {
+        int count = 0;
+        for (Map.Entry<String, Set<String>> entry : repoNamesByPatchMap.entrySet()) {
+            if (entry.getValue().size() > 1) {
+                count++;
+                System.out.print("|--" + color(ANSI_CYAN) + entry.getKey());
+                System.out.println(color(ANSI_RESET));
+                for (String repo : entry.getValue()) {
+                    System.out.print("| |--" + color(ANSI_GREEN) + repo);
+                    System.out.println(color(ANSI_RESET));
+                }
+
+            }
+        }
+        System.out.println();
+        System.out.print(color(ANSI_YELLOW) + "Number of patches packed components from more than one repo: " + count);
+        System.out.println(color(ANSI_RESET));
+
     }
 
     /**

@@ -80,8 +80,8 @@ public class Reader {
         skipComponents.add("org.wso2.carbon.tryit");
         skipComponents.add("org.wso2.carbon.tools.wsdlvalidator");
 
-        addRepo(WSO2_EXT_DIR, "https://github.com/wso2-extensions/");
         addRepo(WSO2_DIR, "https://github.com/wso2/");
+        addRepo(WSO2_EXT_DIR, "https://github.com/wso2-extensions/");
         addProduct(IS460, Rex.IS_460);
         addProduct(IS500, Rex.IS_500);
         addProduct(IS510, Rex.IS_510);
@@ -114,6 +114,7 @@ public class Reader {
             // this includes a line per each file in the git repos.
             reader = new BufferedReader(new FileReader(filePath));
             String line = reader.readLine();
+
             while (line != null) {
                 line = reader.readLine();
                 if (line != null && line.length() > 2) {
@@ -131,7 +132,7 @@ public class Reader {
                             }
 
                             if (skipComponents.contains(componentName)) {
-                                break;
+                                continue;
                             }
 
                             // we do not need to add all repos.
@@ -356,7 +357,7 @@ public class Reader {
             patchNamesByRepoMap.put(repoName, patchNames);
             newPatchForRepo = true;
         }
-        
+
         if (newPatchForRepo) {
             // keeps track total number of patches by repo name.
             if (totalPatchCountByRepoMap.containsKey(repoName)) {

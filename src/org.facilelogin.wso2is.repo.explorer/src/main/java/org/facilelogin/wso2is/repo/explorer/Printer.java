@@ -153,7 +153,7 @@ public class Printer {
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
             System.out.print(
-                    "|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalPatchedJarCount + ")");
+                    "|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalProductPatchCount + ")");
 
             System.out.println(color(ANSI_RESET));
 

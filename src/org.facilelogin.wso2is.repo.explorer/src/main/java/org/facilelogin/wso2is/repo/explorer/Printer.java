@@ -87,8 +87,10 @@ public class Printer {
      * 
      */
     public void printPatchesWithMoreThanOneRepo() {
+        int count = 0;
         for (Map.Entry<String, Set<String>> entry : repoNamesByPatchMap.entrySet()) {
             if (entry.getValue().size() > 1) {
+                count++;
                 System.out.print("|--" + color(ANSI_CYAN) + entry.getKey());
                 System.out.println(color(ANSI_RESET));
                 for (String repo : entry.getValue()) {
@@ -98,6 +100,9 @@ public class Printer {
 
             }
         }
+        System.out.println();
+        System.out.print(color(ANSI_YELLOW) + "Number of patches packed components from more than one repo: " + count);
+        System.out.println(color(ANSI_RESET));
 
     }
 

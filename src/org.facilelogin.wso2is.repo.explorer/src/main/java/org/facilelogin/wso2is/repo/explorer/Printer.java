@@ -62,6 +62,10 @@ public class Printer {
         if (System.getenv("REX_COLOR") != null && System.getenv("REX_COLOR").equalsIgnoreCase("false")) {
             color = false;
         }
+
+        for (Map.Entry<String, Set<Patch>> entry : patchesByProductVersionMap.entrySet()) {
+            this.totalProductPatchCount += entry.getValue().size();
+        }
     }
 
     /**
@@ -263,7 +267,6 @@ public class Printer {
                                 + totalPatchCountByComponentByProducts + ")");
                         System.out.println(color(ANSI_RESET));
                         for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
-                            totalProductPatchCount++;
                             Patch patch = iterator.next();
                             System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + "/"
                                     + patch.getMonth() + "," + patch.getYear() + ")");

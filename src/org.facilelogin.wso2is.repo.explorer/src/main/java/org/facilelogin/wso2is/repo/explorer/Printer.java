@@ -412,7 +412,7 @@ public class Printer {
 
                 if (!printAnomaliesOnly) {
                     System.out.print(
-                            "|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalPatchedJarCount + ")");
+                            "|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalProductPatchCount + ")");
                     System.out.println(color(ANSI_RESET));
                 }
 

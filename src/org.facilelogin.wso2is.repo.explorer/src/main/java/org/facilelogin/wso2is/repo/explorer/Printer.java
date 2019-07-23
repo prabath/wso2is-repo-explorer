@@ -123,7 +123,7 @@ public class Printer {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
     }
-    
+
     public void printPatchesCountByComponentTop10() {
 
         // LinkedHashMap preserve the ordering of elements in which they are inserted
@@ -352,7 +352,17 @@ public class Printer {
                 System.out.print("|--" + color(ANSI_CYAN) + year);
                 System.out.println(color(ANSI_RESET));
 
-                for (Map.Entry<String, Set<Patch>> mt : monthlyPatches.entrySet()) {
+                // LinkedHashMap preserve the ordering of elements in which they are inserted
+                LinkedHashMap<String, Set<Patch>> reverseSortedMap = new LinkedHashMap<>();
+
+                monthlyPatches.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+                        .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
+
+                System.out.print("|  |--");
+
+                int x = 1;
+
+                for (Map.Entry<String, Set<Patch>> mt : reverseSortedMap.entrySet()) {
                     String month = mt.getKey();
                     int patchedJarCount = mt.getValue().size();
                     if (patchedJarCount > 0) {
@@ -362,18 +372,19 @@ public class Printer {
                             Patch patch = iterator.next();
                             if (!uniquePatches.contains(patch.getName())) {
                                 uniquePatches.add(patch.getName());
-                                if (patch.getMonth().equals("Jul") && patch.getYear() == 2019) {
-                                    System.out.println(patch.getName());
-                                }
                             }
-
                         }
 
-                        System.out.print("|  |--" + color(ANSI_GREEN) + month + " (" + uniquePatches.size() + ")");
-                        System.out.println(color(ANSI_RESET));
+                        if (x == reverseSortedMap.size()) {
+                            System.out.print(month + "(" + uniquePatches.size() + ")");
+                        } else {
+                            System.out.print(month + "(" + uniquePatches.size() + ") | ");
+                        }
+
+                        x++;
                     }
                 }
-
+                System.out.println();
             }
         }
     }

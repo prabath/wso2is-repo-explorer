@@ -123,7 +123,7 @@ public class Printer {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
     }
-    
+
     public void printPatchesCountByComponentTop10() {
 
         // LinkedHashMap preserve the ordering of elements in which they are inserted
@@ -351,13 +351,14 @@ public class Printer {
             if (monthlyPatches.size() > 0) {
                 System.out.print("|--" + color(ANSI_CYAN) + year);
                 System.out.println(color(ANSI_RESET));
-                
+
                 // LinkedHashMap preserve the ordering of elements in which they are inserted
                 LinkedHashMap<String, Set<Patch>> reverseSortedMap = new LinkedHashMap<>();
 
                 monthlyPatches.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
                         .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
-                
+
+                System.out.print("|  |--" + color(ANSI_GREEN));
 
                 for (Map.Entry<String, Set<Patch>> mt : reverseSortedMap.entrySet()) {
                     String month = mt.getKey();
@@ -373,9 +374,11 @@ public class Printer {
 
                         }
 
-                        System.out.print("|  |--" + color(ANSI_GREEN) + month + " (" + uniquePatches.size() + ")");
-                        System.out.println(color(ANSI_RESET));
+                        System.out.print(month + " (" + uniquePatches.size() + ") | ");
                     }
+                    
+                    System.out.println(color(ANSI_RESET));
+
                 }
 
             }

@@ -1,9 +1,11 @@
 package org.facilelogin.wso2is.repo.explorer;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -89,15 +91,32 @@ public class Printer {
         }
 
         if (!printAnomaliesOnly) {
-            System.out.println(color(ANSI_YELLOW) + "Repository with the most number of updates (since IS 5.2.0): "
+            System.out.println(color(ANSI_YELLOW) + "Repository with the most number of updates (since IS 5.1.0): "
                     + highestPatchCountByRepoName + " (" + highestPatchCountByRepo + ")");
             System.out.print(
-                    "Component with the most number of updates (since IS 5.2.0): " + highestPatchCountByComponentName
+                    "Component with the most number of updates (since IS 5.1.0): " + highestPatchCountByComponentName
                             + " (" + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
             System.out.println(color(ANSI_RESET));
             System.out.print(
-                    color(ANSI_BLUE) + "Total unumber of product patches since IS 5.2.0: " + totalProductPatchCount);
+                    color(ANSI_BLUE) + "Total unumber of product patches since IS 5.1.0: " + totalProductPatchCount);
             System.out.println(color(ANSI_RESET));
+        }
+
+    }
+
+    /**
+     * 
+     */
+    public void printPatchesCountByRepoTop10() {
+
+        // LinkedHashMap preserve the ordering of elements in which they are inserted
+        LinkedHashMap<String, Long> reverseSortedMap = new LinkedHashMap<>();
+
+        totalPatchCountByRepoMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
+
+        for (Map.Entry<String, Long> entry : reverseSortedMap.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
         }
 
     }
@@ -133,8 +152,8 @@ public class Printer {
             Long totalPatchCountByRepo = this.totalPatchCountByRepoMap.get(comp.getRepoName());
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
-            System.out
-                    .print("|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalPatchedJarCount + ")");
+            System.out.print(
+                    "|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalPatchedJarCount + ")");
 
             System.out.println(color(ANSI_RESET));
 
@@ -392,7 +411,8 @@ public class Printer {
             if (count > 0) {
 
                 if (!printAnomaliesOnly) {
-                    System.out.print("|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalPatchedJarCount + ")");
+                    System.out.print(
+                            "|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalPatchedJarCount + ")");
                     System.out.println(color(ANSI_RESET));
                 }
 

@@ -351,8 +351,15 @@ public class Printer {
             if (monthlyPatches.size() > 0) {
                 System.out.print("|--" + color(ANSI_CYAN) + year);
                 System.out.println(color(ANSI_RESET));
+                
+                // LinkedHashMap preserve the ordering of elements in which they are inserted
+                LinkedHashMap<String, Set<Patch>> reverseSortedMap = new LinkedHashMap<>();
 
-                for (Map.Entry<String, Set<Patch>> mt : monthlyPatches.entrySet()) {
+                monthlyPatches.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+                        .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
+                
+
+                for (Map.Entry<String, Set<Patch>> mt : reverseSortedMap.entrySet()) {
                     String month = mt.getKey();
                     int patchedJarCount = mt.getValue().size();
                     if (patchedJarCount > 0) {
@@ -362,9 +369,6 @@ public class Printer {
                             Patch patch = iterator.next();
                             if (!uniquePatches.contains(patch.getName())) {
                                 uniquePatches.add(patch.getName());
-                                if (patch.getMonth().equals("Jul") && patch.getYear() == 2019) {
-                                    System.out.println(patch.getName());
-                                }
                             }
 
                         }

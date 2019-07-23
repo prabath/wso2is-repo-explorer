@@ -37,7 +37,7 @@ public class Printer {
     String highestPatchCountByComponentRepoName;
     String highestPatchCountByProductName;
 
-    int totalPatchCount = 0;
+    int totalPatchedJarCount = 0;
     int totalProductPatchCount = 0;
 
     boolean color = true;
@@ -46,7 +46,7 @@ public class Printer {
         this.componentNamesByRepoMap = reader.componentNamesByRepoMap;
         this.componentsWithPatchesMap = reader.componentsWithPatchesMap;
         this.patchesByProductVersionMap = reader.patchesByProductVersionMap;
-        this.totalPatchCount = reader.totalPatchCount;
+        this.totalPatchedJarCount = reader.totalPatchedJarCount;
         this.totalPatchCountByRepoMap = reader.totalPatchCountByRepoMap;
         this.totalPatchCountByComponentMap = reader.totalPatchCountByComponentMap;
         this.highestPatchCountByRepo = reader.highestPatchCountByRepo;
@@ -134,7 +134,7 @@ public class Printer {
             long count = totalPatchCountByRepo == null ? 0 : totalPatchCountByRepo;
 
             System.out
-                    .print("|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalPatchCount + ")");
+                    .print("|--" + color(ANSI_CYAN) + comp.getRepoName() + " (" + count + "/" + totalPatchedJarCount + ")");
 
             System.out.println(color(ANSI_RESET));
 
@@ -392,7 +392,7 @@ public class Printer {
             if (count > 0) {
 
                 if (!printAnomaliesOnly) {
-                    System.out.print("|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalPatchCount + ")");
+                    System.out.print("|--" + color(ANSI_CYAN) + repoName + "(" + count + "/" + totalPatchedJarCount + ")");
                     System.out.println(color(ANSI_RESET));
                 }
 

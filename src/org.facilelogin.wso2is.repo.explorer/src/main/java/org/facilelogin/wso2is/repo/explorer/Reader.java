@@ -80,8 +80,8 @@ public class Reader {
         skipComponents.add("org.wso2.carbon.tryit");
         skipComponents.add("org.wso2.carbon.tools.wsdlvalidator");
 
-        addRepo(WSO2_DIR, "https://github.com/wso2/");
         addRepo(WSO2_EXT_DIR, "https://github.com/wso2-extensions/");
+        addRepo(WSO2_DIR, "https://github.com/wso2/");
         addProduct(IS460, Rex.IS_460);
         addProduct(IS500, Rex.IS_500);
         addProduct(IS510, Rex.IS_510);

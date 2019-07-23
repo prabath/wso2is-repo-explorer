@@ -122,7 +122,19 @@ public class Printer {
         for (Map.Entry<String, Long> entry : reverseSortedMap.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
+    }
+    
+    public void printPatchesCountByComponentTop10() {
 
+        // LinkedHashMap preserve the ordering of elements in which they are inserted
+        LinkedHashMap<String, Long> reverseSortedMap = new LinkedHashMap<>();
+
+        totalPatchCountByComponentMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
+
+        for (Map.Entry<String, Long> entry : reverseSortedMap.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
     }
 
     /**

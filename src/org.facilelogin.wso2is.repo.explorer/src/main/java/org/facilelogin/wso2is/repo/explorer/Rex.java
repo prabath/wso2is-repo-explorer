@@ -34,6 +34,8 @@ public class Rex {
         } else if (args.length == 4 && "-c".equals(args[0]) && !args[1].isEmpty() && "-p".equals(args[2])
                 && !args[3].isEmpty()) {
             printer.printPatchesByComponentName(args[1], args[3].toLowerCase());
+        } else if (args.length == 1 && "-c".equals(args[0])) {
+            printer.printPatchesCountByComponentTop10();
         } else if (args.length == 2 && "-r".equals(args[0]) && !args[1].isEmpty()) {
             printer.printPatchesByRepo(args[1]);
         } else if (args.length == 1 && "-p".equals(args[0])) {

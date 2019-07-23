@@ -17,7 +17,7 @@ public class Printer {
     private static final String ANSI_GREEN = "\u001B[32m";
     private static final String ANSI_CYAN = "\u001B[36m";
     private static final String ANSI_PURPLE = "\u001B[35m";
-    // private static final String ANSI_BLUE = "\u001B[34m";
+    private static final String ANSI_BLUE = "\u001B[34m";
     private static final String ANSI_YELLOW = "\u001B[33m";
 
     private Map<String, Set<String>> componentNamesByRepoMap;
@@ -94,8 +94,9 @@ public class Printer {
             System.out.print(
                     "Component with the most number of updates (since IS 5.2.0): " + highestPatchCountByComponentName
                             + " (" + highestPatchCountByComponent + ") [" + highestPatchCountByComponentRepoName + "]");
-            System.out.println(
-                    color(ANSI_YELLOW) + "Total unumber of product patches since IS 5.2.0: " + totalProductPatchCount);
+            System.out.println(color(ANSI_RESET));
+            System.out.print(
+                    color(ANSI_BLUE) + "Total unumber of product patches since IS 5.2.0: " + totalProductPatchCount);
             System.out.println(color(ANSI_RESET));
         }
 
@@ -238,12 +239,12 @@ public class Printer {
                     String ver = entry.getKey();
                     Set<Patch> pches = entry.getValue();
                     if (pches.size() > 0) {
-                        totalProductPatchCount++;
                         // no need to print if there are no patches.
                         System.out.print("|  |  |--" + color(ANSI_PURPLE) + ver + " (" + pches.size() + "/"
                                 + totalPatchCountByComponentByProducts + ")");
                         System.out.println(color(ANSI_RESET));
                         for (Iterator<Patch> iterator = pches.iterator(); iterator.hasNext();) {
+                            totalProductPatchCount++;
                             Patch patch = iterator.next();
                             System.out.println("|  |  |  |--" + patch.getName() + " (" + patch.getJarVersion() + "/"
                                     + patch.getMonth() + "," + patch.getYear() + ")");

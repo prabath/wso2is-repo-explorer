@@ -357,8 +357,6 @@ public class Reader {
             newPatchForRepo = true;
         }
         
-        newPatchForRepo = true;
-
         if (newPatchForRepo) {
             // keeps track total number of patches by repo name.
             if (totalPatchCountByRepoMap.containsKey(repoName)) {

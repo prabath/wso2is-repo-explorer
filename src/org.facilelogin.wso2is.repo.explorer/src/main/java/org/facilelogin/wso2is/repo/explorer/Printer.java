@@ -358,7 +358,7 @@ public class Printer {
                 monthlyPatches.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
                         .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
 
-                System.out.print("|  |--" + color(ANSI_GREEN));
+                System.out.print("|  |--");
 
                 for (Map.Entry<String, Set<Patch>> mt : reverseSortedMap.entrySet()) {
                     String month = mt.getKey();
@@ -377,7 +377,7 @@ public class Printer {
                         System.out.print(month + " (" + uniquePatches.size() + ") | ");
                     }
                 }
-                System.out.println(color(ANSI_RESET));
+                System.out.println();
             }
         }
     }

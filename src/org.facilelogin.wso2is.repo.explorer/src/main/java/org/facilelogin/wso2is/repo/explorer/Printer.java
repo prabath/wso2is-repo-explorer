@@ -376,11 +376,8 @@ public class Printer {
 
                         System.out.print(month + " (" + uniquePatches.size() + ") | ");
                     }
-                    
-                    System.out.println(color(ANSI_RESET));
-
                 }
-
+                System.out.println(color(ANSI_RESET));
             }
         }
     }

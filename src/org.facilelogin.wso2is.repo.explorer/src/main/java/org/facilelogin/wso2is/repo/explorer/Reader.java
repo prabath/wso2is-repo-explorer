@@ -43,6 +43,7 @@ public class Reader {
     protected Map<String, Long> totalPatchCountByRepoMap = new HashMap<String, Long>();
     protected Map<String, Long> totalPatchCountByComponentMap = new HashMap<String, Long>();
     protected Map<String, Set<String>> productsWithPatchesByRepoMap = new HashMap<String, Set<String>>();
+    protected Map<String, Set<String>> repoNamesByPatchMap = new HashMap<String, Set<String>>();
 
     protected int totalPatchedJarCount = 0;
 
@@ -356,6 +357,18 @@ public class Reader {
             patchNames.add(patchName);
             patchNamesByRepoMap.put(repoName, patchNames);
             newPatchForRepo = true;
+        }
+
+        Set<String> repos;
+        if (repoNamesByPatchMap.containsKey(patchName)) {
+            repos = repoNamesByPatchMap.get(patchName);
+            if (!repos.contains(repoName)) {
+                repos.add(repoName);
+            }
+        } else {
+            repos = new HashSet<String>();
+            repos.add(repoName);
+            repoNamesByPatchMap.put(patchName, repos);
         }
 
         if (newPatchForRepo) {

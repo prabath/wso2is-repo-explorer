@@ -360,6 +360,8 @@ public class Printer {
 
                 System.out.print("|  |--");
 
+                int x = 1;
+
                 for (Map.Entry<String, Set<Patch>> mt : reverseSortedMap.entrySet()) {
                     String month = mt.getKey();
                     int patchedJarCount = mt.getValue().size();
@@ -371,10 +373,15 @@ public class Printer {
                             if (!uniquePatches.contains(patch.getName())) {
                                 uniquePatches.add(patch.getName());
                             }
-
                         }
 
-                        System.out.print(month + " (" + uniquePatches.size() + ") | ");
+                        if (x == reverseSortedMap.size()) {
+                            System.out.print(month + "(" + uniquePatches.size() + ")");
+                        } else {
+                            System.out.print(month + "(" + uniquePatches.size() + ") | ");
+                        }
+
+                        x++;
                     }
                 }
                 System.out.println();

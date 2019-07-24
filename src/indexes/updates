@@ -3551,6 +3551,7 @@ WSO2-CARBON-UPDATE-4.4.0-4979|synapse-nhttp-transport|2.1.7-wso2v3|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4980|org.wso2.carbon.apimgt.impl|6.3.95|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4988|org.wso2.carbon.user.core|4.4.35|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4989|org.wso2.carbon.user.core|4.4.35|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-4990|org.wso2.carbon.user.core|4.4.35|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-0055|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Jan|2016
 WSO2-CARBON-UPDATE-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-UPDATE-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

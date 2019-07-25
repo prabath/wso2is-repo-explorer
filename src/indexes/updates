@@ -3544,6 +3544,7 @@ WSO2-CARBON-UPDATE-4.4.0-4965|org.wso2.carbon.identity.conditional.auth.function
 WSO2-CARBON-UPDATE-4.4.0-4966|org.wso2.carbon.identity.oauth|6.0.53|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4967|org.wso2.carbon.event.output.adapter.jms|5.1.1|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4968|org.wso2.carbon.identity.oauth|6.0.53|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-4970|synapse-nhttp-transport|2.1.7-wso2v111|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4971|org.wso2.carbon.apimgt.impl|6.4.50|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4972|org.wso2.carbon.identity.conditional.auth.functions.client.assertion.parameters|0.1.29|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4976|com.wso2.finance.open.banking.gateway|1.3.0|Jul|2019
@@ -3554,6 +3555,14 @@ WSO2-CARBON-UPDATE-4.4.0-4989|org.wso2.carbon.user.core|4.4.35|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4990|org.wso2.carbon.user.core|4.4.35|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4993|synapse-nhttp-transport|2.1.7-wso2v7|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4997|org.wso2.carbon.identity.application.mgt|5.12.387|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-4999|org.wso2.carbon.ui|4.4.40|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5001|org.wso2.carbon.ui|4.4.40|May|2019
+WSO2-CARBON-UPDATE-4.4.0-5003|org.wso2.carbon.ui|4.4.36|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5004|org.wso2.carbon.ui|4.4.32|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5005|org.wso2.carbon.ui|4.4.26|Jun|2019
+WSO2-CARBON-UPDATE-4.4.0-5006|org.wso2.carbon.ui|4.4.32|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5007|org.wso2.carbon.ui|4.4.16|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5008|org.wso2.carbon.ui|4.4.14|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-0055|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Jan|2016
 WSO2-CARBON-UPDATE-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-UPDATE-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

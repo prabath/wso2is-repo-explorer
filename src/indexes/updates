@@ -3574,7 +3574,9 @@ WSO2-CARBON-UPDATE-4.4.0-5014|org.wso2.carbon.identity.application.authz.xacml|2
 WSO2-CARBON-UPDATE-4.4.0-5016|commons-vfs2|2.0-wso2v15|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5018|org.wso2.carbon.ui|4.4.14|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5020|org.wso2.carbon.identity.oauth2.validators.xacml|2.0.5|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5021|com.wso2.finance.open.banking.claim.provider|1.3.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5022|org.wso2.carbon.idp.mgt|5.2.2|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5026|com.wso2.finance.open.banking.mtls.validator|1.3.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-0055|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Jan|2016
 WSO2-CARBON-UPDATE-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-UPDATE-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -3979,3 +3981,4 @@ WSO2-CARBON-UPDATE-4.4.0-4971|org.wso2.carbon.apimgt.rest.api.admin|6.4.50|Jul|2
 WSO2-CARBON-UPDATE-4.4.0-4980|org.wso2.carbon.apimgt.rest.api.admin|6.3.95|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4981|org.wso2.carbon.identity.oauth.endpoint|6.0.53|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5010|com.wso2.finance.open.banking.consent.mgt.endpoint|1.3.0|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5021|authentication-endpoint-solution|1.3.0|Jul|2019

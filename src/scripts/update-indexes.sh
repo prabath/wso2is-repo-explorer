@@ -14,10 +14,17 @@ do
   for file in ./**/*.zip
   do
       file_name=$(echo $file | sed 's/.*\///' | sed -e 's|.zip||g')
-      if [ ! -d "../unzipped/$file_name" ]
+      old_patch_prefix="old"
+      is_old_patch=$(echo $file | grep -o "$old_patch_prefix.*")
+      if [ -z "$is_old_patch" ]
       then
-        echo $file
-        unzip -o -d "../unzipped" "$file"
+        if [ ! -d "../unzipped/$file_name" ]
+        then
+          echo $file
+          unzip -o -d "../unzipped" "$file"
+        fi
+      else
+        echo "Old patch found: $file"
       fi
   done
 

@@ -11,7 +11,9 @@ do
   svn up
   echo "svn updated successfully"
   mkdir -p ../unzipped 
-  for file in ./**/*.zip
+  zip_files=$(find . -name "*.zip")
+  #for file in ./**/*.zip
+  for file in $zip_files
   do
       file_name=$(echo $file | sed 's/.*\///' | sed -e 's|.zip||g')
       old_patch_prefix="old"

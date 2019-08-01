@@ -70,6 +70,16 @@ do
       fi
   done
 
+  for file in $jar_files
+  do 
+      dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-PATCH-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
+      if [ ! -d "../jars/$dir" ]
+      then
+        echo $file
+  	    unzip -o -d "../jars/$dir" "$file"
+      fi
+  done
+
   echo "jar files unzipped successfully" 
 
   mkdir -p ../wars 
@@ -77,6 +87,16 @@ do
   for file in $war_files
   do 
       dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-UPDATE-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
+      if [ ! -d "../wars/$dir" ]
+      then
+        echo $file
+  	    unzip -o -d "../wars/$dir" "$file"
+      fi
+  done
+
+  for file in $war_files
+  do 
+      dir=$(echo "$file" | sed -n 's/.*\(WSO2-CARBON-PATCH-[0-9].[0-9].[0-9]-[0-9]\{4\}\).*/\1/p')
       if [ ! -d "../wars/$dir" ]
       then
         echo $file

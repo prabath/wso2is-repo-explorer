@@ -3980,7 +3980,7 @@ WSO2-CARBON-UPDATE-4.4.0-4890|authentication-endpoint-solution|1.3.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4899|org.wso2.carbon.identity.application.authentication.endpoint|5.12.387|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4900|org.wso2.carbon.apimgt.rest.api.store|6.0.4|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4902|com.wso2.finance.open.banking.consent.mgt.endpoint|1.3.0|Jul|2019
-WSO2-CARBON-UPDATE-4.4.0-4904|org.wso2.carbon.device.mgt.v09.api|3.1.51|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-4904|org.wso2.carbon.device.mgt.mobile.android.v09.api|4.1.20|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4907|org.wso2.carbon.identity.application.authentication.endpoint|5.12.387|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4910|org.wso2.carbon.healthcheck.api.endpoint|1.0.3|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4914|org.wso2.carbon.healthcheck.api.endpoint|1.0.3|Jul|2019

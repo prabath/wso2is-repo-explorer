@@ -145,7 +145,7 @@ public class Printer {
                 .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
 
         for (Map.Entry<String, Long> entry : reverseSortedMap.entrySet()) {
-            System.out.println(entry.getKey() + " : " + entry.getValue());
+            System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
 
@@ -158,7 +158,7 @@ public class Printer {
                 .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
 
         for (Map.Entry<String, Long> entry : reverseSortedMap.entrySet()) {
-            System.out.println(entry.getKey() + " : " + entry.getValue());
+            System.out.println(entry.getKey() + ": " + entry.getValue());
         }
     }
 

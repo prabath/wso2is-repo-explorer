@@ -33,37 +33,41 @@ public class Parser {
             String line = reader.readLine();
             while (line != null) {
                 if (line.endsWith(".properties")) {
-                    line = line.replace("./", "");
-                    String patchName = line.substring(0, line.indexOf("/"));
-                    BufferedReader propReader = null;
-                    try {
-                        propReader = new BufferedReader(new FileReader(line));
-                        Properties properties = new Properties();
-                        properties.load(propReader);
-                        String version = (String) properties.get("version");
-                        String componentName = (String) properties.get("artifactId");
-                        propReader.close();
-
-                        propReader = new BufferedReader(new FileReader(line));
-                        String propLine = propReader.readLine();
-                        propLine = propReader.readLine();
-                        if (propLine != null) {
-                            propLine = propLine.substring(1);
-                            String props[] = propLine.split(" ");
-                            String month = props[1];
-                            String year = props[5];
-                            writer.println(patchName + "|" + componentName + "|" + version + "|" + month + "|" + year);
-                        }
-
-                    } finally {
-                        if (propReader != null) {
+                    if (line.indexOf("old") < -1) {
+                        line = line.replace("./", "");
+                        String patchName = line.substring(0, line.indexOf("/"));
+                        BufferedReader propReader = null;
+                        try {
+                            propReader = new BufferedReader(new FileReader(line));
+                            Properties properties = new Properties();
+                            properties.load(propReader);
+                            String version = (String) properties.get("version");
+                            String componentName = (String) properties.get("artifactId");
                             propReader.close();
+
+                            propReader = new BufferedReader(new FileReader(line));
+                            String propLine = propReader.readLine();
+                            propLine = propReader.readLine();
+                            if (propLine != null) {
+                                propLine = propLine.substring(1);
+                                String props[] = propLine.split(" ");
+                                String month = props[1];
+                                String year = props[5];
+                                writer.println(
+                                        patchName + "|" + componentName + "|" + version + "|" + month + "|" + year);
+                            }
+
+                        } finally {
+                            if (propReader != null) {
+                                propReader.close();
+                            }
                         }
+                    } else {
+                          System.out.println("Old patch: " + line);
                     }
                 }
 
                 line = reader.readLine();
-
             }
             reader.close();
         } catch (Exception e) {

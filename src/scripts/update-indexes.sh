@@ -9,7 +9,7 @@ do
   git pull
   cd ../../svn/updates
   svn up
-  echo "svn updated successfully"
+  echo "updates svn updated successfully"
   mkdir -p ../unzipped 
   zip_files=$(find . -name "*.zip")
   #for file in ./**/*.zip
@@ -31,6 +31,8 @@ do
   done
 
   cd ../patches
+  svn up
+  echo "patches svn updated successfully"
   zip_files=$(find . -name "*.zip")
   #for file in ./**/*.zip
   for file in $zip_files

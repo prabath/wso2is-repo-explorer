@@ -3540,6 +3540,7 @@ WSO2-CARBON-UPDATE-4.4.0-4960|org.wso2.carbon.rest.api.ui|4.6.105|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4961|org.wso2.carbon.identity.core|5.11.148|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4962|org.wso2.carbon.identity.application.authentication.framework|5.2.2|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4963|org.wso2.carbon.identity.application.mgt|5.12.153|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-4964|org.wso2.carbon.identity.sso.saml|5.1.2|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-4965|org.wso2.carbon.identity.conditional.auth.functions.client.assertion.parameters|0.1.29|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4966|org.wso2.carbon.identity.oauth|6.0.53|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4967|org.wso2.carbon.event.output.adapter.jms|5.1.1|Jul|2019
@@ -3587,6 +3588,7 @@ WSO2-CARBON-UPDATE-4.4.0-5034|org.wso2.carbon.identity.application.authenticator
 WSO2-CARBON-UPDATE-4.4.0-5035|org.wso2.carbon.user.core|4.4.32|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5037|org.wso2.carbon.apimgt.handlers|3.1.51|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5038|org.wso2.carbon.extension.identity.authenticator.x509Certificate.connector|2.0.11|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5040|org.wso2.charon3.core|3.0.7|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-0055|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Jan|2016
 WSO2-CARBON-UPDATE-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-UPDATE-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

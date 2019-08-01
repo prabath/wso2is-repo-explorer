@@ -33,7 +33,7 @@ public class Parser {
             String line = reader.readLine();
             while (line != null) {
                 if (line.endsWith(".properties")) {
-                    if (line.indexOf("old") < -1) {
+                    if (line.indexOf("old") == -1) {
                         line = line.replace("./", "");
                         String patchName = line.substring(0, line.indexOf("/"));
                         BufferedReader propReader = null;

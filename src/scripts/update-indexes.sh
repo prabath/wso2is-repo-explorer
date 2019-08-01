@@ -30,7 +30,27 @@ do
       fi
   done
 
-  echo "patch files unzipped successfully" 
+  cd ../patches
+  zip_files=$(find . -name "*.zip")
+  #for file in ./**/*.zip
+  for file in $zip_files
+  do
+      file_name=$(echo $file | sed 's/.*\///' | sed -e 's|.zip||g')
+      old_patch_prefix="old"
+      is_old_patch=$(echo $file | grep -o "$old_patch_prefix.*")
+      if [ -z "$is_old_patch" ]
+      then
+        if [ ! -d "../unzipped/$file_name" ]
+        then
+          echo $file
+          unzip -o -d "../unzipped" "$file"
+        fi
+      else
+        echo "Old patch found: $file"
+      fi
+  done
+
+  echo "patch files unzipped successfully from patches svn" 
 
   cd ../unzipped
   find .  -type f ! -name '*.jar' ! -name '*.war' -delete

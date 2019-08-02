@@ -5525,6 +5525,7 @@ WSO2-CARBON-UPDATE-4.4.0-5018|org.wso2.carbon.ui|4.4.14|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5020|org.wso2.carbon.identity.oauth2.validators.xacml|2.0.5|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5021|com.wso2.finance.open.banking.claim.provider|1.3.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5022|org.wso2.carbon.idp.mgt|5.2.2|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5024|synapse-core|2.1.7-wso2v48|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5026|com.wso2.finance.open.banking.mtls.validator|1.3.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5027|org.wso2.carbon.identity.application.authenticator.oidc|5.1.24|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5028|org.wso2.carbon.identity.sso.saml|5.4.22|Jul|2019
@@ -5533,6 +5534,7 @@ WSO2-CARBON-UPDATE-4.4.0-5031|com.wso2.finance.open.banking.uk.consent.enforceme
 WSO2-CARBON-UPDATE-4.4.0-5032|com.wso2.finance.open.banking.uk.consent.mgt|1.3.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5034|org.wso2.carbon.identity.application.authenticator.oidc|5.1.16|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5035|org.wso2.carbon.user.core|4.4.32|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5036|synapse-core|2.1.7-wso2v111|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5037|org.wso2.carbon.apimgt.handlers|3.1.51|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5038|org.wso2.carbon.extension.identity.authenticator.x509Certificate.connector|2.0.11|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5040|org.wso2.charon3.core|3.0.7|Aug|2019

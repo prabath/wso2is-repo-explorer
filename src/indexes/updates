@@ -5498,6 +5498,7 @@ WSO2-CARBON-UPDATE-4.4.0-4976|com.wso2.finance.open.banking.gateway|1.3.0|Jul|20
 WSO2-CARBON-UPDATE-4.4.0-4979|synapse-nhttp-transport|2.1.7-wso2v3|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4980|org.wso2.carbon.apimgt.impl|6.3.95|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4981|org.wso2.carbon.identity.oauth|6.0.53|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-4987|org.wso2.carbon.user.mgt.ui|5.7.5|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-4988|org.wso2.carbon.user.core|4.4.35|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4989|org.wso2.carbon.user.core|4.4.35|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-4990|org.wso2.carbon.user.core|4.4.35|Jul|2019
@@ -5539,6 +5540,10 @@ WSO2-CARBON-UPDATE-4.4.0-5037|org.wso2.carbon.apimgt.handlers|3.1.51|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5038|org.wso2.carbon.extension.identity.authenticator.x509Certificate.connector|2.0.11|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5040|org.wso2.charon3.core|3.0.7|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5043|org.wso2.carbon.idp.mgt.ui|5.12.387|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5048|synapse-nhttp-transport|2.1.7-wso2v80|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5049|synapse-core|2.1.7-wso2v80|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5050|org.wso2.carbon.device.mgt.core|3.1.51|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5052|org.wso2.carbon.idp.mgt.ui|5.12.153|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6045,3 +6050,4 @@ WSO2-CARBON-UPDATE-4.4.0-5021|authentication-endpoint-solution|1.3.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5030|org.wso2.carbon.extension.identity.authenticator.smsotp.endpoint|2.0.23|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5032|com.wso2.finance.open.banking.consent.mgt.endpoint|1.3.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5039|org.wso2.carbon.identity.application.authentication.endpoint|5.12.153|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5050|org.wso2.carbon.device.mgt.mobile.android.api|4.1.20|Aug|2019

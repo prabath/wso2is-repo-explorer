@@ -95,7 +95,7 @@ then
 	if [ "$version_old" -lt "$version_new" ]
 	then
 		## removing .repodata will automatically, trigger the tool to get updated indexes.
-		echo "Updated indexs are available..."
+		echo "Updated indexes are available..."
   		rm /identity-repos/.repodata/updates
   		rm /identity-repos/.repodata/wso2
   		rm /identity-repos/.repodata/wso2-components

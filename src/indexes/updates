@@ -1944,6 +1944,8 @@ WSO2-CARBON-PATCH-4.4.0-4993|synapse-nhttp-transport|2.1.7-wso2v7|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-5009|synapse-core|2.1.7-wso2v10|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-5022|org.wso2.carbon.idp.mgt|5.2.2|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-5029|org.wso2.carbon.identity.entitlement|5.0.7|Jul|2019
+WSO2-CARBON-PATCH-4.4.0-5060|bcprov-jdk15on|1.49.0.wso2v2|Aug|2019
+WSO2-CARBON-PATCH-4.4.0-5061|org.wso2.carbon.identity.workflow.impl|5.0.7|Aug|2019
 WSO2-CARBON-PATCH-4.4.1-0005|org.wso2.carbon.core|4.4.1|Oct|2015
 WSO2-CARBON-UPDATE-4.4.0-0001|minimal-json|0.9.2|Dec|2014
 WSO2-CARBON-UPDATE-4.4.0-0001|hazelcast|3.5.2|Aug|2015

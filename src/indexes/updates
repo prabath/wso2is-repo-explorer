@@ -1933,6 +1933,7 @@ WSO2-CARBON-PATCH-4.4.0-4920|org.wso2.carbon.identity.sso.saml|5.1.2|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-4929|commons-fileupload|1.2.2.wso2v1|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-4932|commons-fileupload|1.2.2.wso2v1|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-4962|org.wso2.carbon.identity.application.authentication.framework|5.2.2|Jul|2019
+WSO2-CARBON-PATCH-4.4.0-4964|org.wso2.carbon.identity.sso.saml|5.1.2|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-4967|org.wso2.carbon.event.output.adapter.jms|5.1.1|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-4979|synapse-nhttp-transport|2.1.7-wso2v3|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-4982|commons-fileupload|1.2.2.wso2v1|Jul|2019
@@ -5576,6 +5577,10 @@ WSO2-CARBON-UPDATE-4.4.0-5081|org.wso2.carbon.inbound.endpoint|4.6.105|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5084|org.wso2.carbon.identity.oauth|5.5.180|Feb|2019
 WSO2-CARBON-UPDATE-4.4.0-5085|org.wso2.carbon.identity.oauth|5.5.168|Jul|2018
 WSO2-CARBON-UPDATE-4.4.0-5086|org.wso2.carbon.identity.oauth|6.0.53|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5087|org.wso2.carbon.device.mgt.common|3.1.51|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5088|org.wso2.carbon.identity.oauth|6.0.14|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5090|org.wso2.carbon.identity.application.authentication.framework|5.12.153|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5091|org.wso2.carbon.idp.mgt.ui|5.2.2|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6090,3 +6095,5 @@ WSO2-CARBON-UPDATE-4.4.0-5078|org.wso2.carbon.identity.oauth.endpoint|6.0.14|Aug
 WSO2-CARBON-UPDATE-4.4.0-5079|org.wso2.carbon.extension.identity.authenticator.smsotp.endpoint|2.0.25|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5084|org.wso2.carbon.identity.oauth.endpoint|5.5.180|Feb|2019
 WSO2-CARBON-UPDATE-4.4.0-5085|org.wso2.carbon.identity.oauth.endpoint|5.5.168|Jul|2018
+WSO2-CARBON-UPDATE-4.4.0-5087|org.wso2.carbon.device.mgt.api|3.1.51|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5088|org.wso2.carbon.identity.oauth.endpoint|6.0.14|Aug|2019

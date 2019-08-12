@@ -5577,6 +5577,7 @@ WSO2-CARBON-UPDATE-4.4.0-5077|org.wso2.carbon.identity.scim2.common|1.2.7|Aug|20
 WSO2-CARBON-UPDATE-4.4.0-5078|org.wso2.carbon.identity.oauth|6.0.14|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5079|org.wso2.carbon.extension.identity.authenticator.smsotp.connector|2.0.25|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5081|org.wso2.carbon.inbound.endpoint|4.6.105|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5083|org.wso2.carbon.identity.sso.saml|5.4.22|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5084|org.wso2.carbon.identity.oauth|5.5.180|Feb|2019
 WSO2-CARBON-UPDATE-4.4.0-5085|org.wso2.carbon.identity.oauth|5.5.168|Jul|2018
 WSO2-CARBON-UPDATE-4.4.0-5086|org.wso2.carbon.identity.oauth|6.0.53|Aug|2019

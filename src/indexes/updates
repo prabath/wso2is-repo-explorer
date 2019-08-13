@@ -5597,6 +5597,7 @@ WSO2-CARBON-UPDATE-4.4.0-5098|axis2-saaj|1.6.1-wso2v12|Mar|2019
 WSO2-CARBON-UPDATE-4.4.0-5098|synapse-core|2.1.7-wso2v3|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5099|org.wso2.carbon.extension.identity.authenticator.x509Certificate.connector|2.0.11|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5101|org.wso2.charon3.core|3.0.25|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5102|org.wso2.carbon.identity.sso.saml.ui|5.4.43|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

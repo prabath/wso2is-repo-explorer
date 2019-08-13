@@ -1949,6 +1949,8 @@ WSO2-CARBON-PATCH-4.4.0-5022|org.wso2.carbon.idp.mgt|5.2.2|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-5029|org.wso2.carbon.identity.entitlement|5.0.7|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-5060|bcprov-jdk15on|1.49.0.wso2v2|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-5061|org.wso2.carbon.identity.workflow.impl|5.0.7|Aug|2019
+WSO2-CARBON-PATCH-4.4.0-5067|org.wso2.carbon.identity.oauth|5.1.3|Aug|2019
+WSO2-CARBON-PATCH-4.4.0-5091|org.wso2.carbon.idp.mgt.ui|5.2.2|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-5097|org.wso2.carbon.apimgt.api|5.0.3|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-5100|axis2|1.6.1.wso2v16|Jul|2019
 WSO2-CARBON-PATCH-4.4.0-5104|synapse-commons|2.1.7-wso2v7|Aug|2019
@@ -5600,6 +5602,11 @@ WSO2-CARBON-UPDATE-4.4.0-5099|org.wso2.carbon.extension.identity.authenticator.x
 WSO2-CARBON-UPDATE-4.4.0-5101|org.wso2.charon3.core|3.0.25|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5102|org.wso2.carbon.identity.sso.saml.ui|5.4.43|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5104|synapse-commons|2.1.7-wso2v7|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5105|org.wso2.carbon.identity.application.authentication.framework|5.12.153|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5116|org.wso2.carbon.identity.application.mgt.ui|5.12.387|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5117|org.wso2.carbon.identity.application.mgt.ui|5.12.387|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5118|org.wso2.carbon.identity.application.mgt.ui|5.12.153|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5119|org.wso2.carbon.identity.application.mgt.ui|5.12.153|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

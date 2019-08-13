@@ -5607,6 +5607,9 @@ WSO2-CARBON-UPDATE-4.4.0-5116|org.wso2.carbon.identity.application.mgt.ui|5.12.3
 WSO2-CARBON-UPDATE-4.4.0-5117|org.wso2.carbon.identity.application.mgt.ui|5.12.387|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5118|org.wso2.carbon.identity.application.mgt.ui|5.12.153|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5119|org.wso2.carbon.identity.application.mgt.ui|5.12.153|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5120|org.wso2.carbon.identity.claim.metadata.mgt.ui|5.11.148|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5121|org.wso2.carbon.identity.application.mgt.ui|5.11.256|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5123|org.wso2.carbon.identity.application.mgt.ui|5.11.256|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

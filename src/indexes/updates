@@ -5603,6 +5603,7 @@ WSO2-CARBON-UPDATE-4.4.0-5101|org.wso2.charon3.core|3.0.25|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5102|org.wso2.carbon.identity.sso.saml.ui|5.4.43|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5104|synapse-commons|2.1.7-wso2v7|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5105|org.wso2.carbon.identity.application.authentication.framework|5.12.153|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5108|org.wso2.carbon.endpoint.ui|4.6.105|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5116|org.wso2.carbon.identity.application.mgt.ui|5.12.387|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5117|org.wso2.carbon.identity.application.mgt.ui|5.12.387|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5118|org.wso2.carbon.identity.application.mgt.ui|5.12.153|Aug|2019

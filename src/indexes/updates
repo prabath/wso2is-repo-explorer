@@ -5533,6 +5533,7 @@ WSO2-CARBON-UPDATE-4.4.0-5011|synapse-core|2.1.7-wso2v15|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5012|org.wso2.carbon.identity.entitlement|5.12.153|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5013|org.wso2.carbon.identity.oauth2.validators.xacml|1.0.9|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5014|org.wso2.carbon.identity.application.authz.xacml|2.0.2|Jul|2019
+WSO2-CARBON-UPDATE-4.4.0-5015|org.wso2.carbon.extension.identity.authenticator.totp.connector|2.1.0|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5016|commons-vfs2|2.0-wso2v15|Jul|2019
 WSO2-CARBON-UPDATE-4.4.0-5017|synapse-nhttp-transport|2.1.7-wso2v7|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5018|org.wso2.carbon.ui|4.4.14|Jul|2019

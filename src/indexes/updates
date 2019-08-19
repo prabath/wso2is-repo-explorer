@@ -5618,6 +5618,7 @@ WSO2-CARBON-UPDATE-4.4.0-5119|org.wso2.carbon.identity.application.mgt.ui|5.12.1
 WSO2-CARBON-UPDATE-4.4.0-5120|org.wso2.carbon.identity.claim.metadata.mgt.ui|5.11.148|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5121|org.wso2.carbon.identity.application.mgt.ui|5.11.256|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5123|org.wso2.carbon.identity.application.mgt.ui|5.11.256|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5125|org.wso2.carbon.identity.oauth|5.3.4|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5128|com.wso2.finance.open.banking.consent.mgt.berlin.v100|1.4.0|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5129|com.wso2.finance.open.banking.gateway|1.3.0|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5130|org.wso2.carbon.identity.application.mgt|5.12.153|Aug|2019
@@ -5627,6 +5628,7 @@ WSO2-CARBON-UPDATE-4.4.0-5136|org.wso2.carbon.idp.mgt|5.2.2|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5137|com.wso2.finance.open.banking.gateway|1.3.0|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5138|synapse-nhttp-transport|2.1.7-wso2v7|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5140|org.wso2.carbon.identity.sso.saml|5.1.2|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5142|org.wso2.ciphertool|1.0.0-wso2v8|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6146,3 +6148,4 @@ WSO2-CARBON-UPDATE-4.4.0-5088|org.wso2.carbon.identity.oauth.endpoint|6.0.14|Aug
 WSO2-CARBON-UPDATE-4.4.0-5092|org.wso2.carbon.identity.oauth.endpoint|5.6.63|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5109|authentication-endpoint-solution|1.3.0|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5139|com.wso2.finance.open.banking.consent.authorize.endpoint|1.4.0|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5148|org.wso2.carbon.identity.mgt.endpoint|5.11.148|Aug|2019

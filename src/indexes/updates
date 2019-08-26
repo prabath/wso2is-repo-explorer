@@ -5662,6 +5662,8 @@ WSO2-CARBON-UPDATE-4.4.0-5200|org.wso2.ciphertool|1.0.0-wso2v8|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5203|msf4j-core|2.6.4|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5206|org.wso2.carbon.user.core|4.4.9|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5207|javax.cache.wso2|4.4.32|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5209|org.wso2.carbon.identity.application.authentication.framework|5.12.387|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5211|com.wso2.finance.open.banking.consent.mgt.berlin.v100|1.4.0|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

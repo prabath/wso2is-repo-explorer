@@ -5697,6 +5697,7 @@ WSO2-CARBON-UPDATE-4.4.0-5242|org.wso2.carbon.apimgt.api|6.3.95|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5243|org.wso2.carbon.server.admin|4.4.32|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5261|javax.cache.wso2|4.4.9|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5264|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5266|org.wso2.carbon.identity.application.mgt.ui|5.2.2|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

@@ -5702,6 +5702,11 @@ WSO2-CARBON-UPDATE-4.4.0-5245|org.wso2.carbon.server.admin|4.4.26|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5246|org.wso2.carbon.tenant.mgt|4.6.0|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5247|org.wso2.carbon.server.admin|4.4.16|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5249|org.wso2.carbon.server.admin|4.4.14|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5253|org.wso2.carbon.tenant.mgt|4.6.25|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5254|org.wso2.carbon.tenant.mgt|4.6.25|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5255|org.wso2.carbon.server.admin|4.4.36|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5256|org.wso2.carbon.server.admin|4.4.36|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5257|org.wso2.carbon.server.admin|4.4.32|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5261|javax.cache.wso2|4.4.9|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5263|org.wso2.carbon.server.admin|4.4.35|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5264|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Aug|2019
@@ -5713,9 +5718,13 @@ WSO2-CARBON-UPDATE-4.4.0-5272|com.wso2.finance.open.banking.consent.mgt.berlin.v
 WSO2-CARBON-UPDATE-4.4.0-5274|org.wso2.carbon.event.output.adapter.email|5.1.42|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5276|org.wso2.carbon.server.admin|4.4.22|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5278|com.wso2.finance.open.banking.gateway|1.4.0|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5279|org.wso2.carbon.server.admin|4.4.22|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5280|org.wso2.carbon.registry.resource.ui|4.6.46|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5281|org.wso2.carbon.registry.resource.ui|4.6.28|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5282|org.wso2.carbon.server.admin|4.4.20|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5283|org.wso2.carbon.server.admin|4.4.32|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5284|org.wso2.carbon.server.admin|4.4.11|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5285|org.wso2.carbon.server.admin|4.4.9|Sep|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

@@ -5711,6 +5711,7 @@ WSO2-CARBON-UPDATE-4.4.0-5258|org.wso2.carbon.tenant.mgt|4.6.11|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5259|org.wso2.carbon.server.admin|4.4.26|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5260|org.wso2.carbon.tenant.mgt|4.6.0|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5261|javax.cache.wso2|4.4.9|Aug|2019
+WSO2-CARBON-UPDATE-4.4.0-5262|org.wso2.carbon.server.admin|4.4.14|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5263|org.wso2.carbon.server.admin|4.4.35|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5264|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5266|org.wso2.carbon.identity.application.mgt.ui|5.2.2|Aug|2019
@@ -5732,6 +5733,7 @@ WSO2-CARBON-UPDATE-4.4.0-5284|org.wso2.carbon.server.admin|4.4.11|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5285|org.wso2.carbon.server.admin|4.4.9|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5291|org.wso2.carbon.server.admin|4.4.32|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5293|org.wso2.carbon.server.admin|4.4.22|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5295|org.wso2.carbon.server.admin|4.4.16|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5297|org.wso2.carbon.server.admin|4.4.20|Sep|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6274,3 +6276,4 @@ WSO2-CARBON-UPDATE-4.4.0-5242|org.wso2.carbon.apimgt.rest.api.admin|6.3.95|Aug|2
 WSO2-CARBON-UPDATE-4.4.0-5271|org.wso2.carbon.consent.mgt.endpoint|1.0.53|Aug|2019
 WSO2-CARBON-UPDATE-4.4.0-5273|com.wso2.finance.open.banking.consent.mgt.endpoint|1.4.0|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5288|org.wso2.carbon.identity.application.authentication.endpoint|5.12.153|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5289|shindig-server|2.0.23|Sep|2019

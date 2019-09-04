@@ -5741,6 +5741,7 @@ WSO2-CARBON-UPDATE-4.4.0-5291|org.wso2.carbon.server.admin|4.4.32|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5293|org.wso2.carbon.server.admin|4.4.22|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5295|org.wso2.carbon.server.admin|4.4.16|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5297|org.wso2.carbon.server.admin|4.4.20|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5298|org.wso2.carbon.apimgt.gateway|6.4.50|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5301|org.wso2.carbon.apimgt.impl|6.2.201|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5303|org.wso2.carbon.identity.oauth|5.6.63|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5305|org.wso2.carbon.server.admin|4.4.7|Sep|2019

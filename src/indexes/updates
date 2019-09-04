@@ -1962,6 +1962,7 @@ WSO2-CARBON-PATCH-4.4.0-5195|org.wso2.carbon.user.core|4.4.9|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-5206|org.wso2.carbon.user.core|4.4.9|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-5236|org.wso2.carbon.user.core|4.4.9|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-5246|org.wso2.carbon.tenant.mgt|4.6.0|Sep|2019
+WSO2-CARBON-PATCH-4.4.0-5248|org.wso2.carbon.server.admin|4.4.11|Sep|2019
 WSO2-CARBON-PATCH-4.4.0-5261|javax.cache.wso2|4.4.9|Sep|2019
 WSO2-CARBON-PATCH-4.4.0-5285|org.wso2.carbon.server.admin|4.4.9|Sep|2019
 WSO2-CARBON-PATCH-4.4.0-5304|org.wso2.carbon.tenant.mgt|4.5.0|Sep|2019

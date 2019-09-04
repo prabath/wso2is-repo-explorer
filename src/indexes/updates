@@ -1961,6 +1961,11 @@ WSO2-CARBON-PATCH-4.4.0-5140|org.wso2.carbon.identity.sso.saml|5.1.2|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-5195|org.wso2.carbon.user.core|4.4.9|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-5206|org.wso2.carbon.user.core|4.4.9|Aug|2019
 WSO2-CARBON-PATCH-4.4.0-5236|org.wso2.carbon.user.core|4.4.9|Aug|2019
+WSO2-CARBON-PATCH-4.4.0-5246|org.wso2.carbon.tenant.mgt|4.6.0|Sep|2019
+WSO2-CARBON-PATCH-4.4.0-5261|javax.cache.wso2|4.4.9|Sep|2019
+WSO2-CARBON-PATCH-4.4.0-5285|org.wso2.carbon.server.admin|4.4.9|Sep|2019
+WSO2-CARBON-PATCH-4.4.0-5304|org.wso2.carbon.tenant.mgt|4.5.0|Sep|2019
+WSO2-CARBON-PATCH-4.4.0-5305|org.wso2.carbon.server.admin|4.4.7|Sep|2019
 WSO2-CARBON-PATCH-4.4.1-0005|org.wso2.carbon.core|4.4.1|Oct|2015
 WSO2-CARBON-UPDATE-4.4.0-0001|minimal-json|0.9.2|Dec|2014
 WSO2-CARBON-UPDATE-4.4.0-0001|hazelcast|3.5.2|Aug|2015
@@ -5735,6 +5740,9 @@ WSO2-CARBON-UPDATE-4.4.0-5291|org.wso2.carbon.server.admin|4.4.32|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5293|org.wso2.carbon.server.admin|4.4.22|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5295|org.wso2.carbon.server.admin|4.4.16|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5297|org.wso2.carbon.server.admin|4.4.20|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5301|org.wso2.carbon.apimgt.impl|6.2.201|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5303|org.wso2.carbon.identity.oauth|5.6.63|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5305|org.wso2.carbon.server.admin|4.4.7|Sep|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

@@ -5757,6 +5757,8 @@ WSO2-CARBON-UPDATE-4.4.0-5316|org.wso2.carbon.identity.entitlement.ui|5.12.153|S
 WSO2-CARBON-UPDATE-4.4.0-5317|org.wso2.carbon.identity.entitlement.ui|5.11.256|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5318|org.wso2.carbon.identity.entitlement.ui|5.11.256|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5319|org.wso2.carbon.identity.entitlement.ui|5.11.148|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5320|org.wso2.carbon.identity.entitlement.ui|5.10.112|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5321|com.wso2.finance.open.banking.consent.mgt.berlin.v100|1.4.0|Sep|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6299,3 +6301,4 @@ WSO2-CARBON-UPDATE-4.4.0-5271|org.wso2.carbon.consent.mgt.endpoint|1.0.53|Aug|20
 WSO2-CARBON-UPDATE-4.4.0-5273|com.wso2.finance.open.banking.consent.mgt.endpoint|1.4.0|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5288|org.wso2.carbon.identity.application.authentication.endpoint|5.12.153|Sep|2019
 WSO2-CARBON-UPDATE-4.4.0-5289|shindig-server|2.0.23|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5321|ob-authentication-endpoint-solution|1.4.0|Sep|2019

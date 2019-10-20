@@ -5965,6 +5965,7 @@ WSO2-CARBON-UPDATE-4.4.0-5584|org.wso2.carbon.appmgt.impl|1.2.7|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5585|org.wso2.carbon.identity.data.publisher.oauth|1.0.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5586|org.wso2.carbon.identity.data.publisher.oauth|1.0.4|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5588|com.wso2.finance.open.banking.common|1.4.0|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5590|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6550,3 +6551,4 @@ WSO2-CARBON-UPDATE-4.4.0-5577|com.wso2.finance.open.banking.consent.mgt.endpoint
 WSO2-CARBON-UPDATE-4.4.0-5581|shindig-server|2.0.26|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5582|shindig-server|2.0.26|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5583|shindig-server|2.0.26|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5590|authentication-endpoint-solution|1.4.0|Oct|2019

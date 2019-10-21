@@ -5947,6 +5947,7 @@ WSO2-CARBON-UPDATE-4.4.0-5548|org.wso2.carbon.identity.oidc.session|6.0.168|Oct|
 WSO2-CARBON-UPDATE-4.4.0-5549|synapse-commons|2.1.7-wso2v48|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5553|org.wso2.carbon.identity.application.authentication.framework|5.12.153|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5554|synapse-core|2.1.7-wso2v80|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5556|org.wso2.carbon.apimgt.hostobjects|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5557|synapse-core|2.1.7-wso2v80|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5558|synapse-core|2.1.7-wso2v80|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5559|org.wso2.carbon.extension.identity.authenticator.emailotp.connector|2.0.31|Oct|2019
@@ -5966,6 +5967,8 @@ WSO2-CARBON-UPDATE-4.4.0-5585|org.wso2.carbon.identity.data.publisher.oauth|1.0.
 WSO2-CARBON-UPDATE-4.4.0-5586|org.wso2.carbon.identity.data.publisher.oauth|1.0.4|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5588|com.wso2.finance.open.banking.common|1.4.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5590|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5593|org.wso2.carbon.apimgt.gateway|6.4.50|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5594|axis2-transport-rabbitmq-amqp|2.0.0-wso2v30|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6548,6 +6551,7 @@ WSO2-CARBON-UPDATE-4.4.0-5563|org.wso2.carbon.identity.user.endpoint|1.1.37|Oct|
 WSO2-CARBON-UPDATE-4.4.0-5565|org.wso2.carbon.identity.mgt.endpoint|5.12.387|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5567|org.wso2.carbon.identity.application.authentication.endpoint|5.11.256|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5577|com.wso2.finance.open.banking.consent.mgt.endpoint|1.3.0|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5578|org.wso2.carbon.identity.oauth.endpoint|5.3.4|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5581|shindig-server|2.0.26|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5582|shindig-server|2.0.26|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5583|shindig-server|2.0.26|Oct|2019

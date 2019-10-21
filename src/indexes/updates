@@ -5954,8 +5954,10 @@ WSO2-CARBON-UPDATE-4.4.0-5559|org.wso2.carbon.extension.identity.authenticator.e
 WSO2-CARBON-UPDATE-4.4.0-5561|synapse-commons|2.1.7-wso2v80|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5563|org.wso2.carbon.identity.governance|1.1.37|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5564|org.wso2.carbon.identity.oauth|6.0.53|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5568|org.wso2.carbon.identity.user.store.configuration|5.12.153|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5569|org.wso2.carbon.identity.scim2.common|1.2.45|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5570|org.wso2.carbon.registry.resource.ui|4.6.0|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5571|org.wso2.carbon.analytics.dataservice.core|1.2.7|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5572|org.wso2.carbon.registry.indexing|4.6.38|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5573|org.wso2.carbon.registry.resource.ui|4.6.6|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5574|org.wso2.carbon.registry.resource.ui|4.6.3|Oct|2019
@@ -5969,6 +5971,7 @@ WSO2-CARBON-UPDATE-4.4.0-5588|com.wso2.finance.open.banking.common|1.4.0|Oct|201
 WSO2-CARBON-UPDATE-4.4.0-5590|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5593|org.wso2.carbon.apimgt.gateway|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5594|axis2-transport-rabbitmq-amqp|2.0.0-wso2v30|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5595|org.wso2.carbon.identity.scim2.common|1.2.7|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

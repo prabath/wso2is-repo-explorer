@@ -5972,6 +5972,11 @@ WSO2-CARBON-UPDATE-4.4.0-5590|com.wso2.finance.open.banking.consent.authorize.st
 WSO2-CARBON-UPDATE-4.4.0-5593|org.wso2.carbon.apimgt.gateway|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5594|axis2-transport-rabbitmq-amqp|2.0.0-wso2v30|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5595|org.wso2.carbon.identity.scim2.common|1.2.7|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5597|org.wso2.carbon.user.core|4.4.35|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5598|org.wso2.carbon.server.admin|4.4.35|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5599|org.wso2.carbon.server.admin|4.4.35|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5600|org.wso2.carbon.server.admin|4.4.32|Sep|2019
+WSO2-CARBON-UPDATE-4.4.0-5601|org.wso2.carbon.identity.oauth|6.0.53|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

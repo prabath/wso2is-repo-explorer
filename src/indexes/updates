@@ -5987,6 +5987,7 @@ WSO2-CARBON-UPDATE-4.4.0-5602|org.wso2.carbon.identity.sso.saml|5.4.43|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5604|org.wso2.carbon.identity.user.store.configuration|5.12.387|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5605|org.wso2.carbon.idp.mgt.ui|5.12.387|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5606|org.wso2.carbon.apimgt.api|6.4.50|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5608|com.wso2.finance.open.banking.gateway|1.4.0|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

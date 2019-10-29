@@ -1996,6 +1996,7 @@ WSO2-CARBON-PATCH-4.4.0-5591|axis2-saaj|1.6.1-wso2v12|Mar|2015
 WSO2-CARBON-PATCH-4.4.0-5591|synapse-core|2.1.7-wso2v3|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-5592|synapse-core|2.1.5-wso2v2|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-5619|org.wso2.carbon.tomcat.ext|4.4.9|Oct|2019
+WSO2-CARBON-PATCH-4.4.0-5625|org.wso2.carbon.inbound.endpoint|4.4.10|Oct|2019
 WSO2-CARBON-PATCH-4.4.1-0005|org.wso2.carbon.core|4.4.1|Oct|2015
 WSO2-CARBON-UPDATE-4.4.0-0001|minimal-json|0.9.2|Dec|2014
 WSO2-CARBON-UPDATE-4.4.0-0001|hazelcast|3.5.2|Aug|2015

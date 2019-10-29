@@ -6009,6 +6009,7 @@ WSO2-CARBON-UPDATE-4.4.0-5626|org.wso2.carbon.identity.application.authenticatio
 WSO2-CARBON-UPDATE-4.4.0-5627|org.wso2.carbon.identity.application.mgt|5.11.148|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5629|org.wso2.carbon.identity.application.authentication.framework|5.12.153|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5631|com.wso2.finance.open.banking.gateway|1.4.0|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5632|synapse-core|2.1.7-wso2v15|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

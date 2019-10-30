@@ -5999,6 +5999,7 @@ WSO2-CARBON-UPDATE-4.4.0-5609|org.wso2.carbon.apimgt.gateway|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5610|org.wso2.carbon.identity.oauth|6.0.53|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5613|org.wso2.carbon.apimgt.impl|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5615|com.wso2.finance.open.banking.mtls.validator|1.4.0|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5616|org.wso2.carbon.apimgt.impl|6.2.201|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5617|com.wso2.finance.open.banking.mtls.authenticator|1.4.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5618|org.wso2.carbon.identity.sso.saml|5.4.22|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5619|org.wso2.carbon.tomcat.ext|4.4.9|Oct|2019
@@ -6013,7 +6014,9 @@ WSO2-CARBON-UPDATE-4.4.0-5629|org.wso2.carbon.identity.application.authenticatio
 WSO2-CARBON-UPDATE-4.4.0-5630|org.wso2.carbon.apimgt.impl|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5631|com.wso2.finance.open.banking.gateway|1.4.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5632|synapse-core|2.1.7-wso2v15|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5633|org.wso2.carbon.databridge.receiver.binary|5.1.42|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5635|org.wso2.charon.core|2.1.5|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5636|org.wso2.carbon.identity.governance|1.1.37|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5638|org.wso2.carbon.user.mgt|5.2.2|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5641|org.wso2.carbon.ndatasource.ui|4.6.65|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016

@@ -1998,6 +1998,8 @@ WSO2-CARBON-PATCH-4.4.0-5592|synapse-core|2.1.5-wso2v2|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-5619|org.wso2.carbon.tomcat.ext|4.4.9|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-5625|org.wso2.carbon.inbound.endpoint|4.4.10|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-5638|org.wso2.carbon.user.mgt|5.2.2|Oct|2019
+WSO2-CARBON-PATCH-4.4.0-5643|process-tools|3.6.0|Oct|2019
+WSO2-CARBON-PATCH-4.4.0-5645|synapse-nhttp-transport|2.1.7-wso2v7|Oct|2019
 WSO2-CARBON-PATCH-4.4.1-0005|org.wso2.carbon.core|4.4.1|Oct|2015
 WSO2-CARBON-UPDATE-4.4.0-0001|minimal-json|0.9.2|Dec|2014
 WSO2-CARBON-UPDATE-4.4.0-0001|hazelcast|3.5.2|Aug|2015
@@ -5984,6 +5986,7 @@ WSO2-CARBON-UPDATE-4.4.0-5591|synapse-core|2.1.7-wso2v3|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5593|org.wso2.carbon.apimgt.gateway|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5594|axis2-transport-rabbitmq-amqp|2.0.0-wso2v30|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5595|org.wso2.carbon.identity.scim2.common|1.2.7|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5596|org.wso2.carbon.apimgt.impl|6.2.201|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5597|org.wso2.carbon.user.core|4.4.35|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5598|org.wso2.carbon.server.admin|4.4.35|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5599|org.wso2.carbon.server.admin|4.4.35|Sep|2019
@@ -6610,6 +6613,7 @@ WSO2-CARBON-UPDATE-4.4.0-5581|shindig-server|2.0.26|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5582|shindig-server|2.0.26|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5583|shindig-server|2.0.26|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5590|authentication-endpoint-solution|1.4.0|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5596|org.wso2.carbon.apimgt.rest.api.store|6.2.201|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5606|org.wso2.carbon.apimgt.rest.api.admin|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5607|org.wso2.carbon.apimgt.rest.api.publisher|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5610|org.wso2.carbon.identity.oauth.endpoint|6.0.53|Oct|2019

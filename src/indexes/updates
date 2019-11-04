@@ -6000,6 +6000,7 @@ WSO2-CARBON-UPDATE-4.4.0-5606|org.wso2.carbon.apimgt.api|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5608|com.wso2.finance.open.banking.gateway|1.4.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5609|org.wso2.carbon.apimgt.gateway|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5610|org.wso2.carbon.identity.oauth|6.0.53|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5611|wss4j|1.5.11-wso2v18|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5613|org.wso2.carbon.apimgt.impl|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5615|com.wso2.finance.open.banking.mtls.validator|1.4.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5616|org.wso2.carbon.apimgt.impl|6.2.201|Oct|2019
@@ -6030,7 +6031,10 @@ WSO2-CARBON-UPDATE-4.4.0-5645|synapse-nhttp-transport|2.1.7-wso2v7|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5646|org.wso2.carbon.apimgt.keymgt|6.3.95|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5648|com.wso2.finance.open.banking.mtls.validator|1.3.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5649|org.wso2.carbon.identity.recovery|1.0.2|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5650|com.wso2.finance.open.banking.consent.mgt.berlin.v100|1.4.0|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5652|org.wso2.carbon.identity.application.authentication.framework|5.11.256|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5653|org.wso2.carbon.identity.user.store.configuration|5.12.387|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5655|com.wso2.finance.open.banking.uk.consent.enforcement|1.4.0|Nov|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6626,3 +6630,6 @@ WSO2-CARBON-UPDATE-4.4.0-5610|org.wso2.carbon.identity.oauth.endpoint|6.0.53|Oct
 WSO2-CARBON-UPDATE-4.4.0-5612|org.wso2.carbon.apimgt.rest.api.publisher|6.4.50|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5622|com.wso2.finance.open.banking.consent.mgt.endpoint|1.3.0|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5649|org.wso2.carbon.identity.user.endpoint|1.0.2|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5650|com.wso2.finance.open.banking.consent.mgt.endpoint|1.4.0|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5655|open-banking-backend-uk-3.0.0|1.4.0|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5656|com.wso2.finance.open.banking.consent.mgt.endpoint|1.4.0|Nov|2019

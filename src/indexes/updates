@@ -6041,6 +6041,8 @@ WSO2-CARBON-UPDATE-4.4.0-5658|com.wso2.finance.open.banking.common|1.3.0|Nov|201
 WSO2-CARBON-UPDATE-4.4.0-5659|synapse-extensions|2.1.7-wso2v65|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5660|org.wso2.carbon.apimgt.jms.listener|6.4.50|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5661|org.wso2.carbon.apimgt.keymgt|6.4.50|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5662|synapse-core|2.1.7-wso2v80|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5665|synapse-extensions|2.1.7-wso2v65|Nov|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

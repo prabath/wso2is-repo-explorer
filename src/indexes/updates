@@ -2000,6 +2000,7 @@ WSO2-CARBON-PATCH-4.4.0-5625|org.wso2.carbon.inbound.endpoint|4.4.10|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-5638|org.wso2.carbon.user.mgt|5.2.2|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-5643|process-tools|3.6.0|Oct|2019
 WSO2-CARBON-PATCH-4.4.0-5645|synapse-nhttp-transport|2.1.7-wso2v7|Oct|2019
+WSO2-CARBON-PATCH-4.4.0-5667|org.wso2.carbon.identity.user.store.configuration.ui|5.0.7|Nov|2019
 WSO2-CARBON-PATCH-4.4.1-0005|org.wso2.carbon.core|4.4.1|Oct|2015
 WSO2-CARBON-UPDATE-4.4.0-0001|minimal-json|0.9.2|Dec|2014
 WSO2-CARBON-UPDATE-4.4.0-0001|hazelcast|3.5.2|Aug|2015
@@ -6043,6 +6044,7 @@ WSO2-CARBON-UPDATE-4.4.0-5660|org.wso2.carbon.apimgt.jms.listener|6.4.50|Nov|201
 WSO2-CARBON-UPDATE-4.4.0-5661|org.wso2.carbon.apimgt.keymgt|6.4.50|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5662|synapse-core|2.1.7-wso2v80|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5665|synapse-extensions|2.1.7-wso2v65|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5669|synapse-core|2.1.7-wso2v80|Nov|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

@@ -6052,7 +6052,9 @@ WSO2-CARBON-UPDATE-4.4.0-5670|org.wso2.carbon.device.mgt.common|3.1.51|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5671|org.wso2.carbon.identity.oauth|5.1.3|Oct|2019
 WSO2-CARBON-UPDATE-4.4.0-5677|org.wso2.carbon.extension.identity.authenticator.x509Certificate.connector|2.0.13|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5678|org.wso2.carbon.identity.governance|1.1.37|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5680|org.wso2.carbon.identity.oauth|5.3.4|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5681|org.wso2.carbon.extension.identity.authenticator.x509Certificate.connector|2.0.13|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5685|org.wso2.carbon.identity.account.suspension.notification.task|1.1.15|Nov|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -6654,6 +6656,7 @@ WSO2-CARBON-UPDATE-4.4.0-5656|com.wso2.finance.open.banking.consent.mgt.endpoint
 WSO2-CARBON-UPDATE-4.4.0-5658|com.wso2.finance.open.banking.consent.mgt.endpoint|1.3.0|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5670|org.wso2.carbon.device.mgt.mobile.android.api|4.1.20|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5671|org.wso2.carbon.identity.oauth.endpoint|5.1.3|Oct|2019
+WSO2-CARBON-UPDATE-4.4.0-5676|org.wso2.carbon.apimgt.rest.api.publisher|6.4.50|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5677|org.wso2.carbon.extension.identity.authenticator.x509Certificate.endpoint|2.0.13|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5678|org.wso2.carbon.identity.user.endpoint|1.1.37|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5681|org.wso2.carbon.extension.identity.authenticator.x509Certificate.endpoint|2.0.13|Nov|2019

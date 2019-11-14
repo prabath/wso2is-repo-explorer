@@ -6062,8 +6062,11 @@ WSO2-CARBON-UPDATE-4.4.0-5679|org.wso2.carbon.event.publisher.core|5.1.42|Nov|20
 WSO2-CARBON-UPDATE-4.4.0-5680|org.wso2.carbon.identity.oauth|5.3.4|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5681|org.wso2.carbon.extension.identity.authenticator.x509Certificate.connector|2.0.13|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5682|org.wso2.carbon.message.processor.ui|4.6.150|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5683|synapse-nhttp-transport|2.1.7-wso2v10|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5684|org.wso2.carbon.message.processor.ui|4.6.150|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5685|org.wso2.carbon.identity.account.suspension.notification.task|1.1.15|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5686|org.wso2.balana.utils|1.1.5|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5687|org.wso2.carbon.message.processor.ui|4.6.6|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5688|org.wso2.carbon.message.processor.ui|4.6.16|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5690|org.wso2.carbon.message.processor.ui|4.6.19|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5693|org.wso2.carbon.message.processor.ui|4.6.105|Nov|2019
@@ -6071,6 +6074,7 @@ WSO2-CARBON-UPDATE-4.4.0-5694|org.wso2.carbon.message.processor.ui|4.6.105|Nov|2
 WSO2-CARBON-UPDATE-4.4.0-5695|org.wso2.carbon.message.processor.ui|4.6.89|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5696|org.wso2.carbon.message.processor.ui|4.6.67|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5700|org.wso2.carbon.event.publisher.core|5.1.42|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5704|synapse-nhttp-transport|2.1.7-wso2v48|Nov|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

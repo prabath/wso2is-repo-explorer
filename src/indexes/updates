@@ -6081,8 +6081,11 @@ WSO2-CARBON-UPDATE-4.4.0-5700|org.wso2.carbon.event.publisher.core|5.1.42|Nov|20
 WSO2-CARBON-UPDATE-4.4.0-5703|org.wso2.carbon.identity.base|5.2.2|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5704|synapse-nhttp-transport|2.1.7-wso2v48|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5705|org.wso2.carbon.identity.application.authentication.framework|5.12.153|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5707|org.wso2.carbon.identity.sso.saml|5.4.43|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5712|org.wso2.carbon.mediation.security.ui|4.6.105|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5713|com.wso2.finance.open.banking.consent.mgt.berlin.v100|1.4.0|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5718|org.wso2.carbon.identity.application.mgt.ui|5.12.387|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5720|org.wso2.carbon.service.mgt|4.7.3|Nov|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

@@ -6089,6 +6089,7 @@ WSO2-CARBON-UPDATE-4.4.0-5713|com.wso2.finance.open.banking.consent.mgt.berlin.v
 WSO2-CARBON-UPDATE-4.4.0-5718|org.wso2.carbon.identity.application.mgt.ui|5.12.387|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5720|org.wso2.carbon.service.mgt|4.7.3|Nov|2019
 WSO2-CARBON-UPDATE-4.4.0-5721|org.wso2.carbon.user.core|4.4.1|Nov|2019
+WSO2-CARBON-UPDATE-4.4.0-5723|siddhi-core|4.2.20|Sep|2019
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

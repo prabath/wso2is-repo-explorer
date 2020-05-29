@@ -6943,6 +6943,7 @@ WSO2-CARBON-UPDATE-4.4.0-6618|com.wso2.finance.open.banking.gateway|1.4.0|May|20
 WSO2-CARBON-UPDATE-4.4.0-6619|axis2|1.6.1-wso2v23|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6621|com.wso2.finance.periodical.updater|1.5.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6622|com.wso2.finance.open.banking.uk.consent.enforcement|1.5.0|May|2020
+WSO2-CARBON-UPDATE-4.4.0-6623|org.wso2.carbon.databridge.receiver.binary|5.1.42|May|2020
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

@@ -6940,6 +6940,7 @@ WSO2-CARBON-UPDATE-4.4.0-6612|com.wso2.finance.open.banking.custom.throttling|1.
 WSO2-CARBON-UPDATE-4.4.0-6615|com.wso2.finance.open.banking.event.notifications.uk.300.mgt|1.5.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6616|com.wso2.finance.open.banking.uk.consent.enforcement|1.4.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6618|com.wso2.finance.open.banking.gateway|1.4.0|May|2020
+WSO2-CARBON-UPDATE-4.4.0-6619|axis2|1.6.1-wso2v23|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6621|com.wso2.finance.periodical.updater|1.5.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6622|com.wso2.finance.open.banking.uk.consent.enforcement|1.5.0|May|2020
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016

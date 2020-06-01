@@ -6951,6 +6951,7 @@ WSO2-CARBON-UPDATE-4.4.0-6622|com.wso2.finance.open.banking.uk.consent.enforceme
 WSO2-CARBON-UPDATE-4.4.0-6623|org.wso2.carbon.databridge.receiver.binary|5.1.42|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6624|org.wso2.carbon.identity.oauth|5.6.63|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6625|org.wso2.carbon.apimgt.gateway|6.4.50|May|2020
+WSO2-CARBON-UPDATE-4.4.0-6628|org.wso2.carbon.identity.recovery|1.1.37|Jun|2020
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

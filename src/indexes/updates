@@ -6912,6 +6912,7 @@ WSO2-CARBON-UPDATE-4.4.0-6550|com.wso2.finance.open.banking.common|1.3.0|May|202
 WSO2-CARBON-UPDATE-4.4.0-6551|org.wso2.carbon.identity.sso.saml.ui|5.4.22|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6552|org.wso2.carbon.identity.sso.saml.ui|5.4.43|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6553|org.wso2.carbon.identity.application.authentication.framework|5.12.153|May|2020
+WSO2-CARBON-UPDATE-4.4.0-6554|org.wso2.carbon.identity.application.authentication.framework|5.12.153|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6555|org.wso2.carbon.identity.recovery|1.1.37|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6556|com.wso2.finance.open.banking.common|1.4.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6560|org.wso2.carbon.registry.resource.ui|4.6.46|May|2020
@@ -6940,6 +6941,7 @@ WSO2-CARBON-UPDATE-4.4.0-6605|org.wso2.carbon.user.core|4.4.40|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6606|org.wso2.carbon.identity.oauth|6.0.53|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6607|org.wso2.carbon.identity.scim2.common|1.2.7|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6608|synapse-nhttp-transport|2.1.3-wso2v11|May|2020
+WSO2-CARBON-UPDATE-4.4.0-6610|org.wso2.carbon.idp.mgt.ui|5.12.153|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6611|com.wso2.finance.open.banking.reporting.data.publisher|1.5.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6612|com.wso2.finance.open.banking.custom.throttling|1.5.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6615|com.wso2.finance.open.banking.event.notifications.uk.300.mgt|1.5.0|May|2020
@@ -6952,6 +6954,8 @@ WSO2-CARBON-UPDATE-4.4.0-6623|org.wso2.carbon.databridge.receiver.binary|5.1.42|
 WSO2-CARBON-UPDATE-4.4.0-6624|org.wso2.carbon.identity.oauth|5.6.63|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6625|org.wso2.carbon.apimgt.gateway|6.4.50|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6628|org.wso2.carbon.identity.recovery|1.1.37|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6630|synapse-nhttp-transport|2.1.7-wso2v7|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6632|com.wso2.finance.open.banking.reporting.data.common|1.3.0|Jun|2020
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
@@ -7658,6 +7662,7 @@ WSO2-CARBON-UPDATE-4.4.0-6538|com.wso2.finance.open.banking.consent.mgt.endpoint
 WSO2-CARBON-UPDATE-4.4.0-6541|org.wso2.carbon.identity.oauth.endpoint|6.0.53|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6542|org.wso2.carbon.identity.oauth.endpoint|6.0.53|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6548|org.wso2.carbon.identity.scim2.provider|1.1.19|May|2020
+WSO2-CARBON-UPDATE-4.4.0-6554|org.wso2.carbon.identity.application.authentication.endpoint|5.12.153|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6573|open-banking-backend-uk-3.0.0|1.3.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6578|com.wso2.finance.open.banking.consent.mgt.endpoint|1.4.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6579|open-banking-backend-uk-3.0.0|1.4.0|May|2020

@@ -6949,6 +6949,7 @@ WSO2-CARBON-UPDATE-4.4.0-6609|org.wso2.carbon.apimgt.keymgt|6.3.95|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6610|org.wso2.carbon.idp.mgt.ui|5.12.153|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6611|com.wso2.finance.open.banking.reporting.data.publisher|1.5.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6612|com.wso2.finance.open.banking.custom.throttling|1.5.0|May|2020
+WSO2-CARBON-UPDATE-4.4.0-6613|org.wso2.carbon.identity.entitlement|5.12.387|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6615|com.wso2.finance.open.banking.event.notifications.uk.300.mgt|1.5.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6616|com.wso2.finance.open.banking.uk.consent.enforcement|1.4.0|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6618|com.wso2.finance.open.banking.gateway|1.4.0|May|2020

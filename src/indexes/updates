@@ -6970,6 +6970,8 @@ WSO2-CARBON-UPDATE-4.4.0-6637|com.wso2.finance.open.banking.reporting.data.retri
 WSO2-CARBON-UPDATE-4.4.0-6638|org.wso2.carbon.dataservices.core|4.4.106|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6639|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6645|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6646|app-deletion-workflow|1.4.0|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6650|app-deletion-workflow|1.4.0|Jun|2020
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

@@ -6963,6 +6963,7 @@ WSO2-CARBON-UPDATE-4.4.0-6625|org.wso2.carbon.apimgt.gateway|6.4.50|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6626|org.wso2.carbon.identity.oauth|6.0.14|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6627|org.wso2.carbon.user.core|4.4.35|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6628|org.wso2.carbon.identity.recovery|1.1.37|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6629|org.wso2.carbon.identity.scim2.common|1.2.7|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6630|synapse-nhttp-transport|2.1.7-wso2v7|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6631|synapse-nhttp-transport|2.1.7-wso2v10|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6632|com.wso2.finance.open.banking.reporting.data.common|1.3.0|Jun|2020

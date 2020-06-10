@@ -6971,6 +6971,7 @@ WSO2-CARBON-UPDATE-4.4.0-6636|com.wso2.finance.open.banking.reporting.data.publi
 WSO2-CARBON-UPDATE-4.4.0-6637|com.wso2.finance.open.banking.reporting.data.retriever|1.4.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6638|org.wso2.carbon.dataservices.core|4.4.106|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6639|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6643|org.wso2.carbon.registry.resource|4.5.4|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6644|org.wso2.carbon.event.receiver.core|5.1.25|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6645|com.wso2.finance.open.banking.consent.authorize.steps.impl|1.4.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6646|app-deletion-workflow|1.4.0|Jun|2020

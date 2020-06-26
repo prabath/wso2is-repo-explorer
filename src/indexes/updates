@@ -6938,6 +6938,7 @@ WSO2-CARBON-UPDATE-4.4.0-6575|org.wso2.carbon.identity.oauth|6.0.14|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6576|org.wso2.carbon.apimgt.impl|6.2.201|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6577|synapse-core|2.1.7-wso2v80|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6578|com.wso2.finance.open.banking.uk.consent.mgt|1.4.0|May|2020
+WSO2-CARBON-UPDATE-4.4.0-6580|org.wso2.carbon.tomcat.ext|4.4.35|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6589|org.wso2.carbon.apimgt.webapp.publisher|3.1.51|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6590|synapse-core|2.1.7-wso2v65|May|2020
 WSO2-CARBON-UPDATE-4.4.0-6591|org.wso2.carbon.databridge.receiver.binary|5.1.42|May|2020

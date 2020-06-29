@@ -7024,6 +7024,7 @@ WSO2-CARBON-UPDATE-4.4.0-6699|org.wso2.carbon.identity.sso.saml|5.4.11|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6700|org.wso2.carbon.identity.recovery|1.1.37|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6703|org.wso2.carbon.identity.scim2.common|1.2.7|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6704|synapse-core|2.1.7-wso2v111|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6706|org.wso2.carbon.apimgt.gateway|6.1.66|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6707|org.wso2.carbon.identity.entitlement|5.12.387|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6708|org.wso2.carbon.extension.identity.authenticator.emailotp.connector|2.0.40.3|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6709|org.wso2.carbon.extension.identity.authenticator.emailotp.connector|2.0.40.3|Jun|2020

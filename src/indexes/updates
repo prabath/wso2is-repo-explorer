@@ -7029,6 +7029,8 @@ WSO2-CARBON-UPDATE-4.4.0-6708|org.wso2.carbon.extension.identity.authenticator.e
 WSO2-CARBON-UPDATE-4.4.0-6709|org.wso2.carbon.extension.identity.authenticator.emailotp.connector|2.0.40.3|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6710|org.wso2.carbon.registry.core|4.4.35|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6712|org.wso2.carbon.identity.oauth|6.0.53|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6713|com.wso2.finance.open.banking.mtls.validator|1.5.0|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6714|com.wso2.finance.open.banking.mtls.authenticator|1.5.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6720|org.wso2.carbon.identity.application.authentication.framework|5.12.153|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6725|org.wso2.carbon.ui|4.4.32|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6726|org.wso2.carbon.ui|4.4.26|Jun|2020
@@ -7761,6 +7763,7 @@ WSO2-CARBON-UPDATE-4.4.0-6680|authentication-endpoint-solution|1.3.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6681|authentication-endpoint-solution|1.4.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6703|org.wso2.carbon.identity.scim2.provider|1.2.7|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6716|org.wso2.carbon.identity.application.authentication.endpoint|5.12.153|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6717|org.wso2.carbon.identity.application.authentication.endpoint|5.12.153|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6720|org.wso2.carbon.identity.application.authentication.endpoint|5.12.153|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6721|authentication-endpoint-solution|1.4.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6722|authentication-endpoint-solution|1.3.0|Jun|2020

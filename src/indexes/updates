@@ -7024,6 +7024,7 @@ WSO2-CARBON-UPDATE-4.4.0-6699|org.wso2.carbon.identity.sso.saml|5.4.11|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6700|org.wso2.carbon.identity.recovery|1.1.37|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6703|org.wso2.carbon.identity.scim2.common|1.2.7|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6704|synapse-core|2.1.7-wso2v111|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6705|org.wso2.carbon.user.core|4.4.35|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6706|org.wso2.carbon.apimgt.gateway|6.1.66|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6707|org.wso2.carbon.identity.entitlement|5.12.387|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6708|org.wso2.carbon.extension.identity.authenticator.emailotp.connector|2.0.40.3|Jun|2020
@@ -7772,3 +7773,4 @@ WSO2-CARBON-UPDATE-4.4.0-6723|org.wso2.carbon.identity.application.authenticatio
 WSO2-CARBON-UPDATE-4.4.0-6724|org.wso2.carbon.identity.application.authentication.endpoint|5.12.153|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6728|com.wso2.finance.open.banking.consent.mgt.endpoint|1.4.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6732|org.wso2.carbon.event.output.adapter.websocket.endpoint|5.1.37|Apr|2020
+WSO2-CARBON-UPDATE-4.4.0-6735|org.wso2.carbon.identity.oauth.endpoint|6.0.53|Jul|2020

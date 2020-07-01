@@ -7038,6 +7038,9 @@ WSO2-CARBON-UPDATE-4.4.0-6725|org.wso2.carbon.ui|4.4.32|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6726|org.wso2.carbon.ui|4.4.26|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6727|com.wso2.finance.open.banking.mtls.validator|1.4.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6732|org.wso2.carbon.core|4.4.26|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6737|com.wso2.finance.open.banking.uk.consent.mgt|1.5.0|Jul|2020
+WSO2-CARBON-UPDATE-4.4.0-6738|com.wso2.finance.open.banking.uk.consent.mgt|1.4.0|Jul|2020
+WSO2-CARBON-UPDATE-4.4.0-6739|smbj|0.10.0.wso2v2|Jun|2020
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016

@@ -7039,6 +7039,7 @@ WSO2-CARBON-UPDATE-4.4.0-6725|org.wso2.carbon.ui|4.4.32|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6726|org.wso2.carbon.ui|4.4.26|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6727|com.wso2.finance.open.banking.mtls.validator|1.4.0|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6730|org.wso2.carbon.extension.identity.authenticator.totp.connector|2.0.21|Jun|2020
+WSO2-CARBON-UPDATE-4.4.0-6731|org.wso2.carbon.identity.governance|1.1.37|Jul|2020
 WSO2-CARBON-UPDATE-4.4.0-6732|org.wso2.carbon.core|4.4.26|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6734|org.wso2.carbon.extension.identity.authenticator.emailotp.connector|2.0.13.5|Jun|2020
 WSO2-CARBON-UPDATE-4.4.0-6736|org.wso2.carbon.identity.recovery|1.1.37|Jul|2020

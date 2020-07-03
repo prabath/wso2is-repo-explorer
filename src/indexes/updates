@@ -7051,6 +7051,7 @@ WSO2-CARBON-UPDATE-4.4.0-6740|org.wso2.carbon.idp.mgt.ui|5.12.153|Jul|2020
 WSO2-CARBON-UPDATE-4.4.0-6743|axis2-transport-jms|2.0.0-wso2v30|Jul|2020
 WSO2-CARBON-UPDATE-4.4.0-6744|com.wso2.finance.open.banking.gateway|1.5.0|Jul|2020
 WSO2-CARBON-UPDATE-4.4.0-6746|com.wso2.finance.open.banking.gateway|1.4.0|Jul|2020
+WSO2-CARBON-UPDATE-4.4.0-6755|synapse-core|2.1.7-wso2v7|Jul|2020
 WSO2-CARBON-PATCH-4.4.0-0073|org.wso2.carbon.identity.application.authentication.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0076|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
 WSO2-CARBON-PATCH-4.4.0-0092|org.wso2.carbon.identity.oauth.endpoint|5.0.7|Feb|2016
